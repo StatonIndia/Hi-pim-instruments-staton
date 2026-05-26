@@ -376,13 +376,15 @@
       } else {
         // - SLOW: scrolling DOWN from top - cinematic reveal -
         if (isMobileOrTouch) {
-          tl.to(whyTitle, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" })
-            .to(whySubtitle, { opacity: 1, duration: 0.3, ease: "power3.out" }, "-=0.3")
-            .to(leftCards, { x: 0, y: 0, opacity: 1, duration: 0.4, ease: "power3.out", stagger: 0.06 }, "-=0.15")
-            .to(rightCards, { x: 0, y: 0, opacity: 1, duration: 0.4, ease: "power3.out", stagger: 0.06 }, "-=0.4");
+          // Durations increased vs before so fast mobile swipes don't cause
+          // onLeave to fire mid-animation (in/out overlap → rushed look)
+          tl.to(whyTitle, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" })
+            .to(whySubtitle, { opacity: 1, duration: 0.5, ease: "power3.out" }, "-=0.4")
+            .to(leftCards, { x: 0, y: 0, opacity: 1, duration: 0.6, ease: "power3.out", stagger: 0.08 }, "-=0.2")
+            .to(rightCards, { x: 0, y: 0, opacity: 1, duration: 0.6, ease: "power3.out", stagger: 0.08 }, "-=0.6");
 
           if (includeTool) {
-            tl.fromTo(whyTool, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, "-=0.4");
+            tl.fromTo(whyTool, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, "-=0.5");
             if (whyToolImg) whyToolImg.classList.remove('pause-float');
           }
         } else {
@@ -404,8 +406,8 @@
     // Direction-aware ScrollTrigger
     ScrollTrigger.create({
       trigger: whySection,
-      start: "top 70%",
-      end: "bottom 60%", // Align with fsARC start to catch the transition perfectly
+      start: isMobileOrTouch ? "top 75%" : "top 70%",
+      end: isMobileOrTouch ? "bottom 30%" : "bottom 60%", // wider zone on mobile so onLeave can't fire mid-animation
       onEnter: () => playWhyTimeline(false),      // Scrolling DOWN into section → slow
       onEnterBack: () => playWhyTimeline(true, false), // No tool reset on reverse scroll (scrub handles it)
       onLeave: () => {
@@ -495,9 +497,9 @@
     const fsarcTl = gsap.timeline({
       scrollTrigger: {
         trigger: fsarcSection,
-        start: mob ? "top 85%" : "top 60%",
-        end: "bottom bottom",
-        scrub: mob ? 0.8 : 1.5,
+        start: mob ? "top 80%" : "top 60%",
+        end: mob ? "bottom 20%" : "bottom bottom", // extend zone on mobile so animation isn't compressed
+        scrub: mob ? 1.5 : 1.5,                    // match desktop scrub — mobile was 0.8 (too fast)
         onRefreshInit: calculateFsarcMovement
       }
     });
