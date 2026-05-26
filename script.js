@@ -105,6 +105,7 @@
   // ═══════════════════════════════════════════════════════════
   let scrollY = 0;
   let targetScrollY = 0;
+  let heroScrollY = 0; // separate smoothed value for hero animation (lower lerp = smoother for mouse wheel)
 
   const canvas = document.getElementById('bg-canvas');
   if (canvas) {
@@ -1459,6 +1460,7 @@
 
   }
 
+
   // ═══════════════════════════════════════════════════════════
   // MASTER SCROLL & ANIMATION LOOP
   // ═══════════════════════════════════════════════════════════
@@ -1474,9 +1476,14 @@
 
     // Smooth scroll interpolation
     scrollY += (targetScrollY - scrollY) * (isMobileOrTouch ? 0.25 : 0.18);
+    // Hero gets its own slower lerp so mouse-wheel jumps animate as smoothly as touchpad
+    heroScrollY += (targetScrollY - heroScrollY) * (isMobileOrTouch ? 0.25 : 0.1);
 
     // Always update nav (lightweight)
     updateNav();
+
+    // Hero frame animation — driven by smoothed heroScrollY, not GSAP scrub
+    if (window._updateHeroFromScroll) window._updateHeroFromScroll();
 
     // Throttle expensive updates on mobile to ~30fps
     if (!isMobileOrTouch || (time - _lastUpdateTime > 33)) {
@@ -1494,17 +1501,15 @@
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && heroSection) {
     gsap.registerPlugin(ScrollTrigger);
 
-    ScrollTrigger.create({
+    const heroTrigger = ScrollTrigger.create({
       trigger: heroSection,
       start: "top top",
       end: isMobileOrTouch ? "+=200%" : "+=250%",
       pin: true,
-      scrub: isMobileOrTouch ? 0.4 : 0.6,
+      // No scrub — animation is driven manually in the RAF loop via heroScrollY
+      // so mouse-wheel large jumps are smoothed the same way touchpad is.
       anticipatePin: isMobileOrTouch ? 0 : 1,
       refreshPriority: 1,
-      onUpdate: self => {
-        updateHeroSequence(self.progress);
-      },
       onLeave: () => {
         nav.classList.add('out-of-hero');
       },
@@ -1513,12 +1518,23 @@
       }
     });
 
+    // Drive hero frame animation from the RAF loop using heroScrollY.
+    // heroTrigger.start/end are in raw scroll-pixel coordinates.
+    window._updateHeroFromScroll = function () {
+      if (!heroTrigger || heroTrigger.end <= heroTrigger.start) return;
+      const progress = Math.max(0, Math.min(1,
+        (heroScrollY - heroTrigger.start) / (heroTrigger.end - heroTrigger.start)
+      ));
+      updateHeroSequence(progress);
+    };
+
     // Initialize first frame
     updateHeroSequence(0);
   }
 
   targetScrollY = window.pageYOffset || document.documentElement.scrollTop;
   scrollY = targetScrollY;
+  heroScrollY = targetScrollY;
   animate(0);
 
   function initCTA() {
