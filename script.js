@@ -1462,12 +1462,79 @@
 
 
   // ═══════════════════════════════════════════════════════════
+  // VIRTUAL SCROLL DRIVER
+  // On desktop: wheel / keyboard feed targetScrollY directly and
+  // window.scrollTo(0, Math.round(scrollY)) in the RAF loop drives
+  // the page.  GSAP's ScrollTrigger then reads a smoothly-moving
+  // pageYOffset instead of 100 px jumps, so the hero pin/unpin
+  // boundary is crossed gradually — no glitch, no stuck frames.
+  // Overflow containers (dropdowns, modals) are exempted so they
+  // still scroll normally.  Mobile keeps the original passive listener.
+  // ═══════════════════════════════════════════════════════════
+  if (isMobileOrTouch) {
+    window.addEventListener('scroll', () => {
+      targetScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    }, { passive: true });
+  } else {
+    // Emergency resync: if something external (hash nav, GSAP refresh,
+    // programmatic scrollTo) moves pageYOffset far from our driven value,
+    // snap all three scroll vars back into sync so nothing gets lost.
+    window.addEventListener('scroll', () => {
+      const actual = window.pageYOffset;
+      if (Math.abs(actual - Math.round(scrollY)) > 200) {
+        targetScrollY = actual;
+        scrollY      = actual;
+        heroScrollY  = actual;
+      }
+    }, { passive: true });
+
+    // True when el lives inside a scrollable overflow container
+    function hasScrollableParent(el) {
+      while (el && el !== document.documentElement) {
+        const s = window.getComputedStyle(el);
+        if (/auto|scroll/.test(s.overflow + s.overflowY) && el.scrollHeight > el.clientHeight) return true;
+        el = el.parentElement;
+      }
+      return false;
+    }
+
+    const PAGE_STEP = Math.round(window.innerHeight * 0.85);
+
+    // Wheel → accumulate into targetScrollY, suppress the native 100 px jump
+    window.addEventListener('wheel', (e) => {
+      if (hasScrollableParent(e.target)) return; // dropdowns / modals scroll normally
+      e.preventDefault();
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      targetScrollY = Math.max(0, Math.min(max,
+        targetScrollY + (e.deltaMode === 1 ? e.deltaY * 30 : e.deltaY)
+      ));
+    }, { passive: false });
+
+    // Keyboard → route Space / PgDn / PgUp / arrows / Home / End through targetScrollY
+    window.addEventListener('keydown', (e) => {
+      const tag = document.activeElement && document.activeElement.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (document.activeElement && document.activeElement.isContentEditable) return;
+      if (hasScrollableParent(document.activeElement)) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      switch (e.key) {
+        case 'ArrowDown': targetScrollY = Math.min(max, targetScrollY + 80);        e.preventDefault(); break;
+        case 'ArrowUp':   targetScrollY = Math.max(0,   targetScrollY - 80);        e.preventDefault(); break;
+        case 'PageDown':  targetScrollY = Math.min(max, targetScrollY + PAGE_STEP); e.preventDefault(); break;
+        case 'PageUp':    targetScrollY = Math.max(0,   targetScrollY - PAGE_STEP); e.preventDefault(); break;
+        case ' ':
+          if (!e.shiftKey) targetScrollY = Math.min(max, targetScrollY + PAGE_STEP);
+          else             targetScrollY = Math.max(0,   targetScrollY - PAGE_STEP);
+          e.preventDefault(); break;
+        case 'Home': targetScrollY = 0;   e.preventDefault(); break;
+        case 'End':  targetScrollY = max; e.preventDefault(); break;
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
   // MASTER SCROLL & ANIMATION LOOP
   // ═══════════════════════════════════════════════════════════
-  window.addEventListener('scroll', () => {
-    targetScrollY = window.pageYOffset || document.documentElement.scrollTop;
-  }, { passive: true });
-
   let rafId;
 
   let _lastUpdateTime = 0;
@@ -1478,6 +1545,12 @@
     scrollY += (targetScrollY - scrollY) * (isMobileOrTouch ? 0.25 : 0.18);
     // Hero gets its own slower lerp so mouse-wheel jumps animate as smoothly as touchpad
     heroScrollY += (targetScrollY - heroScrollY) * (isMobileOrTouch ? 0.25 : 0.1);
+
+    // On desktop, feed GSAP our lerped scrollY so pin/unpin crossings are
+    // gradual (no stuck / glitch at the hero → next-section boundary).
+    if (!isMobileOrTouch) {
+      window.scrollTo(0, Math.round(scrollY));
+    }
 
     // Always update nav (lightweight)
     updateNav();
@@ -1826,10 +1899,11 @@
 
     scrollToTopBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      if (!isMobileOrTouch) {
+        targetScrollY = 0; // RAF lerp handles the smooth ride
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   }
 
@@ -1844,11 +1918,12 @@
         e.preventDefault();
         const navHeight = 80;
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+        if (!isMobileOrTouch) {
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          targetScrollY = Math.max(0, Math.min(max, targetPosition));
+        } else {
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
       }
     });
   });
