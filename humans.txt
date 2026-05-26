@@ -1,0 +1,20 @@
+/* TEAM */
+    Developer: PRception
+    Website: https://www.prception.in/
+    Location: India
+
+/* SITE */
+    Last update: 2026/05/15
+    Standards: HTML5, CSS3, ES6+
+    Components: GSAP (GreenSock), Three.js, ScrollTrigger
+    Software: VS Code, Git
+
+/* TECHNOLOGY */
+    Core: PVD Coating (Physical Vapor Deposition)
+    Proprietary: fsARC™ Filtered Cathodic Arc Technology
+    Machines: OCTOARC, OCTOMAG
+
+/* THANKS */
+    Company: STATON s.r.o.
+    Partners: HI-PIM Instruments PVT. Ltd
+    Certifications: ISO 9001:2008

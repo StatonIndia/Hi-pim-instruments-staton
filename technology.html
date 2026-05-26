@@ -1,0 +1,3644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PVD Coating Technologies | fsARC™, Magnetron Sputtering & PECVD</title>
+  <link rel="canonical" href="https://statoncoating.com/technology.html">
+  <meta name="description"
+    content="Explore Staton's core technologies: from proprietary fsARC™ filtered arc evaporation to advanced HiPIMS and PECVD for superior industrial surface engineering.">
+  <link rel="stylesheet" href="style.css?v=1.3">
+  <link rel="icon" type="image/png" href="assets/products/Staton%20Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ═══════ TECHNOLOGY PAGE - UNIQUE STORYTELLING DESIGN ═══════ */
+
+    :root {
+      --tech-green: #0db84a;
+      --tech-glow: rgba(13, 184, 74, 0.15);
+      --tech-glow-strong: rgba(13, 184, 74, 0.4);
+      --section-pad: 140px 48px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .accent {
+      color: var(--tech-green);
+    }
+
+    /* - Hero Section - */
+    .tech-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .tech-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      transform: translateZ(0);
+    }
+
+    #plasma-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .tech-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 20%, #000 100%),
+        linear-gradient(to bottom, transparent 60%, #000 100%);
+      z-index: 1;
+    }
+
+    .tech-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .tech-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--tech-green);
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .tech-hero-title {
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      color: #fff;
+      margin-bottom: 32px;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .tech-hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: rgba(255, 255, 255, 0.5);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* - Section Header - */
+    .tech-section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .tech-section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .tech-section-heading {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      color: #fff;
+    }
+
+    /* - Why PVD Section (Redesigned) - */
+    .pvd-why-section {
+      padding: 0 48px;
+      /* Removed vertical padding to reduce blank space */
+      position: relative;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .pvd-why-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 100px;
+      align-items: center;
+      min-height: 100vh;
+      /* Keeps it centered in the viewport during pin */
+    }
+
+
+
+    .pvd-why-sticky {
+      /* Pinned by GSAP parent */
+    }
+
+
+    .pvd-why-heading {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .pvd-why-text {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.4);
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+
+    .pvd-why-cards {
+      position: relative;
+      height: 420px;
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+
+    .pvd-benefit-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 48px;
+      border-radius: 32px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+      pointer-events: none;
+      transition: border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      will-change: transform, opacity;
+    }
+
+    .pvd-benefit-card.active {
+      border-color: rgba(13, 184, 74, 0.3);
+      background: rgba(13, 184, 74, 0.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(13, 184, 74, 0.03);
+    }
+
+    .benefit-card-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .benefit-card-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(13, 184, 74, 0.08);
+      border: 1px solid rgba(13, 184, 74, 0.15);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--tech-green);
+      flex-shrink: 0;
+      transition: all 0.4s ease;
+    }
+
+    .pvd-benefit-card.active .benefit-card-icon {
+      background: var(--tech-green);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(13, 184, 74, 0.4);
+    }
+
+    .benefit-card-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .benefit-card-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .benefit-card-stat {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--tech-green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .benefit-card-desc {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.7;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .benefit-card-num {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 3rem;
+      /* Reduced from 4rem */
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.03);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+
+
+
+    @media (max-width: 1024px) {
+      .pvd-why-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .pvd-why-sticky {
+        position: relative;
+        top: 0;
+      }
+
+      .pvd-benefit-card {
+        padding: 30px;
+      }
+
+      .benefit-card-header {
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .benefit-card-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+      }
+
+      .benefit-card-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .benefit-card-title {
+        font-size: 1.4rem;
+      }
+
+      .benefit-card-stat {
+        font-size: 0.8rem;
+      }
+
+      .benefit-card-desc {
+        font-size: 0.95rem;
+      }
+    }
+
+
+    /* - Core Technologies Panels - */
+    .tech-panels {
+      padding-bottom: 0;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-panel {
+      height: 68vh;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      max-width: 100%;
+      padding: 0 8%;
+      margin: 0 auto;
+      position: relative;
+      background-color: #000;
+      background-image: linear-gradient(90deg, rgba(13, 184, 74, 0.09) 0%, transparent 12%, transparent 88%, rgba(13, 184, 74, 0.09) 100%);
+      box-sizing: border-box;
+      will-change: transform, opacity;
+      box-shadow: 0 -20px 100px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 28px;
+    }
+
+    /* Wrap content to maintain max-width */
+    .tech-panel>* {
+      max-width: 1300px;
+    }
+
+    .tech-panel:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .tech-panel-content {
+      flex: 1.2;
+    }
+
+    .tech-panel-image {
+      flex: 0.8;
+      max-width: 500px;
+      aspect-ratio: 4/3;
+      max-height: 45vh;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .tech-panel-visual {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 1.2s var(--ease-out-expo);
+    }
+
+    .tech-panel:hover .tech-panel-visual {
+      transform: scale(1.03);
+    }
+
+    .tech-panel-visual-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: rgba(255, 255, 255, 0.2);
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Panel visual themes */
+    /* Panel backgrounds applied to the whole panel for stacking */
+    .tech-panel:nth-child(1) {
+      background-color: #020a04;
+    }
+
+    .tech-panel:nth-child(2) {
+      background-color: #02020d;
+    }
+
+    .tech-panel:nth-child(3) {
+      background-color: #05020a;
+    }
+
+    .tech-panel:nth-child(4) {
+      background-color: #030303;
+    }
+
+    .panel-visual-arc {
+      background: radial-gradient(circle at 50% 50%, rgba(13, 184, 74, 0.2) 0%, rgba(0, 0, 0, 0) 65%);
+    }
+
+    .panel-visual-arc::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(13, 184, 74, 0.35) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.3;
+    }
+
+    .panel-visual-sputter {
+      background: linear-gradient(160deg, rgba(30, 40, 120, 0.15) 0%, rgba(80, 50, 200, 0.12) 100%);
+    }
+
+    .panel-visual-sputter::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(80, 100, 255, 0.08) 29px),
+        repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(80, 100, 255, 0.08) 29px);
+    }
+
+    .panel-visual-hipims {
+      background: linear-gradient(135deg, rgba(100, 40, 200, 0.15) 0%, rgba(13, 184, 74, 0.1) 100%);
+      animation: hipimsPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes hipimsPulse {
+
+      0%,
+      100% {
+        box-shadow: inset 0 0 60px rgba(100, 40, 200, 0.1);
+      }
+
+      50% {
+        box-shadow: inset 0 0 120px rgba(13, 184, 74, 0.12);
+      }
+    }
+
+    .panel-visual-pecvd {
+      background-color: transparent;
+    }
+
+    .panel-visual-pecvd::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(30deg, transparent, transparent 14px, rgba(255, 255, 255, 0.03) 15px),
+        repeating-linear-gradient(-30deg, transparent, transparent 14px, rgba(255, 255, 255, 0.03) 15px);
+    }
+
+    /* Panel spec list */
+    .tech-panel-specs {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .panel-spec {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .panel-spec::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--tech-green);
+      flex-shrink: 0;
+    }
+
+    .tech-panel-eyebrow {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--tech-green);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .tech-panel-title {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .tech-panel-desc {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* - HiPIMS Section - */
+    .tech-hipims {
+      padding: 160px 48px;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+      perspective: 2000px;
+    }
+
+    .tech-hipims-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140%;
+      height: 120%;
+      background: radial-gradient(circle at center, rgba(13, 184, 74, 0.15) 0%, transparent 60%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .tech-hipims-inner {
+      max-width: 950px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      transform-style: preserve-3d;
+    }
+
+    .tech-hipims-card {
+      background:
+        linear-gradient(rgba(13, 184, 74, 0.03) 1px, transparent 1px),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+      background-size: 100% 4px, 100% 100%;
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(13, 184, 74, 0.2);
+      border-radius: 32px;
+      padding: 60px 50px;
+      box-shadow:
+        0 40px 120px rgba(0, 0, 0, 0.7),
+        inset 0 0 50px rgba(13, 184, 74, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-hipims-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right,
+          transparent,
+          rgba(255, 255, 255, 0.05),
+          transparent);
+      transform: skewX(-25deg);
+      z-index: 2;
+      pointer-events: none;
+      animation: cardShine 8s infinite;
+    }
+
+    @keyframes cardShine {
+      0% {
+        left: -100%;
+      }
+
+      20% {
+        left: 200%;
+      }
+
+      100% {
+        left: 200%;
+      }
+    }
+
+    .tech-hipims-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(13, 184, 74, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 70% 70%, rgba(120, 80, 255, 0.08) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 1;
+      animation: plasmaMove 20s linear infinite;
+    }
+
+    @keyframes plasmaMove {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .tech-hipims-card>* {
+      position: relative;
+      z-index: 5;
+    }
+
+
+    .tech-hipims-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 20px;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .tech-hipims-text {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 700px;
+      margin: 0 auto 50px;
+      line-height: 1.7;
+    }
+
+    .tech-hipims-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+
+    .hipims-feature {
+      padding: 24px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      transition: all 0.4s var(--ease-out-expo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hipims-feature:hover {
+      background: rgba(13, 184, 74, 0.08);
+      border-color: rgba(13, 184, 74, 0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hipims-feature-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .hipims-feature-desc {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.5;
+    }
+
+    .tech-hipims-highlight {
+      margin-top: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--tech-green);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    /* - Process Flow - */
+    .tech-process {
+      padding: var(--section-pad);
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-bg-decoration {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      perspective: 1200px;
+      opacity: 1;
+      /* Fade out center slightly, keep sides strong */
+      mask-image: linear-gradient(to right,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 1) 15%,
+          rgba(0, 0, 0, 0.15) 50%,
+          rgba(0, 0, 0, 1) 85%,
+          rgba(0, 0, 0, 1) 100%);
+      -webkit-mask-image: linear-gradient(to right,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 1) 15%,
+          rgba(0, 0, 0, 0.15) 50%,
+          rgba(0, 0, 0, 1) 85%,
+          rgba(0, 0, 0, 1) 100%);
+    }
+
+    .process-bg-line {
+      fill: none;
+      stroke: var(--tech-green);
+      stroke-linecap: round;
+    }
+
+    .process-bg-glow {
+      fill: none;
+      stroke: var(--tech-green);
+      stroke-width: 3;
+      stroke-linecap: round;
+      filter: blur(4px) drop-shadow(0 0 10px var(--tech-green));
+      stroke-dasharray: 80 2320;
+      animation: slowGlow 8s linear infinite;
+    }
+
+    @keyframes slowGlow {
+      0% {
+        stroke-dashoffset: 2400;
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        stroke-dashoffset: -2400;
+        opacity: 0;
+      }
+    }
+
+    .process-flow-wrapper {
+      max-width: 1300px;
+      margin: 80px auto 0;
+      position: relative;
+      z-index: 5;
+      padding: 40px 0;
+    }
+
+    .tech-process-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 60px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Center the 3 items in the second row */
+    .tech-process-step:nth-child(5) {
+      grid-column: 1 / 2;
+      margin-left: 50%;
+    }
+
+    /* Alternatively, just use 4-column grid and let them flow */
+    /* To strictly center the last 3 in a 4-column grid is tricky with just grid */
+    /* Let's use flexbox for the row for easier centering of the second line */
+    .tech-process-row {
+      display: flex;
+      justify-content: center;
+      gap: 60px 40px;
+      margin-bottom: 60px;
+    }
+
+    .tech-process-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .tech-process-step {
+      flex: 0 0 250px;
+      /* Fixed width for consistency */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      position: relative;
+      z-index: 5;
+    }
+
+    @media (max-width: 1200px) {
+      .tech-process-row {
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .tech-process-step {
+        flex: 0 0 calc(50% - 40px);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .tech-process-step {
+        flex: 0 0 100%;
+      }
+    }
+
+    .step-num-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+      font-family: monospace;
+    }
+
+    .step-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .step-desc {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.7;
+      max-width: 260px;
+      font-weight: 300;
+    }
+
+    @media (max-width: 1024px) {
+      .tech-process-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .step-desc {
+        max-width: 500px;
+      }
+    }
+
+    /* - Coating Types & Applications - */
+    .tech-types-apps {
+      padding: var(--section-pad);
+    }
+
+    .types-container {
+      max-width: 1200px;
+      margin: 0 auto 100px;
+    }
+
+    .types-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .type-tag {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 36px;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #fff;
+      transition: all 0.4s var(--ease-out-expo);
+      cursor: default;
+    }
+
+    .type-tag:hover {
+      background: var(--tech-green);
+      border-color: var(--tech-green);
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(13, 184, 74, 0.3);
+    }
+
+    /* Coating Types Grid */
+    .coating-types-grid {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .coating-type-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 24px 20px;
+      transition: all 0.35s var(--ease-out-expo);
+      cursor: default;
+    }
+
+    .coating-type-card:hover {
+      background: rgba(13, 184, 74, 0.05);
+      border-color: rgba(13, 184, 74, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .coating-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .coating-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .coating-sub {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.38);
+      line-height: 1.5;
+    }
+
+    /* Stale classes removed to prevent conflicts */
+
+    .view-all-btn {
+      margin-top: 60px;
+      display: inline-block;
+      background: var(--tech-green);
+      color: #fff;
+      text-decoration: none;
+      padding: 18px 40px;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      transition: all 0.4s var(--ease-out-expo);
+      box-shadow: 0 10px 30px rgba(13, 184, 74, 0.3);
+    }
+
+    .view-all-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(13, 184, 74, 0.5);
+      background: #0ea643;
+    }
+
+    /* - Advanced Coating Portfolio - Expanded - */
+    .tech-portfolio {
+      padding: var(--section-pad);
+      background: #000;
+      position: relative;
+      z-index: 50;
+      /* Force above background */
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .portfolio-grid {
+      max-width: 1300px;
+      margin: 80px auto 120px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      position: relative;
+      z-index: 51;
+      align-items: start;
+    }
+
+    @media (min-width: 900px) {
+      .portfolio-card:nth-child(even) {
+        margin-top: 60px;
+      }
+
+      .portfolio-card:last-child {
+        margin-top: 0;
+      }
+    }
+
+    .portfolio-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 32px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      min-height: 380px;
+      flex: 1 1 300px;
+      max-width: 360px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Noise Texture Layer */
+    .portfolio-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0;
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity 0.6s;
+    }
+
+    /* Subtle Green Glow Layer */
+    .portfolio-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, var(--card-accent-alpha) 0%, transparent 70%);
+      opacity: 0.3;
+      transition: opacity 0.6s;
+      z-index: 1;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--card-accent);
+      box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.8),
+        0 0 30px var(--card-accent-alpha);
+    }
+
+    .portfolio-card:hover::before {
+      opacity: 1;
+    }
+
+    .portfolio-card:hover::after {
+      opacity: 0.25;
+      mix-blend-mode: overlay;
+    }
+
+    .portfolio-card>* {
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .card-num-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.15em;
+      font-family: monospace;
+    }
+
+    .card-icon-btn {
+      width: 36px;
+      height: 36px;
+      background: var(--tech-green);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .portfolio-card:hover .card-icon-btn {
+      background: #fff;
+      color: #0db84a;
+      transform: rotate(-45deg);
+    }
+
+    .portfolio-card:hover .portfolio-title,
+    .portfolio-card:hover .portfolio-desc,
+    .portfolio-card:hover .card-num-label,
+    .portfolio-card:hover .spec-label,
+    .portfolio-card:hover .spec-value {
+      color: #fff;
+      /* Ensure high contrast white text on green background */
+    }
+
+    .portfolio-card:hover .portfolio-desc {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .portfolio-card:hover .spec-label {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .portfolio-title {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .portfolio-desc {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+      font-weight: 300;
+    }
+
+    .portfolio-specs {
+      display: flex;
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .spec-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    .spec-value {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+
+    /* - Coating Finder Matrix - */
+    .finder-matrix {
+      max-width: 1150px;
+      margin: 50px auto 0;
+      background: rgba(10, 10, 10, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 32px;
+      overflow: hidden;
+      backdrop-filter: blur(30px);
+      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .matrix-tabs {
+      display: flex;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 12px;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .matrix-tab {
+      flex: 1;
+      padding: 18px 15px;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      border-radius: 16px;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+    }
+
+    .matrix-tab:hover {
+      color: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .matrix-tab.active {
+      background: rgba(13, 184, 74, 0.08);
+      color: var(--tech-green);
+      border-color: rgba(13, 184, 74, 0.3);
+      box-shadow: inset 0 0 20px rgba(13, 184, 74, 0.05);
+    }
+
+    .matrix-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20%;
+      right: 20%;
+      height: 2px;
+      background: var(--tech-green);
+      box-shadow: 0 0 10px var(--tech-green);
+      border-radius: 2px 2px 0 0;
+    }
+
+    .matrix-content {
+      padding: 50px 70px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      min-height: 400px;
+    }
+
+    .matrix-info {
+      position: relative;
+    }
+
+    .matrix-info-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--tech-green);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+
+    .matrix-info h4 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .matrix-info p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .matrix-perf {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 24px;
+      position: relative;
+    }
+
+    .matrix-perf::before {
+      content: 'DIAGNOSTIC DATA';
+      position: absolute;
+      top: -10px;
+      left: 30px;
+      background: #0a0a0a;
+      padding: 0 10px;
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: 0.2em;
+    }
+
+    .perf-bar-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .perf-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .perf-label span:first-child {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .perf-label span:last-child {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .perf-bar-bg {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .perf-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--tech-green), #fff);
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 0 15px rgba(13, 184, 74, 0.4);
+    }
+
+    @media (max-width: 991px) {
+      .matrix-content {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+        gap: 20px;
+        min-height: auto;
+      }
+
+      .matrix-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 8px;
+        gap: 8px;
+      }
+
+      .matrix-tab {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 110px;
+        padding: 8px !important;
+        font-size: 0.65rem;
+      }
+
+      .matrix-info h4 {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+      }
+
+      .matrix-info p {
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+        line-height: 1.5;
+      }
+
+      .matrix-perf {
+        padding: 16px;
+        gap: 12px;
+      }
+
+      .perf-label span:last-child {
+        font-size: 0.95rem;
+      }
+    }
+
+
+    /* - fsARC Proof Section - */
+    .fsarc-proof {
+      padding: var(--section-pad);
+      background: #000;
+      position: relative;
+      z-index: 5;
+    }
+
+    .fsarc-proof-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .comparison-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 64px;
+    }
+
+    .comparison-side {
+      padding: 48px 40px;
+    }
+
+    .comparison-side--bad {
+      background: rgba(220, 50, 50, 0.04);
+      border-right: 1px solid rgba(220, 50, 50, 0.2);
+    }
+
+    .comparison-side--good {
+      background: rgba(13, 184, 74, 0.04);
+    }
+
+    .comp-label {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      display: block;
+    }
+
+    .comp-label--bad {
+      color: rgba(220, 80, 80, 0.8);
+    }
+
+    /* - Portfolio Carousel Styles - */
+    .portfolio-carousel-outer {
+      position: relative;
+      max-width: 1400px;
+      margin: 64px auto 0;
+      padding: 0 60px;
+    }
+
+    .portfolio-carousel-container {
+      overflow: visible;
+      /* On desktop we use grid */
+    }
+
+    .portfolio-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: #fff;
+      display: none;
+      /* Only show on mobile carousel */
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s;
+    }
+
+    .portfolio-nav-btn:hover {
+      background: var(--tech-green);
+      border-color: var(--tech-green);
+      box-shadow: 0 0 20px rgba(13, 184, 74, 0.4);
+    }
+
+    .portfolio-nav-btn.prev {
+      left: 0;
+    }
+
+    .portfolio-nav-btn.next {
+      right: 0;
+    }
+
+    .portfolio-pagination {
+      display: none;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .dot.active {
+      background: var(--tech-green);
+      transform: scale(1.4);
+      box-shadow: 0 0 10px var(--tech-green);
+    }
+
+    @media (max-width: 1024px) {
+      .portfolio-carousel-outer {
+        padding: 0;
+        width: 100%;
+        margin-top: 40px;
+        position: relative;
+        z-index: 100;
+      }
+
+      .portfolio-nav-btn {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        z-index: 1000;
+        pointer-events: auto;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .portfolio-nav-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .portfolio-nav-btn.prev {
+        left: 5px;
+      }
+
+      .portfolio-nav-btn.next {
+        right: 5px;
+      }
+
+      .portfolio-carousel-container {
+        overflow: hidden;
+      }
+
+      .tech-portfolio {
+        padding-bottom: 0 !important;
+      }
+
+      .portfolio-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 24px !important;
+        transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        width: max-content;
+        padding: 0 20px;
+        margin: 0 auto !important;
+      }
+
+      .portfolio-card {
+        flex: 0 0 300px !important;
+        width: 300px !important;
+        max-width: 80vw !important;
+        min-height: 420px;
+        margin: 0 !important;
+      }
+
+      .portfolio-pagination {
+        display: none !important;
+      }
+    }
+
+    .comp-label--good {
+      color: var(--tech-green);
+    }
+
+    .comp-visual {
+      margin-bottom: 32px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .comp-stat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .comp-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .comp-stat-label {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .comp-stat-value {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .comp-stat-icon {
+      margin-left: 6px;
+    }
+
+    .icon-bad {
+      color: rgba(220, 80, 80, 0.9);
+    }
+
+    .icon-good {
+      color: var(--tech-green);
+    }
+
+    .fsarc-callout {
+      margin-top: 40px;
+      border: 1px solid rgba(13, 184, 74, 0.25);
+      border-radius: 16px;
+      padding: 28px 36px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.7;
+      background: rgba(13, 184, 74, 0.03);
+    }
+
+    /* - Coating Finder - */
+    .coating-finder {
+      padding: 110px 48px;
+      background: #050505;
+      position: relative;
+      z-index: 5;
+    }
+
+    .coating-cards-grid {
+      max-width: 1200px;
+      margin: 64px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .coating-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      padding: 40px;
+      transition: all 0.4s var(--ease-out-expo);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coating-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .coating-card--amber::before {
+      background: #f59e0b;
+    }
+
+    .coating-card--blue::before {
+      background: #3b82f6;
+    }
+
+    .coating-card--teal::before {
+      background: var(--tech-green);
+    }
+
+    .coating-card--violet::before {
+      background: #8b5cf6;
+    }
+
+    .coating-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .coating-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .coating-card-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .coating-card--amber .coating-card-icon {
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    .coating-card--blue .coating-card-icon {
+      background: rgba(59, 130, 246, 0.1);
+    }
+
+    .coating-card--teal .coating-card-icon {
+      background: rgba(13, 184, 74, 0.1);
+    }
+
+    .coating-card--violet .coating-card-icon {
+      background: rgba(139, 92, 246, 0.1);
+    }
+
+    .coating-card-industry {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 6px;
+    }
+
+    .coating-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .coating-card-coatings {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .coating-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .coating-card-why {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.42);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    .coating-card-prop {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .coating-card-prop span {
+      color: var(--tech-green);
+    }
+
+    /* - R&D Section - */
+    .rd-section {
+      padding: var(--section-pad);
+      background: #050505;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .rd-section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .rd-body {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.8;
+      margin-top: 40px;
+      margin-bottom: 64px;
+    }
+
+    .rd-stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .rd-stat {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 100px;
+      padding: 16px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .rd-stat-value {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--tech-green);
+    }
+
+    .rd-stat-label {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.38);
+      font-weight: 500;
+    }
+
+    @media (max-width: 1024px) {
+      .tech-panel {
+        height: auto !important;
+        min-height: 65vh;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        padding: 40px 32px !important;
+        text-align: center;
+        border-radius: 24px !important;
+        width: 95%;
+        max-width: 900px;
+        margin: 0 auto !important;
+        box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      }
+
+      .tech-panel:nth-child(even) {
+        flex-direction: column !important;
+      }
+
+      .tech-panel-content {
+        flex: none !important;
+        width: 100%;
+      }
+
+      .tech-panel-title {
+        font-size: 1.6rem !important;
+        margin-bottom: 8px !important;
+      }
+
+      .tech-panel-desc {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        max-width: 100% !important;
+        color: rgba(255, 255, 255, 0.4) !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .tech-panel-image {
+        flex: none !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        height: 150px !important;
+        margin: 0 auto !important;
+        border-radius: 16px !important;
+      }
+
+      .tech-panel-specs {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: fit-content !important;
+        margin: 20px auto 0 !important;
+        gap: 8px !important;
+        padding: 0 !important;
+      }
+
+      .panel-spec {
+        font-size: 0.85rem !important;
+        white-space: nowrap !important;
+        display: flex !important;
+        align-items: center !important;
+        text-align: left !important;
+        color: rgba(255, 255, 255, 0.5) !important;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .tech-intro-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .tech-hipims-features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .apps-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .coating-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .coating-types-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .tech-section-header {
+        margin-bottom: 40px;
+      }
+
+      :root {
+        --section-pad: 80px 24px;
+      }
+
+      .tech-hipims {
+        padding: 60px 20px;
+      }
+
+      .tech-hipims-card {
+        padding: 40px 24px;
+      }
+
+      .tech-hipims-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 12px !important;
+      }
+
+      .tech-hipims-text {
+        font-size: 0.95rem !important;
+        margin-bottom: 30px !important;
+        line-height: 1.5 !important;
+      }
+
+      .tech-hipims-features {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .hipims-feature {
+        padding: 16px 10px;
+      }
+
+      .hipims-feature-title {
+        font-size: 0.85rem !important;
+      }
+
+      .hipims-feature-desc {
+        font-size: 0.72rem !important;
+      }
+
+      .tech-hipims-highlight {
+        margin-top: 30px !important;
+        font-size: 0.75rem !important;
+      }
+
+      .fsarc-proof {
+        padding: 60px 20px;
+      }
+
+      .coating-finder {
+        padding: 50px 20px;
+      }
+
+      .tech-panel {
+        flex-direction: column !important;
+        gap: 40px;
+      }
+
+      .tech-benefits-list {
+        grid-template-columns: 1fr;
+      }
+
+      .apps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-split {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+      }
+
+      .comparison-side {
+        padding: 32px 24px;
+      }
+
+      .comparison-side--bad {
+        border-right: none;
+        border-bottom: 1px solid rgba(220, 50, 50, 0.2);
+      }
+
+      .comp-label {
+        margin-bottom: 16px;
+      }
+
+      .comp-visual {
+        margin-bottom: 20px;
+      }
+
+      .comp-visual svg {
+        height: 80px;
+      }
+
+      .comp-stat-row {
+        gap: 8px;
+      }
+
+      .comp-stat {
+        padding: 10px 0;
+        font-size: 0.85rem;
+      }
+
+      .comp-stat-value {
+        font-size: 0.9rem;
+      }
+
+      .fsarc-callout {
+        padding: 20px 24px;
+        margin-top: 24px;
+        font-size: 0.85rem;
+      }
+
+      .rd-stats-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* ═══════ SMALL MOBILE (360x900 etc.) TWEAKS ═══════ */
+    @media (max-width: 480px) {
+      .tech-section-heading {
+        font-size: 2rem !important;
+      }
+      .pvd-why-heading {
+        font-size: 2.2rem !important;
+      }
+      .tech-hero-title {
+        font-size: 2.5rem !important;
+      }
+      .pvd-why-inner {
+        gap: 30px !important;
+      }
+      .pvd-why-text {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+      }
+      .tech-intro-stats > div > div:first-child {
+        font-size: 1.4rem !important;
+      }
+      .tech-intro-stats > div > div:last-child {
+        font-size: 0.6rem !important;
+      }
+      .tech-hipims-card {
+        padding: 30px 16px !important;
+      }
+      .tech-hipims-title {
+        font-size: 1.5rem !important;
+      }
+      .tech-hipims-text {
+        font-size: 0.85rem !important;
+      }
+      .hipims-feature-title {
+        font-size: 0.75rem !important;
+      }
+      .hipims-feature-desc {
+        font-size: 0.65rem !important;
+      }
+      .fsarc-proof {
+        padding: 40px 16px !important;
+      }
+      .comp-label {
+        font-size: 0.55rem !important;
+      }
+      .comp-stat {
+        font-size: 0.75rem !important;
+      }
+      .comp-stat-value {
+        font-size: 0.8rem !important;
+      }
+      .fsarc-callout {
+        font-size: 0.75rem !important;
+        padding: 16px 20px !important;
+      }
+      .comparison-side {
+        padding: 24px 16px !important;
+      }
+      .tech-hipims {
+        padding: 40px 16px !important;
+      }
+      .coating-finder {
+        padding: 40px 16px !important;
+      }
+      .matrix-content {
+        padding: 20px 12px !important;
+      }
+      .tech-panel {
+        padding: 30px 20px !important;
+        gap: 20px !important;
+      }
+      .tech-panel-title {
+        font-size: 1.4rem !important;
+      }
+      .tech-panel-desc {
+        font-size: 0.85rem !important;
+      }
+      .tech-panel-eyebrow {
+        font-size: 0.55rem !important;
+      }
+      .panel-spec {
+        font-size: 0.75rem !important;
+      }
+      .portfolio-card {
+        width: 85vw !important;
+        max-width: 300px !important;
+        padding: 24px !important;
+        min-height: 380px !important;
+      }
+      .portfolio-carousel-outer {
+        margin-top: 20px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="parallax-grid" id="parallax-grid"></div>
+  <div class="vignette"></div>
+
+  <!-- ═══════ NAVIGATION (LOGO ONLY) ═══════ -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo-link" style="display: inline-block; pointer-events: auto; text-decoration: none;">
+      <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. navigation logo" class="nav-logo">
+    </a>
+    <button class="mob-hamburger" id="mob-hamburger"
+      aria-label="Open navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- ═══════ FLOATING NAVIGATION (PILLS) ═══════ -->
+  <div class="floating-nav" id="floating-nav">
+    <ul class="nav-links-pill">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="technology.html" class="active">Technology</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="applications.html">Applications</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="contact-pill">Contact</a>
+  </div>
+
+  <!-- ═══════ MOBILE DRAWER NAV (ADD-ON — mobile ≤768px only) ═══════ -->
+  <div class="mob-overlay" id="mob-overlay"></div>
+  <div class="mob-drawer" id="mob-drawer">
+    <div class="mob-drawer-header">
+      <a href="index.html" class="mob-drawer-logo-link" style="display: inline-block; text-decoration: none;">
+        <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. mobile navigation logo" class="mob-drawer-logo">
+      </a>
+      <div class="mob-drawer-close" id="mob-drawer-close">
+        <svg viewBox="0 0 24 24" fill="none">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </div>
+    </div>
+    <ul class="mob-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="technology.html" class="active">Technology</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="applications.html">Applications</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <div class="mob-nav-contact"><a href="contact.html">Contact</a></div>
+  </div>
+  <script>
+    (function () {
+      var btn = document.getElementById('mob-hamburger');
+      var drawer = document.getElementById('mob-drawer');
+      var overlay = document.getElementById('mob-overlay');
+      var close = document.getElementById('mob-drawer-close');
+      function openMenu() { btn.classList.add('mob-open'); drawer.classList.add('mob-open'); overlay.classList.add('mob-open'); drawer.style.pointerEvents = 'auto'; }
+      function closeMenu() { btn.classList.remove('mob-open'); drawer.classList.remove('mob-open'); overlay.classList.remove('mob-open'); drawer.style.pointerEvents = 'none'; }
+      btn.addEventListener('click', openMenu);
+      close.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+
+  <!-- ═══════ SECTION 1 - HERO ═══════ -->
+  <section class="tech-hero sub-hero" id="top">
+    <div class="tech-hero-bg">
+      <canvas id="plasma-canvas"></canvas>
+    </div>
+    <div class="tech-hero-overlay"></div>
+    <div class="tech-hero-content">
+      <div class="tech-eyebrow">INNOVATION</div>
+      <h1 class="tech-hero-title">Advanced Coating <br><span class="accent">Technology</span></h1>
+      <p class="tech-hero-subtitle">High-performance surface engineering using advanced PVD and plasma-based coating
+        systems.</p>
+    </div>
+  </section>
+
+  <!-- ═══════ SECTION 2 - WHY PVD ═══════ -->
+  <section class="pvd-why-section" id="pvd">
+
+    <div class="pvd-why-inner">
+      <div class="pvd-why-sticky">
+        <span class="tech-section-label">THE ADVANTAGE</span>
+        <h2 class="pvd-why-heading">Why <span class="accent">PVD?</span></h2>
+        <p class="pvd-why-text">
+          Physical Vapor Deposition (PVD) is more than a coating - it's a fundamental transformation of material
+          surfaces,
+          enabling tools and components to withstand environments that would destroy untreated metals.
+        </p>
+        <div class="tech-intro-stats" style="margin-top: 40px; display: flex; gap: 30px;">
+          <div>
+            <div style="font-size: 2rem; font-weight: 900; color: #fff;">15,000°C</div>
+            <div
+              style="font-size: 0.7rem; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.1em;">
+              Plasma Energy</div>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: 900; color: #fff;">1-5μm</div>
+            <div
+              style="font-size: 0.7rem; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.1em;">
+              Ultra-Thin Film</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pvd-why-cards">
+        <div class="pvd-benefit-card">
+          <div class="benefit-card-num">01</div>
+          <div class="benefit-card-header">
+            <div class="benefit-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="benefit-card-title-group">
+              <h3 class="benefit-card-title">Extreme Hardness</h3>
+              <div class="benefit-card-stat">1,500 – 3,500 HV</div>
+            </div>
+          </div>
+          <p class="benefit-card-desc">Staton coatings create a nanostructured ceramic layer that is significantly
+            harder than the substrate, providing a diamond-like barrier against deformation and impact.</p>
+        </div>
+
+        <div class="pvd-benefit-card">
+          <div class="benefit-card-num">02</div>
+          <div class="benefit-card-header">
+            <div class="benefit-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <div class="benefit-card-title-group">
+              <h3 class="benefit-card-title">Wear Resistance</h3>
+              <div class="benefit-card-stat">5x Tool Life Extension</div>
+            </div>
+          </div>
+          <p class="benefit-card-desc">By reducing adhesive and abrasive wear, PVD coatings dramatically extend the
+            operational life of cutting tools, molds, and automotive components.</p>
+        </div>
+
+        <div class="pvd-benefit-card">
+          <div class="benefit-card-num">03</div>
+          <div class="benefit-card-header">
+            <div class="benefit-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2v20M2 12h20"></path>
+              </svg>
+            </div>
+            <div class="benefit-card-title-group">
+              <h3 class="benefit-card-title">Low Friction</h3>
+              <div class="benefit-card-stat">μ as low as 0.05</div>
+            </div>
+          </div>
+          <p class="benefit-card-desc">Ultra-smooth surfaces reduce heat generation and material pick-up, enabling
+            higher machining speeds and improved surface finishes on the workpiece.</p>
+        </div>
+
+        <div class="pvd-benefit-card">
+          <div class="benefit-card-num">04</div>
+          <div class="benefit-card-header">
+            <div class="benefit-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M2 12h20M12 2l4 4m-4-4l-4 4m4 16l4-4m-4 4l-4-4"></path>
+              </svg>
+            </div>
+            <div class="benefit-card-title-group">
+              <h3 class="benefit-card-title">Thermal Stability</h3>
+              <div class="benefit-card-stat">Up to 1,100°C</div>
+            </div>
+          </div>
+          <p class="benefit-card-desc">PVD films maintain their chemical and mechanical integrity at extreme
+            temperatures, protecting the substrate during dry machining or high-speed operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════ SECTION 3 - CORE TECHNOLOGIES ═══════ -->
+  <section class="tech-panels" id="technologies">
+    <div class="tech-section-header" style="padding-top: 100px; margin-bottom: 60px; position: relative; z-index: 20;">
+      <span class="tech-section-label">CORE EXPERTISE</span>
+      <h2 class="tech-section-heading">Core Coating <span class="accent">Technologies</span></h2>
+      <p style="font-size:1.1rem;color:rgba(255,255,255,0.45);max-width:780px;margin:24px auto 0;line-height:1.7;">
+        Staton's proprietary PVD and plasma technologies deliver industry-leading performance across four core
+        deposition methods, optimized for maximum tool life and surface integrity.</p>
+    </div>
+
+    <!-- Panel 1: Arc Evaporation -->
+    <div class="tech-panel">
+      <div class="tech-panel-content">
+        <span class="tech-panel-eyebrow">CORE TECHNOLOGY 01</span>
+        <h3 class="tech-panel-title">Arc <span class="accent">Evaporation</span></h3>
+        <p class="tech-panel-desc">Cathodic Arc Deposition is a PVD process where a high current applied to a metallic
+          target creates a cathodic spot at an extreme temperature of 15,000°C, instantly vaporizing target material.
+          The arc produces highly ionized plasma (30–100% ionization) resulting in exceptional coating adhesion and
+          density. Standard arc processes produce macro-particles (droplets) that roughen the coating surface. Staton's
+          proprietary fsARC® cathode uses a rapidly-adjusting electromagnetic field to split the arc and filter these
+          droplets - producing coatings as smooth as magnetron sputtering while retaining the hardness and adhesion of
+          cathodic arc.</p>
+        <div class="tech-panel-specs">
+          <div class="panel-spec">Ionization: 30–100%</div>
+          <div class="panel-spec">Deposition rate: 2–5 μm/hr</div>
+          <div class="panel-spec">Adhesion: HF1–HF2</div>
+        </div>
+      </div>
+      <div class="tech-panel-image">
+        <div class="tech-panel-visual panel-visual-arc">
+          <img src="assets/technologies/arc_evaporation.png" alt="PVD cathodic arc evaporation technology process">
+            style="position:absolute; width:100%; height:100%; object-fit:cover; opacity: 0.7; z-index: 0; mix-blend-mode: screen;">
+          <span class="tech-panel-visual-label"
+            style="z-index: 2; text-shadow: 0 2px 10px rgba(0,0,0,0.8); color: rgba(255,255,255,0.7);">fsARC® Cathodic
+            Arc</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2: Magnetron Sputtering (flipped) -->
+    <div class="tech-panel">
+      <div class="tech-panel-content">
+        <span class="tech-panel-eyebrow">CORE TECHNOLOGY 02</span>
+        <h3 class="tech-panel-title">Magnetron <span class="accent">Sputtering</span></h3>
+        <p class="tech-panel-desc">Magnetron Sputtering uses magnetically-confined plasma to bombard a target, ejecting
+          atoms that deposit as a uniform, extremely smooth thin film. The magnetic field increases ionization
+          efficiency near the target surface, enabling precise control of coating thickness to within nanometers.
+          Staton's OCTOMAG series supports DC, MF (mid-frequency), and HiPIMS power modes within a single system -
+          making it the most versatile platform for applications requiring ultra-smooth surfaces, low-temperature
+          deposition, or biocompatible coatings for medical devices.</p>
+        <div class="tech-panel-specs">
+          <div class="panel-spec">Surface roughness Ra: &lt; 0.1 μm</div>
+          <div class="panel-spec">Thickness control: ±5 nm</div>
+          <div class="panel-spec">Max substrate temp: 200°C</div>
+        </div>
+      </div>
+      <div class="tech-panel-image">
+        <div class="tech-panel-visual panel-visual-sputter">
+          <img src="assets/technologies/magnetron_sputtering.png" alt="Magnetron sputtering PVD coating technology process">
+            style="position:absolute; width:100%; height:100%; object-fit:cover; opacity: 0.8; z-index: 0;">
+          <span class="tech-panel-visual-label"
+            style="z-index: 2; text-shadow: 0 2px 10px rgba(0,0,0,0.8); color: rgba(255,255,255,0.7);">OCTOMAG
+            Sputtering</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3: HiPIMS -->
+    <div class="tech-panel">
+      <div class="tech-panel-content">
+        <span class="tech-panel-eyebrow">CORE TECHNOLOGY 03</span>
+        <h3 class="tech-panel-title">HiPIMS <span class="accent">Plasma</span></h3>
+        <p class="tech-panel-desc">High Power Impulse Magnetron Sputtering (HiPIMS) delivers ultra-short,
+          ultra-high-power pulses (peak power density: 1–10 kW/cm²) to the target - generating a dense, highly ionized
+          plasma (&gt;50% ionization vs &lt;5% in DC sputtering). This high ionization produces dramatically denser,
+          harder coatings with superior adhesion at low substrate temperatures. HiPIMS is the technology of choice for
+          coating micro-tools, medical implants, and precision components where surface finish, uniformity, and
+          biocompatibility are non-negotiable. Staton was among the early adopters of HiPIMS alongside their research
+          partner Comenius University, Bratislava.</p>
+        <div class="tech-panel-specs">
+          <div class="panel-spec">Peak power: 1–10 kW/cm²</div>
+          <div class="panel-spec">Ionization: &gt;50%</div>
+          <div class="panel-spec">Compatible with HITUS mode</div>
+        </div>
+      </div>
+      <div class="tech-panel-image">
+        <div class="tech-panel-visual panel-visual-hipims">
+          <img src="assets/technologies/hipims_plasma.png" alt="High-power impulse magnetron sputtering (HiPIMS) plasma process">
+            style="position:absolute; width:100%; height:100%; object-fit:cover; opacity: 0.8; z-index: 0;">
+          <span class="tech-panel-visual-label"
+            style="z-index: 2; text-shadow: 0 2px 10px rgba(0,0,0,0.8); color: rgba(255,255,255,0.7);">HiPIMS Pulse
+            Plasma</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 4: PECVD -->
+    <div class="tech-panel">
+      <div class="tech-panel-content">
+        <span class="tech-panel-eyebrow">CORE TECHNOLOGY 04</span>
+        <h3 class="tech-panel-title">PECVD <span class="accent">Technology</span></h3>
+        <p class="tech-panel-desc">Plasma-Enhanced Chemical Vapor Deposition (PECVD) uses plasma energy to activate
+          chemical reactions at significantly lower temperatures than conventional CVD - typically 150–400°C vs
+          800–1,000°C. This makes PECVD ideal for depositing Diamond-Like Carbon (DLC) and ta-C coatings on
+          heat-sensitive substrates including aluminium alloys, polymers, and pre-hardened steel tools. The resulting
+          DLC coatings offer some of the lowest friction coefficients achievable (μ &lt; 0.05) with extreme hardness up
+          to 3,500 HV - ideal for machining non-ferrous materials and forming tools for aluminium parts.</p>
+        <div class="tech-panel-specs">
+          <div class="panel-spec">Deposition temp: 150–400°C</div>
+          <div class="panel-spec">Hardness: up to 3,500 HV</div>
+          <div class="panel-spec">Friction μ: &lt; 0.05</div>
+        </div>
+      </div>
+      <div class="tech-panel-image">
+        <div class="tech-panel-visual panel-visual-pecvd">
+          <img src="assets/technologies/pecvd_technology.png" alt="Plasma-enhanced chemical vapor deposition (PECVD) technology">
+            style="position:absolute; width:100%; height:100%; object-fit:cover; opacity: 0.8; z-index: 0;">
+          <span class="tech-panel-visual-label"
+            style="z-index: 2; text-shadow: 0 2px 10px rgba(0,0,0,0.8); color: rgba(255,255,255,0.7);">DLC / PECVD
+            Carbon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ NEW SECTION - fsARC PROOF ═══════ -->
+  <section class="fsarc-proof" id="fsarc-tech">
+    <div class="fsarc-proof-inner">
+      <div class="tech-section-header">
+        <span class="tech-section-label">PROOF</span>
+        <h2 class="tech-section-heading">Eliminate the Droplets. <span class="accent">Maximize the Speed.</span></h2>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,0.45);max-width:780px;margin:24px auto 0;line-height:1.7;">
+          While standard cathodic arc machines spray molten droplets that roughen surfaces and reduce tool life,
+          Staton's fsARC® technology electromagnetically filters every droplet - delivering sputtering-level smoothness
+          with arc-level adhesion.</p>
+      </div>
+      <div class="comparison-split">
+        <div class="comparison-side comparison-side--bad">
+          <span class="comp-label comp-label--bad">STANDARD ARC</span>
+          <div class="comp-visual">
+            <svg width="100%" height="120" viewBox="0 0 400 120" preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="120" fill="#0d0505" />
+              <polyline
+                points="0,90 30,88 55,70 80,85 110,60 140,80 170,55 200,75 230,50 260,72 290,48 320,68 360,52 400,65"
+                fill="none" stroke="rgba(200,80,80,0.5)" stroke-width="2" />
+              <circle cx="55" cy="48" r="6" fill="rgba(220,60,60,0.55)" />
+              <circle cx="140" cy="38" r="8" fill="rgba(220,60,60,0.45)" />
+              <circle cx="230" cy="28" r="5" fill="rgba(220,60,60,0.6)" />
+              <circle cx="320" cy="35" r="7" fill="rgba(220,60,60,0.5)" />
+            </svg>
+          </div>
+          <div class="comp-stat-row">
+            <div class="comp-stat"><span class="comp-stat-label">Surface roughness Ra</span><span
+                class="comp-stat-value">~0.8–1.5 μm <span class="icon-bad">✕</span></span></div>
+            <div class="comp-stat"><span class="comp-stat-label">Macro-droplets</span><span
+                class="comp-stat-value">Present <span class="icon-bad">✕</span></span></div>
+            <div class="comp-stat"><span class="comp-stat-label">Tool life multiplier</span><span
+                class="comp-stat-value">1× baseline <span class="icon-bad">✕</span></span></div>
+          </div>
+        </div>
+        <div class="comparison-side comparison-side--good">
+          <span class="comp-label comp-label--good">STATON fsARC®</span>
+          <div class="comp-visual">
+            <svg width="100%" height="120" viewBox="0 0 400 120" preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="120" fill="#030d05" />
+              <polyline points="0,80 50,79 100,81 150,80 200,79 250,80 300,81 350,80 400,79" fill="none"
+                stroke="rgba(13,184,74,0.6)" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="comp-stat-row">
+            <div class="comp-stat"><span class="comp-stat-label">Surface roughness Ra</span><span
+                class="comp-stat-value">~0.1–0.3 μm <span class="icon-good">✓</span></span></div>
+            <div class="comp-stat"><span class="comp-stat-label">Macro-droplets</span><span
+                class="comp-stat-value">Eliminated <span class="icon-good">✓</span></span></div>
+            <div class="comp-stat"><span class="comp-stat-label">Tool life multiplier</span><span
+                class="comp-stat-value">Up to 5× <span class="icon-good">✓</span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="fsarc-callout">Staton's fsARC® cathode uses a high-current magnetic oscillation system to split the
+        cathodic arc - dramatically reducing macro-particle formation. Coatings produced with fsARC® consistently
+        achieve Ra values comparable to magnetron sputtering, while maintaining the superior hardness and adhesion of
+        cathodic arc deposition.</div>
+    </div>
+  </section>
+
+  <!-- ═══════ SECTION - HiPIMS ═══════ -->
+  <section class="tech-hipims" id="hipims">
+    <div class="tech-hipims-glow"></div>
+    <div class="tech-hipims-inner">
+      <div class="tech-hipims-card">
+        <h2 class="tech-hipims-title">Magnetron Plasma <br><span class="accent">Technology (HiPIMS)</span></h2>
+        <p class="tech-hipims-text">HiPIMS delivers ultra-short, ultra-high-power pulses generating plasma ionization
+          exceeding 50% - vs less than 5% in conventional DC sputtering. The result: denser coatings, superior adhesion,
+          and ultra-smooth surfaces at low substrate temperatures.</p>
+        <div class="tech-hipims-features">
+          <div class="hipims-feature">
+            <div class="hipims-feature-title">High Ionization</div>
+            <div class="hipims-feature-desc">&gt;50% vs &lt;5% in DC mode</div>
+          </div>
+          <div class="hipims-feature">
+            <div class="hipims-feature-title">Superior Adhesion</div>
+            <div class="hipims-feature-desc">HF1 scratch test rating</div>
+          </div>
+          <div class="hipims-feature">
+            <div class="hipims-feature-title">Ultra-Smooth</div>
+            <div class="hipims-feature-desc">Ra &lt; 0.1 μm surface finish</div>
+          </div>
+          <div class="hipims-feature">
+            <div class="hipims-feature-title">Precise Control</div>
+            <div class="hipims-feature-desc">±5 nm thickness accuracy</div>
+          </div>
+        </div>
+        <p class="tech-hipims-highlight">Staton + Comenius University - a generation ahead in HiPIMS &amp; HITUS
+          R&amp;D.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-process" id="process">
+    <div class="tech-section-header">
+      <span class="tech-section-label">STEP BY STEP</span>
+      <h2 class="tech-section-heading">Process <span class="accent">Flow</span></h2>
+      <div class="process-flow-wrapper">
+        <!-- Background Curved Lines Decoration (Strictly behind process steps) -->
+        <div class="process-bg-decoration">
+          <svg width="100%" height="100%" viewBox="0 0 1400 600" preserveAspectRatio="none">
+            <!-- 3 Top Lines (Slightly more gap) -->
+            <path class="process-bg-line" d="M0,30 Q700,230 1400,30" style="stroke-width: 1.2; opacity: 0.35;" />
+            <path class="process-bg-glow" d="M0,30 Q700,230 1400,30"
+              style="animation-delay: -1s; animation-duration: 8s;" />
+
+            <path class="process-bg-line" d="M0,125 Q700,295 1400,125" style="stroke-width: 1.2; opacity: 0.35;" />
+            <path class="process-bg-glow" d="M0,125 Q700,295 1400,125"
+              style="animation-delay: -5s; animation-duration: 9s;" />
+
+            <path class="process-bg-line" d="M0,220 Q700,360 1400,220" style="stroke-width: 1.2; opacity: 0.35;" />
+            <path class="process-bg-glow" d="M0,220 Q700,360 1400,220"
+              style="animation-delay: -3s; animation-duration: 7s;" />
+
+            <!-- 3 Bottom Lines (Slightly more gap) -->
+            <path class="process-bg-line" d="M0,380 Q700,240 1400,380" style="stroke-width: 1.2; opacity: 0.35;" />
+            <path class="process-bg-glow" d="M0,380 Q700,240 1400,380"
+              style="animation-delay: -2s; animation-duration: 8.5s;" />
+
+            <path class="process-bg-line" d="M0,475 Q700,305 1400,475" style="stroke-width: 1.2; opacity: 0.35;" />
+            <path class="process-bg-glow" d="M0,475 Q700,305 1400,475"
+              style="animation-delay: -6s; animation-duration: 7.5s;" />
+
+            <path class="process-bg-line" d="M0,570 Q700,370 1400,570" style="stroke-width: 1.2; opacity: 0.35;" />
+            <path class="process-bg-glow" d="M0,570 Q700,370 1400,570"
+              style="animation-delay: -4s; animation-duration: 9.5s;" />
+          </svg>
+        </div>
+
+        <!-- First Row: 4 Steps -->
+        <div class="tech-process-row">
+          <div class="tech-process-step">
+            <div class="step-num-label">[ 01 ]</div>
+            <h3 class="step-title">Pre-Inspection</h3>
+            <p class="step-desc">Dimensional check and surface condition assessment.</p>
+          </div>
+          <div class="tech-process-step">
+            <div class="step-num-label">[ 02 ]</div>
+            <h3 class="step-title">Stripping</h3>
+            <p class="step-desc">Safe removal of existing PVD coatings from tools.</p>
+          </div>
+          <div class="tech-process-step">
+            <div class="step-num-label">[ 03 ]</div>
+            <h3 class="step-title">Ultrasonic Cleaning</h3>
+            <p class="step-desc">Multi-stage bath to remove microscopic contaminants.</p>
+          </div>
+          <div class="tech-process-step">
+            <div class="step-num-label">[ 04 ]</div>
+            <h3 class="step-title">Chamber Loading</h3>
+            <p class="step-desc">Mounting on planetary rotating fixtures for 360° coverage.</p>
+          </div>
+        </div>
+
+        <!-- Second Row: 3 Steps -->
+        <div class="tech-process-row">
+          <div class="tech-process-step">
+            <div class="step-num-label">[ 05 ]</div>
+            <h3 class="step-title">Plasma Etching</h3>
+            <p class="step-desc">Argon ion bombardment for maximum coating adhesion.</p>
+          </div>
+          <div class="tech-process-step">
+            <div class="step-num-label">[ 06 ]</div>
+            <h3 class="step-title">PVD Deposition</h3>
+            <p class="step-desc">Target vaporization via proprietary fsARC® or HiPIMS.</p>
+          </div>
+          <div class="tech-process-step">
+            <div class="step-num-label">[ 07 ]</div>
+            <h3 class="step-title">QC Inspection</h3>
+            <p class="step-desc">Hardness, adhesion, and thickness certification.</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- ═══════ COATING FINDER MATRIX ═══════ -->
+  <section class="coating-finder" id="coatings">
+    <div class="tech-section-header">
+      <span class="tech-section-label">SOLUTION FINDER</span>
+      <h2 class="tech-section-heading">Find Your Optimized <span class="accent">Coating</span></h2>
+      <p
+        style="font-size:1.15rem;color:rgba(255,255,255,0.4);max-width:700px;margin:24px auto 0;line-height:1.7;font-weight:300;">
+        Select your industrial application to discover the high-performance thin-film chemistry engineered for your
+        specific operational challenges.
+      </p>
+    </div>
+
+    <div class="finder-matrix">
+      <div class="matrix-tabs">
+        <div class="matrix-tab active" data-target="cutting">Cutting Tools</div>
+        <div class="matrix-tab" data-target="automotive">Automotive</div>
+        <div class="matrix-tab" data-target="medical">Medical</div>
+        <div class="matrix-tab" data-target="molds">Molds & Dies</div>
+      </div>
+
+      <div class="matrix-content" id="matrix-body">
+        <div class="matrix-info">
+          <span class="matrix-info-label" id="matrix-category">INDUSTRIAL CATEGORY</span>
+          <h3 id="matrix-title">High-Speed Machining</h3>
+          <p id="matrix-desc">Extreme oxidation resistance and hot hardness for dry machining and interrupted cuts in
+            hardened steels. Our TiAlN and AlCrN systems provide the thermal stability required for 1000°C+ operations.
+          </p>
+          <div class="coating-card-coatings" id="matrix-pills">
+            <span class="coating-pill">TiAlN</span>
+            <span class="coating-pill">AlCrN</span>
+            <span class="coating-pill">TiSiN</span>
+          </div>
+        </div>
+        <div class="matrix-perf">
+          <div class="perf-bar-wrap">
+            <div class="perf-label"><span>Hardness</span><span id="val-hardness">3,200 HV</span></div>
+            <div class="perf-bar-bg">
+              <div class="perf-bar-fill" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="perf-bar-wrap">
+            <div class="perf-label"><span>Temp Resistance</span><span id="val-temp">900°C</span></div>
+            <div class="perf-bar-bg">
+              <div class="perf-bar-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="perf-bar-wrap">
+            <div class="perf-label"><span>Low Friction</span><span id="val-friction">0.4 μ</span></div>
+            <div class="perf-bar-bg">
+              <div class="perf-bar-fill" style="width: 40%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ADVANCED COATING TYPES ═══════ -->
+  <section class="tech-portfolio" id="portfolio">
+    <div class="tech-section-header">
+      <span class="tech-section-label">FULL PORTFOLIO</span>
+      <h2 class="tech-section-heading">Coating <span class="accent">Types</span></h2>
+      <p style="font-size:1.05rem;color:rgba(255,255,255,0.4);max-width:640px;margin:20px auto 0;line-height:1.7;">
+        Staton s.r.o. offers a versatile range of PVD chemistries, from standard nitrides to advanced nanocomposites and
+        hydrogen-free carbon films.</p>
+    </div>
+
+    <div class="portfolio-carousel-outer">
+      <button class="portfolio-nav-btn prev" id="portfolio-prev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="portfolio-carousel-container">
+        <div class="portfolio-grid" id="portfolio-slider">
+
+          <!-- TiN -->
+          <div class="portfolio-card" style="--card-accent: #d4a900; --card-accent-alpha: rgba(212, 169, 0, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 1.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">TiN</h3>
+            <p class="portfolio-desc">Titanium Nitride is the universal standard for wear protection. Known for its
+              distinct
+              golden color, it provides exceptional adhesion and toughness for HSS and carbide tools.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">2,450 HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Max Temp</span><span class="spec-value">500°C</span></div>
+            </div>
+          </div>
+
+          <!-- TiCN -->
+          <div class="portfolio-card" style="--card-accent: #4b5563; --card-accent-alpha: rgba(75, 85, 99, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 2.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">TiCN</h3>
+            <p class="portfolio-desc">Titanium Carbonitride offers higher hardness than TiN and a lower friction
+              coefficient. Optimized for milling, tapping, and punching of abrasive materials.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">3,000 HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Friction μ</span><span class="spec-value">0.20</span></div>
+            </div>
+          </div>
+
+          <!-- TiAlN -->
+          <div class="portfolio-card" style="--card-accent: #6b21a8; --card-accent-alpha: rgba(107, 33, 168, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 3.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">TiAlN</h3>
+            <p class="portfolio-desc">Titanium Aluminium Nitride is designed for high-thermal stress. Forms a protective
+              alumina layer during machining, ideal for dry cutting.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">3,200 HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Max Temp</span><span class="spec-value">700°C</span></div>
+            </div>
+          </div>
+
+          <!-- AlCrN -->
+          <div class="portfolio-card" style="--card-accent: #374151; --card-accent-alpha: rgba(55, 65, 81, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 4.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">AlCrN</h3>
+            <p class="portfolio-desc">Aluminium Chromium Nitride outperforms TiAlN in interrupted cuts and heavy-duty
+              milling. Superior oxidation resistance and hot hardness.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">3,400 HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Max Temp</span><span class="spec-value">1,000°C</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DLC -->
+          <div class="portfolio-card" style="--card-accent: #1f2937; --card-accent-alpha: rgba(31, 41, 55, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 5.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">DLC (a-C:H)</h3>
+            <p class="portfolio-desc">Diamond-Like Carbon for extreme sliding properties. Essential for non-ferrous
+              machining (Al, Cu) and precision automotive components.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">2,000 HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Friction μ</span><span class="spec-value">0.05 -
+                  0.1</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ta-C -->
+          <div class="portfolio-card" style="--card-accent: #111827; --card-accent-alpha: rgba(17, 24, 39, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 6.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">ta-C</h3>
+            <p class="portfolio-desc">Tetrahedral Amorphous Carbon. Hydrogen-free DLC with near-diamond hardness.
+              Optimized
+              for medical implants and food-safe tools.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">3,500+ HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Friction μ</span><span class="spec-value">&lt; 0.05</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TiSiN -->
+          <div class="portfolio-card" style="--card-accent: #4c1d95; --card-accent-alpha: rgba(76, 29, 149, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 7.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">TiSiN</h3>
+            <p class="portfolio-desc">Nanocomposite structure for extreme hardness. Designed for machining hardened
+              steels
+              up to 65 HRC and high-speed finishing.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">3,800 HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Max Temp</span><span class="spec-value">1,100°C</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAHLEN -->
+          <div class="portfolio-card" style="--card-accent: #b91c1c; --card-accent-alpha: rgba(185, 28, 28, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 8.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">MAHLEN</h3>
+            <p class="portfolio-desc">Proprietary TiAlCrXN multilayer system. Exceptional resistance to thermal fatigue
+              and
+              solder for die-casting and forging dies.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">3,300 HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Surface</span><span class="spec-value">Ultra-Smooth</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ZrN -->
+          <div class="portfolio-card" style="--card-accent: #fbbf24; --card-accent-alpha: rgba(251, 191, 36, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 9.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">ZrN</h3>
+            <p class="portfolio-desc">Zirconium Nitride provides high corrosion resistance and a beautiful silver
+              finish.
+              Widely used in dental tools and decorative hardware.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">2,200 HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Max Temp</span><span class="spec-value">500°C</span></div>
+            </div>
+          </div>
+
+          <!-- CrN -->
+          <div class="portfolio-card" style="--card-accent: #9ca3af; --card-accent-alpha: rgba(156, 163, 175, 0.1);">
+            <div class="card-top-row">
+              <span class="card-num-label">[ 10.0 ]</span>
+              <div class="card-icon-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="portfolio-title">CrN</h3>
+            <p class="portfolio-desc">Chromium Nitride for excellent release properties and chemical stability. Ideal
+              for
+              plastic injection molds and die-casting release.</p>
+            <div class="portfolio-specs">
+              <div class="spec-item"><span class="spec-label">Hardness</span><span class="spec-value">2,200 HV</span>
+              </div>
+              <div class="spec-item"><span class="spec-label">Max Temp</span><span class="spec-value">650°C</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="portfolio-nav-btn next" id="portfolio-next" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <div class="portfolio-pagination" id="portfolio-dots"></div>
+  </section>
+
+
+  <!-- ═══════ CONTACT / CONVERSION FOOTER ═══════ -->
+  <!-- ═══════ CTA / CONTACT SECTION ═══════ -->
+  <section class="contact-section section" id="contact">
+    <div class="cta-bg-pulse"></div>
+
+    <div class="cta-content-wrapper">
+      <div class="contact-bg-text">Contact Us</div>
+
+      <div class="contact-split-layout">
+        <!-- Left: Information & CTA -->
+        <div class="contact-info-side">
+          <h2 class="contact-headline">
+            Ready to Transform Your <span class="accent">Coating Performance?</span>
+          </h2>
+          <p class="contact-sub">
+            Speak with our experts for installation, training, and full support across India.
+            We're here to help with any inquiries you may have.
+          </p>
+
+          <div class="contact-features">
+            <div class="contact-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Personalized technical assistance</span>
+            </div>
+            <div class="contact-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Timely response within 24 hours</span>
+            </div>
+            <div class="contact-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Comprehensive operational support</span>
+            </div>
+          </div>
+
+          <div class="cta-buttons">
+            <a href="contact.html" class="cta-btn primary">Request Consultation</a>
+            <a href="https://wa.me/919960184242" target="_blank" class="cta-btn secondary">Talk to an Expert</a>
+          </div>
+        </div>
+
+        <!-- Right: The Form -->
+        <div class="form-glass-wrapper">
+          <form class="contact-form" id="contact-form" action="mailto:hipiminstruments@gmail.com" method="post" enctype="text/plain">
+            <div class="form-field">
+              <input type="text" id="field-name" placeholder=" " autocomplete="name">
+              <label for="field-name">Your Name</label>
+            </div>
+            <div class="form-field">
+              <input type="text" id="field-company" placeholder=" " autocomplete="organization">
+              <label for="field-company">Company</label>
+            </div>
+            <div class="form-field">
+              <input type="email" id="field-email" placeholder=" " autocomplete="email">
+              <label for="field-email">Email</label>
+            </div>
+
+            <div class="form-query-title">What are you looking for?</div>
+            <div class="query-options" id="query-options">
+              <div class="query-option" data-value="machine">
+                <span class="radio"></span>
+                PVD Coating Machine
+              </div>
+              <div class="query-option" data-value="service">
+                <span class="radio"></span>
+                Coating Service
+              </div>
+              <div class="query-option" data-value="spare">
+                <span class="radio"></span>
+                Spare Parts &amp; Consumables
+              </div>
+              <div class="query-option" data-value="consultation">
+                <span class="radio"></span>
+                Technical Consultation
+              </div>
+            </div>
+
+            <div class="submit-line" id="submit-btn">
+              <span class="submit-text">Send Inquiry →</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer-staton">
+    <div class="footer-staton-container">
+      <div class="footer-staton-top">
+        <div class="footer-staton-left">
+          <div class="footer-logos-wrap" style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+            <a href="index.html" class="footer-staton-logo-link" style="display: block; text-decoration: none;">
+              <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. footer logo"
+                class="footer-staton-logo" style="margin-bottom: 0;">
+            </a>
+            <div class="footer-hipim-wrap">
+              <div class="hipim-logo-footer"><img src="assets/hipim%20logo/h%20surroundings.png" alt="" class="hipim-ring" aria-hidden="true"><img src="assets/hipim%20logo/H%20logo.png" alt="HI-PIM Logo" class="hipim-h"></div>
+              <div class="footer-hipim-name">HI-PIM Instruments PVT. Ltd</div>
+            </div>
+          </div>
+          <div class="footer-staton-socials">
+            <a href="#" class="footer-staton-social-link" aria-label="Facebook">
+              <svg viewBox="0 0 320 512">
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="footer-staton-social-link" aria-label="Instagram">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="footer-staton-social-link" aria-label="X">
+              <svg viewBox="0 0 512 512">
+                <path
+                  d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L273.1 181.7 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/111718722/" target="_blank" rel="noopener noreferrer" class="footer-staton-social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                </path>
+              </svg>
+            </a>
+          </div>
+          <h3 class="footer-staton-cta-title">Ready to redefine your industrial coating standards?</h3>
+        </div>
+
+        <div class="footer-staton-right">
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Solutions</div>
+            <ul class="footer-staton-list">
+              <li><a href="#">PVD Coating Machines</a></li>
+              <li><a href="#">Thin Film Technology</a></li>
+              <li><a href="#">Custom Engineering</a></li>
+              <li><a href="#">R&amp;D Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Company</div>
+            <ul class="footer-staton-list">
+              <li><a href="#pvd">PVD Technology</a></li>
+              <li><a href="#technologies">Core Tech</a></li>
+              <li><a href="#process">Process Workflow</a></li>
+              <li><a href="#portfolio">Coatings</a></li>
+            </ul>
+          </div>
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Certifications</div>
+            <div class="footer-staton-certifications">
+              <img src="assets/certifications/imgi_45_ISO-9001-2008-LOGO.png" alt="ISO 9001 quality management certification logo" class="footer-cert-img">
+              <img src="assets/certifications/imgi_47_86877626-dUE9T.png" alt="Industrial quality certification logo" class="footer-cert-img">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-staton-bottom">
+        <div class="footer-copyright">© 2026 STATON s.r.o. All rights reserved.</div>
+        <div class="footer-staton-bottom-links">
+          <a href="privacy-policy.html" style="color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;margin-right:18px;">Privacy Policy</a>
+          <a href="terms.html" style="color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;margin-right:18px;">Terms &amp; Conditions</a>
+          <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;">Website Designed by <a
+              href="https://www.prception.in/" target="_blank" rel="noopener noreferrer"
+              style="color: rgb(0, 90, 90); font-weight: 700; text-decoration: none; padding-left: 4px;">PRception</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ WHATSAPP FAB ═══════ -->
+  <a class="whatsapp-fab" href="https://wa.me/919960184242" target="_blank" rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- ═══════ SCROLL TO TOP FAB ═══════ -->
+  <a class="scroll-to-top-fab" id="scroll-to-top" aria-label="Scroll to top" href="#top">
+    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    // ═══════ TECHNOLOGY PAGE - IMMERSIVE SCROLL ANIMATIONS ═══════
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      // - Hero Entrance -
+      const heroTl = gsap.timeline();
+      heroTl.to('.tech-eyebrow', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+        .to('.tech-hero-title', { opacity: 1, y: 0, duration: 1, ease: 'power4.out' }, '-=0.4')
+        .to('.tech-hero-subtitle', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=0.6');
+
+      // - Why PVD Stacking Card Reveal -
+      const whySection = document.querySelector('.pvd-why-section');
+      const whyCards = gsap.utils.toArray('.pvd-benefit-card');
+
+      // Pre-reveal the first card before the pin starts
+      gsap.to(whyCards[0], {
+        scrollTrigger: {
+          trigger: whySection,
+          start: "top 70%", // Triggers before it pins
+        },
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        pointerEvents: 'all',
+        duration: 0.8,
+        ease: "power2.out",
+        onStart: () => whyCards[0].classList.add('active')
+      });
+
+      // Responsive logic for "Why PVD" pinning
+      ScrollTrigger.matchMedia({
+        // Mobile: Pin only when transition cards are seen fully
+        "(max-width: 1024px)": function () {
+          setupWhyPVD(".pvd-why-cards", "center center");
+        },
+        // Desktop: Pin as soon as section hits top
+        "(min-width: 1025px)": function () {
+          setupWhyPVD(whySection, "top top");
+        }
+      });
+
+      function setupWhyPVD(triggerEl, startPos) {
+        const masterTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerEl,
+            start: startPos,
+            end: () => `+=${whyCards.length * 60}%`, // Faster scroll distance
+            pin: whySection,
+            scrub: 0.4, // Snappy response
+            id: "why-pin",
+            invalidateOnRefresh: true
+          }
+        });
+
+        whyCards.forEach((card, i) => {
+          const isLast = i === whyCards.length - 1;
+
+          if (i === 0) {
+            // First card exit
+            masterTl.to(card, {
+              opacity: 0,
+              y: -60,
+              scale: 0.94,
+              pointerEvents: 'none',
+              duration: 1,
+              ease: "power2.inOut",
+              onComplete: () => card.classList.remove('active'),
+              onReverseComplete: () => card.classList.add('active')
+            });
+          } else {
+            // Entrance for subsequent cards
+            masterTl.fromTo(card,
+              { opacity: 0, y: 60, scale: 0.94, pointerEvents: 'none' },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                pointerEvents: 'all',
+                duration: 1,
+                ease: "power2.inOut",
+                onStart: () => card.classList.add('active'),
+                onReverseComplete: () => card.classList.remove('active')
+              }, "-=0.8"); // Snappy cross-fade overlap
+
+            // Exit if not last
+            if (!isLast) {
+              masterTl.to(card, {
+                opacity: 0,
+                y: -60,
+                scale: 0.94,
+                pointerEvents: 'none',
+                duration: 1,
+                ease: "power2.inOut",
+                onComplete: () => card.classList.remove('active'),
+                onReverseComplete: () => card.classList.add('active')
+              });
+            }
+          }
+        });
+      }
+
+
+
+
+      // - Tech Panels Header Reveal -
+      gsap.from('#technologies .tech-section-header', {
+        scrollTrigger: {
+          trigger: '#technologies',
+          start: 'top 85%',
+        },
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: 'power3.out'
+      });
+
+
+      // - Stacking Panels Scroll Effect -
+      const panels = gsap.utils.toArray('.tech-panel');
+
+      ScrollTrigger.matchMedia({
+        // Desktop only
+        "(min-width: 1024px)": function () {
+          panels.forEach((panel, i) => {
+            // High z-index to ensure correct stacking
+            gsap.set(panel, { zIndex: i + 1 });
+
+            // Final Robust Stacking Logic: Remove the extra 100% from the last panel to prevent empty scroll
+            const isLast = i === panels.length - 1;
+            ScrollTrigger.create({
+              trigger: panel,
+              start: "top top",
+              // Panels pin until the last panel arrives at the top
+              end: () => `+=${(panels.length - i - 1) * 100}%`,
+              pin: true,
+              // Disable pin spacing to maintain natural flow without extra gaps
+              pinSpacing: false,
+              pinType: "fixed",
+              anticipatePin: 0,
+              invalidateOnRefresh: true,
+              id: `panel-pin-${i}`
+            });
+
+            // 1. Current panel shrinks as NEXT panel comes in
+            if (i < panels.length - 1) {
+              gsap.to(panel, {
+                scale: 0.95,
+                ease: "none", // Critical for perfect scrub sync
+                scrollTrigger: {
+                  trigger: panels[i + 1],
+                  start: "top 100%",
+                  end: "top top",
+                  scrub: true,
+                  invalidateOnRefresh: true
+                }
+              });
+            }
+          });
+        },
+        // Mobile/Tablet: Stacking reveal (requested) - Aligned with desktop for smoothness
+        "(max-width: 1023px)": function () {
+          panels.forEach((panel, i) => {
+            // High z-index to ensure correct stacking
+            gsap.set(panel, { zIndex: i + 1 });
+
+            ScrollTrigger.create({
+              trigger: panel,
+              start: "top top",
+              // Panels pin until the last panel arrives at the top
+              end: () => `+=${(panels.length - i - 1) * 100}%`,
+              pin: true,
+              pinSpacing: false,
+              pinType: "fixed",
+              anticipatePin: 0,
+              invalidateOnRefresh: true,
+              id: `panel-pin-mob-${i}`
+            });
+
+            // 1. Current panel shrinks as NEXT panel comes in
+            if (i < panels.length - 1) {
+              gsap.to(panel, {
+                scale: 0.95,
+                ease: "none", // Critical for perfect scrub sync
+                scrollTrigger: {
+                  trigger: panels[i + 1],
+                  start: "top 100%",
+                  end: "top top",
+                  scrub: true,
+                  invalidateOnRefresh: true
+                }
+              });
+            }
+          });
+        }
+      });
+
+      // - HiPIMS Glow Pulse -
+      gsap.to('.tech-hipims-glow', {
+        scale: 1.2,
+        opacity: 0.25,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      });
+
+      gsap.from('.tech-hipims-card', {
+        scrollTrigger: {
+          trigger: '.tech-hipims',
+          start: 'top 75%',
+          end: 'bottom 25%',
+          toggleActions: 'restart reverse restart reverse',
+        },
+        rotationX: -90,
+        rotationZ: -10,
+        y: 120,
+        opacity: 0,
+        duration: 1.8,
+        ease: 'back.out(1.2)',
+        transformOrigin: "center center",
+        force3D: true
+      });
+
+      // - Process Flow Reveal -
+      gsap.to('.tech-process-step', {
+        scrollTrigger: {
+          trigger: '.tech-process-row',
+          start: 'top 85%',
+        },
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: 'power3.out'
+      });
+
+      // - fsARC Comparison -
+      gsap.from('.comparison-split', {
+        scrollTrigger: { trigger: '.fsarc-proof', start: 'top 75%' },
+        opacity: 0, y: 40, duration: 1.2, ease: 'power3.out'
+      });
+
+      // - Coating Finder Reveal -
+      gsap.from('.coating-finder .tech-section-header', {
+        scrollTrigger: {
+          trigger: '.coating-finder',
+          start: 'top 80%',
+        },
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        ease: 'power3.out'
+      });
+
+      gsap.from('.finder-matrix', {
+        scrollTrigger: {
+          trigger: '.finder-matrix',
+          start: 'top 85%',
+        },
+        opacity: 0,
+        scale: 0.98,
+        y: 60,
+        duration: 1.4,
+        ease: 'expo.out'
+      });
+
+      // - Portfolio Cards Expanding Animation -
+      gsap.utils.toArray('.portfolio-card').forEach((card) => {
+        gsap.fromTo(card,
+          {
+            opacity: 0,
+            scale: 0.8,
+            y: 40
+          },
+          {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 92%',
+              end: 'bottom 8%',
+              toggleActions: 'play reverse play reverse'
+            },
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1.2,
+            ease: 'back.out(1.2)'
+          }
+        );
+      });
+
+      // - R&D Stat Pills -
+      gsap.from('.rd-stat', {
+        scrollTrigger: { trigger: '.rd-section', start: 'top 85%' },
+        opacity: 0, scale: 0.9, stagger: 0.2, duration: 0.7, ease: 'back.out(1.4)'
+      });
+
+
+      // - Matrix Finder Logic -
+      const matrixTabs = document.querySelectorAll('.matrix-tab');
+      const matrixData = {
+        cutting: {
+          title: "High-Speed Machining",
+          desc: "Extreme oxidation resistance and hot hardness for dry machining and interrupted cuts in hardened steels. Our TiAlN and AlCrN systems provide the thermal stability required for 1000°C+ operations.",
+          pills: ["TiAlN", "AlCrN", "TiSiN"],
+          perf: { hardness: "3,200 HV", temp: "900°C", friction: "0.4 μ" },
+          bars: [90, 85, 40]
+        },
+        automotive: {
+          title: "Engine & Drive Components",
+          desc: "Low-friction DLC coatings for fuel injection systems and valvetrains. CrN and AlCrN for large-scale forming dies requiring high wear resistance.",
+          pills: ["DLC", "ta-C", "CrN", "AlCrN"],
+          perf: { hardness: "2,000 HV", temp: "400°C", friction: "0.05 μ" },
+          bars: [60, 40, 95]
+        },
+        medical: {
+          title: "Surgical & Dental Implants",
+          desc: "Biocompatible TiN and ZrN coatings that meet FDA standards. Highly corrosion-resistant and non-toxic, with zero macro-particle surface finish.",
+          pills: ["TiN", "ZrN", "CrN", "DLC"],
+          perf: { hardness: "2,300 HV", temp: "500°C", friction: "0.2 μ" },
+          bars: [70, 50, 75]
+        },
+        molds: {
+          title: "Precision Molds & Dies",
+          desc: "Specialized CrN and MAHLEN coatings for anti-sticking and easy release. Excellent corrosion protection for processing aggressive plastics.",
+          pills: ["CrN", "CrCN", "AlCrN", "MAHLEN"],
+          perf: { hardness: "3,300 HV", temp: "800°C", friction: "0.1 μ" },
+          bars: [85, 80, 85]
+        }
+      };
+
+      matrixTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.target;
+          const data = matrixData[target];
+
+          matrixTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          const body = document.getElementById('matrix-body');
+          gsap.to(body, {
+            opacity: 0, x: -20, duration: 0.3, onComplete: () => {
+              document.getElementById('matrix-category').innerText = tab.innerText + " Solution";
+              document.getElementById('matrix-title').innerText = data.title;
+              document.getElementById('matrix-desc').innerText = data.desc;
+
+              const pillContainer = document.getElementById('matrix-pills');
+              pillContainer.innerHTML = data.pills.map(p => `<span class="coating-pill">${p}</span>`).join('');
+
+              document.getElementById('val-hardness').innerText = data.perf.hardness;
+              document.getElementById('val-temp').innerText = data.perf.temp;
+              document.getElementById('val-friction').innerText = data.perf.friction;
+
+              const bars = document.querySelectorAll('.perf-bar-fill');
+              bars.forEach((bar, i) => {
+                gsap.to(bar, { width: data.bars[i] + '%', duration: 1, ease: "power4.out", delay: i * 0.1 });
+              });
+
+              gsap.to(body, { opacity: 1, x: 0, duration: 0.4 });
+            }
+          });
+        });
+      });
+
+      // ═══════ PORTFOLIO CAROUSEL ═══════
+      const slider = document.getElementById('portfolio-slider');
+      const dotsContainer = document.getElementById('portfolio-dots');
+      const prevBtn = document.getElementById('portfolio-prev');
+      const nextBtn = document.getElementById('portfolio-next');
+      const cards = document.querySelectorAll('.portfolio-card');
+      let currentIndex = 0;
+
+      // Create dots
+      cards.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function updateDots() {
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      function goToSlide(index) {
+        if (window.innerWidth > 1024) return;
+
+        if (index < 0) index = cards.length - 1;
+        if (index >= cards.length) index = 0;
+        currentIndex = index;
+
+        const container = slider.parentElement;
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 24;
+        const containerWidth = container.offsetWidth;
+
+        // Calculate offset to center the card, accounting for the 20px grid padding
+        const offset = -currentIndex * (cardWidth + gap) + (containerWidth - cardWidth) / 2 - 20;
+
+        gsap.to(slider, {
+          x: offset,
+          duration: 0.7,
+          ease: "power2.out"
+        });
+        updateDots();
+      }
+
+      prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+      nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+      // Initial alignment
+      setTimeout(() => {
+        if (window.innerWidth <= 1024) goToSlide(0);
+      }, 500);
+
+      // Handle resize to reset slider
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+          gsap.set(slider, { x: 0, xPercent: 0 });
+        } else {
+          goToSlide(currentIndex);
+        }
+      });
+    });
+  </script>
+
+  <script>
+    // ═══════ PLASMA CANVAS HERO ═══════
+    (function () {
+      const canvas = document.getElementById('plasma-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d', { alpha: true });
+      const isMobile = window.innerWidth < 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+      const PARTICLE_COUNT = isMobile ? 40 : 90;
+      const FRAME_INTERVAL = isMobile ? 1000 / 30 : 0; // 30fps cap on mobile, uncapped on desktop
+      let W, H, particles = [], animId = null, lastTime = 0, cachedGrad = null, resizeTimer;
+
+      function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+        cachedGrad = null; // invalidate on resize
+      }
+      function getGrad() {
+        if (!cachedGrad) {
+          cachedGrad = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, 200);
+          cachedGrad.addColorStop(0, 'rgba(13,184,74,0.08)');
+          cachedGrad.addColorStop(1, 'transparent');
+        }
+        return cachedGrad;
+      }
+      function createParticles() {
+        particles = [];
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const radius = 150 + Math.random() * 350;
+          particles.push({
+            x: W / 2 + Math.cos(angle) * radius, y: H / 2 + Math.sin(angle) * radius,
+            tx: W / 2 + (Math.random() - 0.5) * 80, ty: H / 2 + (Math.random() - 0.5) * 80,
+            size: Math.random() * 2.5 + 0.5, speed: Math.random() * 0.003 + 0.001, progress: Math.random(),
+            color: Math.random() > 0.4 ? `rgba(13,184,74,${Math.random() * 0.7 + 0.3})` : `rgba(120,80,255,${Math.random() * 0.5 + 0.2})`
+          });
+        }
+      }
+      function draw(timestamp) {
+        animId = requestAnimationFrame(draw);
+        if (FRAME_INTERVAL && timestamp - lastTime < FRAME_INTERVAL) return;
+        lastTime = timestamp;
+        ctx.clearRect(0, 0, W, H);
+        ctx.fillStyle = getGrad(); ctx.fillRect(0, 0, W, H);
+        particles.forEach(p => {
+          p.progress += p.speed;
+          if (p.progress >= 1) {
+            p.progress = 0;
+            const angle = Math.random() * Math.PI * 2, radius = 150 + Math.random() * 350;
+            p.x = W / 2 + Math.cos(angle) * radius; p.y = H / 2 + Math.sin(angle) * radius;
+            p.tx = W / 2 + (Math.random() - 0.5) * 80; p.ty = H / 2 + (Math.random() - 0.5) * 80;
+          }
+          const e = p.progress < 0.5 ? 2 * p.progress * p.progress : 1 - Math.pow(-2 * p.progress + 2, 2) / 2;
+          ctx.beginPath(); ctx.arc(p.x + (p.tx - p.x) * e, p.y + (p.ty - p.y) * e, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.color; ctx.fill();
+        });
+      }
+      // Pause animation when hero is off-screen
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          if (!animId) { lastTime = 0; animId = requestAnimationFrame(draw); }
+        } else {
+          if (animId) { cancelAnimationFrame(animId); animId = null; }
+        }
+      }, { threshold: 0.01 });
+      const heroSection = canvas.closest('.tech-hero') || canvas.parentElement;
+      if (heroSection) observer.observe(heroSection);
+
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { resize(); createParticles(); }, 150);
+      });
+      resize(); createParticles(); animId = requestAnimationFrame(draw);
+    })();
+  </script>
+</body>
+
+</html>

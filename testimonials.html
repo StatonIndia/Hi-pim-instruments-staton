@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Testimonials & Success Stories | Staton PVD Performance</title>
+  <link rel="canonical" href="https://statoncoating.com/testimonials.html">
+  <meta name="description"
+    content="Trusted by global leaders. See how Staton's PVD coating solutions deliver measurable results and enhanced component life across diverse industrial sectors.">
+  <link rel="stylesheet" href="style.css?v=1.3">
+  <link rel="icon" type="image/png" href="assets/products/Staton%20Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ═══════ TESTIMONIALS PAGE UNIQUE STYLES ═══════ */
+    :root {
+      --tech-green: #0db84a;
+      --glass-bg: rgba(255, 255, 255, 0.02);
+      --glass-border: rgba(255, 255, 255, 0.05);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .accent {
+      color: var(--tech-green);
+    }
+
+    /* - SECTION 1: HERO (STAGGERED EDITORIAL) - */
+    .trust-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 10;
+      padding-top: 80px;
+      background: #000;
+    }
+
+    .hero-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20vw;
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-gradient-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-gradient-blob {
+      position: absolute;
+      width: 60vw;
+      height: 60vw;
+      max-width: 800px;
+      max-height: 800px;
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      filter: blur(120px);
+      opacity: 0.35;
+      mix-blend-mode: screen;
+      animation: morphBlob 5s linear infinite;
+    }
+
+    .blob-1 {
+      top: 50%;
+      left: 30%;
+      background: radial-gradient(circle at center, rgba(13, 184, 74, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
+      transform-origin: 50% 50%;
+      animation-delay: 0s;
+    }
+
+    .blob-2 {
+      top: 40%;
+      left: 70%;
+      background: radial-gradient(circle at center, rgba(30, 255, 120, 0.4) 0%, transparent 70%);
+      animation: morphBlob2 4s linear infinite;
+    }
+
+    .blob-3 {
+      top: 70%;
+      left: 50%;
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle at center, rgba(10, 120, 50, 0.6) 0%, transparent 70%);
+      animation: morphBlob3 7s linear infinite;
+    }
+
+    @keyframes morphBlob {
+      0% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+      }
+
+      33% {
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+        transform: translate(-40%, -10%) rotate(120deg) scale(1.4);
+      }
+
+      66% {
+        border-radius: 30% 70% 70% 30% / 50% 40% 70% 60%;
+        transform: translate(20%, -70%) rotate(240deg) scale(0.8);
+      }
+
+      100% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+      }
+    }
+
+    @keyframes morphBlob2 {
+      0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+      }
+
+      33% {
+        border-radius: 30% 70% 70% 30% / 30% 60% 40% 70%;
+        transform: translate(-60%, 10%) rotate(-120deg) scale(1.3);
+      }
+
+      66% {
+        border-radius: 50% 50% 20% 80% / 20% 80% 50% 50%;
+        transform: translate(10%, -60%) rotate(-240deg) scale(1.5);
+      }
+
+      100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(-50%, -50%) rotate(-360deg) scale(0.8);
+      }
+    }
+
+    @keyframes morphBlob3 {
+      0% {
+        border-radius: 50%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+      }
+
+      50% {
+        border-radius: 30% 70% 50% 50% / 50% 50% 70% 30%;
+        transform: translate(-60%, -40%) rotate(180deg) scale(1.2);
+      }
+
+      100% {
+        border-radius: 50%;
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+      }
+    }
+
+    .hero-content-staggered {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .hero-top-zone {
+      align-self: flex-end;
+      max-width: 450px;
+      text-align: right;
+      margin-top: 60px;
+      opacity: 0;
+    }
+
+    .hero-bottom-zone {
+      align-self: flex-start;
+      margin-bottom: 40px;
+      opacity: 0;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      color: var(--tech-green);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-line {
+      width: 40px;
+      height: 2px;
+      background: var(--tech-green);
+      box-shadow: 0 0 10px rgba(13, 184, 74, 0.8);
+    }
+
+    .trust-hero-title {
+      font-size: clamp(3.5rem, 8vw, 7.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 12px;
+      margin-top: 0;
+    }
+
+    .outline-text {
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .trust-hero-title-accent {
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      color: var(--tech-green);
+      margin: 0;
+      text-shadow: 0 0 40px rgba(13, 184, 74, 0.4);
+    }
+
+    .trust-hero-sub {
+      font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+      margin: 0;
+      font-weight: 300;
+      border-right: 2px solid rgba(13, 184, 74, 0.6);
+      padding-right: 20px;
+    }
+
+    .trust-hero-sub strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .hero-watermark {
+        font-size: 25vw;
+        top: 30%;
+      }
+
+      .hero-content-staggered {
+        justify-content: center;
+        gap: 80px;
+      }
+
+      .hero-top-zone {
+        align-self: flex-start;
+        text-align: left;
+        margin-top: 0;
+      }
+
+      .hero-eyebrow {
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+      }
+
+      .trust-hero-sub {
+        border-right: none;
+        border-left: 2px solid rgba(13, 184, 74, 0.6);
+        padding-right: 0;
+        padding-left: 20px;
+      }
+
+      .hero-bottom-zone {
+        align-self: flex-start;
+        margin-bottom: 0;
+      }
+    }
+
+    /* - SECTION 2: CLIENT PORTFOLIO - */
+    .trust-logos {
+      padding: 100px 40px;
+      position: relative;
+      z-index: 5;
+      background: #000;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .trust-logos-header {
+      text-align: center;
+      margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .trust-logos-eyebrow {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.4em;
+      color: var(--tech-green);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .trust-logos-headline {
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .logos-glass-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .glass-logo-item {
+      position: relative;
+      width: 260px;
+      height: 140px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .glass-logo-glow {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(13, 184, 74, 0.5);
+      border-radius: 50%;
+      filter: blur(40px);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .glass-logo-item img {
+      height: 65px;
+      max-width: 80%;
+      filter: grayscale(100%) opacity(0.7);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2;
+      object-fit: contain;
+    }
+
+    .glass-logo-item:hover {
+      background: rgba(13, 184, 74, 0.05);
+      border-color: rgba(13, 184, 74, 0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .glass-logo-item:hover .glass-logo-glow {
+      opacity: 1;
+    }
+
+    .glass-logo-item:hover img {
+      filter: grayscale(0%) opacity(1);
+      transform: scale(1.1);
+    }
+
+    /* - SECTION 3: PERFORMANCE HIGHLIGHTS - */
+    .trust-performance {
+      padding: 120px 24px;
+      position: relative;
+      z-index: 5;
+      background: #000;
+    }
+
+    .perf-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .metric-highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 60px 40px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+    }
+
+    .metric-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle at top right, rgba(13, 184, 74, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .metric-value {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 15px;
+      color: #fff;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .metric-value .accent {
+      color: var(--tech-green);
+      text-shadow: 0 0 30px rgba(13, 184, 74, 0.4);
+    }
+
+    .metric-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 10px;
+    }
+
+    .metric-desc {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.6;
+      max-width: 400px;
+    }
+
+    .metric-comparison {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      gap: 40px;
+    }
+
+    .comp-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .comp-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .comp-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* - SECTION 4: INDUSTRY PROOF - */
+    .trust-industry {
+      padding: 140px 24px 180px;
+      position: relative;
+      z-index: 5;
+      background: #000;
+    }
+
+    .ind-header {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    .ind-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      color: var(--tech-green);
+      margin-bottom: 20px;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .ind-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .ind-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .ind-item {
+      padding: 40px 30px;
+      border-top: 2px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+    }
+
+    .ind-item:hover {
+      border-top-color: var(--tech-green);
+      background: linear-gradient(180deg, rgba(13, 184, 74, 0.06) 0%, transparent 100%);
+      transform: translateY(-10px);
+    }
+
+    .ind-item-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .ind-item-desc {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.6;
+    }
+
+    /* - SECTION 2.5: TESTIMONIALS CARDS - */
+    .trust-testimonials {
+      padding: 120px 24px;
+      position: relative;
+      z-index: 5;
+      background: #000;
+    }
+
+    .testi-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .testi-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      color: var(--tech-green);
+      margin-bottom: 20px;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .testi-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .testimonial-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(145deg, rgba(20, 20, 20, 0.9) 0%, rgba(5, 5, 5, 1) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-left: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0 24px 0 24px;
+      padding: 30px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .testimonial-card:nth-child(1),
+    .testimonial-card:nth-child(2) {
+      grid-column: span 3;
+    }
+
+    .testimonial-card:nth-child(3),
+    .testimonial-card:nth-child(4),
+    .testimonial-card:nth-child(5) {
+      grid-column: span 2;
+    }
+
+    .testimonial-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -2px;
+      width: 2px;
+      height: 0;
+      background: var(--tech-green);
+      transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      font-size: 10rem;
+      font-family: Georgia, serif;
+      color: rgba(255, 255, 255, 0.02);
+      line-height: 1;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .testimonial-card:hover {
+      background: linear-gradient(145deg, rgba(25, 25, 25, 0.95) 0%, rgba(5, 5, 5, 1) 100%);
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.08);
+      border-left-color: var(--tech-green);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), -10px 0 30px rgba(13, 184, 74, 0.1);
+    }
+
+    .testimonial-card:hover::after {
+      height: 100%;
+    }
+
+    .testi-company {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      z-index: 1;
+    }
+
+    .testi-industry {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--tech-green);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+      z-index: 1;
+    }
+
+    .testi-quote {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 30px;
+      font-weight: 300;
+      flex-grow: 1;
+      position: relative;
+      padding-left: 16px;
+      z-index: 1;
+    }
+
+    .testi-quote::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 2px;
+      height: calc(100% - 10px);
+      background: linear-gradient(to bottom, rgba(13, 184, 74, 0.6), transparent);
+    }
+
+    .testi-result {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: auto;
+      align-self: flex-start;
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+
+    .testi-result span {
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+
+    .testimonial-card:hover .testi-result {
+      background: rgba(13, 184, 74, 0.1);
+      border-color: rgba(13, 184, 74, 0.3);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(13, 184, 74, 0.2);
+    }
+
+    /* MINI CASE SNIPPETS */
+    .mini-case-container {
+      margin-top: 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 60px;
+    }
+
+    .mini-case-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 40px;
+      text-align: center;
+      opacity: 0;
+    }
+
+    .mini-case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .mini-case-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 30px;
+      opacity: 0;
+    }
+
+    .case-step {
+      margin-bottom: 16px;
+    }
+
+    .case-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .case-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .case-value {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.4;
+    }
+
+    .case-value.result {
+      color: var(--tech-green);
+      font-weight: 600;
+    }
+
+    /* CTA SECTION */
+    .trust-cta {
+      padding: 120px 24px;
+      position: relative;
+      z-index: 5;
+      background: #000;
+      text-align: center;
+    }
+
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0;
+    }
+
+    .cta-headline {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .cta-subtext {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--tech-green);
+      color: #000;
+      box-shadow: 0 0 20px rgba(13, 184, 74, 0.3);
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+      opacity: 0;
+    }
+
+    .btn-primary:hover {
+      background: #11d155;
+      box-shadow: 0 0 30px rgba(13, 184, 74, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary:hover::after {
+      opacity: 1;
+      transform: rotate(45deg) translate(50%, 50%);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonial-card:nth-child(n) {
+        grid-column: span 1;
+      }
+
+      .metric-highlight-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .ind-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-logos {
+        padding: 60px 24px;
+      }
+
+      .logos-glass-grid {
+        gap: 30px;
+      }
+
+      .glass-logo-item {
+        width: auto;
+        height: auto;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .glass-logo-item img {
+        height: 40px;
+        width: auto;
+      }
+
+      .glass-logo-glow {
+        display: none;
+      }
+
+      .ind-grid {
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .trust-industry {
+        padding: 80px 20px 100px;
+      }
+
+      .ind-header {
+        margin-bottom: 50px;
+      }
+
+      .ind-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .ind-item {
+        padding: 30px 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: none;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+      }
+
+      .ind-item:hover {
+        transform: translateY(-5px);
+        border-color: rgba(13, 184, 74, 0.3);
+        background: rgba(13, 184, 74, 0.05);
+      }
+
+      .ind-item-title {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
+
+      .ind-item-desc {
+        font-size: 1rem;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════ GLOBAL CANVASES ═══════ -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="parallax-grid" id="parallax-grid"></div>
+  <div class="vignette"></div>
+
+  <!-- ═══════ NAVIGATION (LOGO ONLY) ═══════ -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo-link" style="display: inline-block; pointer-events: auto; text-decoration: none;">
+      <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. navigation logo" class="nav-logo">
+    </a>
+    <button class="mob-hamburger" id="mob-hamburger"
+      aria-label="Open navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- ═══════ FLOATING NAVIGATION (PILLS) ═══════ -->
+  <div class="floating-nav" id="floating-nav">
+    <ul class="nav-links-pill">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="applications.html">Applications</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html" class="active">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="contact-pill">Contact</a>
+  </div>
+
+  <!-- ═══════ MOBILE DRAWER NAV (ADD-ON — mobile ≤768px only) ═══════ -->
+  <div class="mob-overlay" id="mob-overlay"></div>
+  <div class="mob-drawer" id="mob-drawer">
+    <div class="mob-drawer-header">
+      <a href="index.html" class="mob-drawer-logo-link" style="display: inline-block; text-decoration: none;">
+        <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. mobile navigation logo" class="mob-drawer-logo">
+      </a>
+      <div class="mob-drawer-close" id="mob-drawer-close">
+        <svg viewBox="0 0 24 24" fill="none">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </div>
+    </div>
+    <ul class="mob-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="applications.html">Applications</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html" class="active">Testimonials</a></li>
+    </ul>
+    <div class="mob-nav-contact"><a href="contact.html">Contact</a></div>
+  </div>
+  <script>
+    (function () {
+      var btn = document.getElementById('mob-hamburger');
+      var drawer = document.getElementById('mob-drawer');
+      var overlay = document.getElementById('mob-overlay');
+      var close = document.getElementById('mob-drawer-close');
+      function openMenu() { btn.classList.add('mob-open'); drawer.classList.add('mob-open'); overlay.classList.add('mob-open'); drawer.style.pointerEvents = 'auto'; }
+      function closeMenu() { btn.classList.remove('mob-open'); drawer.classList.remove('mob-open'); overlay.classList.remove('mob-open'); drawer.style.pointerEvents = 'none'; }
+      btn.addEventListener('click', openMenu);
+      close.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+
+  <!-- ═══════ SECTION 1: HERO ═══════ -->
+  <section class="trust-hero" id="testimonials">
+    <div class="hero-watermark">STATON</div>
+
+    <div class="hero-gradient-container">
+      <div class="hero-gradient-blob blob-1"></div>
+      <div class="hero-gradient-blob blob-2"></div>
+      <div class="hero-gradient-blob blob-3"></div>
+    </div>
+
+    <div class="hero-content-staggered">
+      <!-- Top Right -->
+      <div class="hero-top-zone">
+        <div class="hero-eyebrow">
+          <span>THE STATON STANDARD</span>
+          <span class="eyebrow-line"></span>
+        </div>
+        <p class="trust-hero-sub">
+          Advanced coating solutions engineered to deliver <strong>measurable results</strong> and exceptional
+          durability across the most <strong>critical industrial applications</strong> worldwide.
+        </p>
+      </div>
+
+      <!-- Bottom Left -->
+      <div class="hero-bottom-zone">
+        <h1 class="trust-hero-title">
+          Trusted by <span class="outline-text">Industry.</span>
+        </h1>
+        <h2 class="trust-hero-title-accent">Proven by Performance.</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SECTION 2: CLIENT PORTFOLIO ═══════ -->
+  <section class="trust-logos" id="partners">
+    <div class="trust-logos-header">
+      <span class="trust-logos-eyebrow">GLOBAL PARTNERS</span>
+      <h2 class="trust-logos-headline">Trusted by <span class="accent">Global Leaders</span></h2>
+    </div>
+
+    <div class="logos-glass-grid">
+      <div class="glass-logo-item">
+        <div class="glass-logo-glow"></div>
+        <img src="assets/client%20logos/imgi_37_kinex-hover.webp" alt="Kinex company logo">
+      </div>
+      <div class="glass-logo-item">
+        <div class="glass-logo-glow"></div>
+        <img src="assets/client%20logos/imgi_38_mar-sk-hover.webp" alt="Mar-SK company logo">
+      </div>
+      <div class="glass-logo-item">
+        <div class="glass-logo-glow"></div>
+        <img src="assets/client%20logos/imgi_39_minc-kremnica-hover.webp" alt="Mincovňa Kremnica company logo">
+      </div>
+      <div class="glass-logo-item">
+        <div class="glass-logo-glow"></div>
+        <img src="assets/client%20logos/imgi_40_schaeffler-hover.webp" alt="Schaeffler company logo">
+      </div>
+      <div class="glass-logo-item">
+        <div class="glass-logo-glow"></div>
+        <img src="assets/client%20logos/imgi_41_viena-intl-hover.webp" alt="Viena International company logo">
+      </div>
+      <div class="glass-logo-item">
+        <div class="glass-logo-glow"></div>
+        <img src="assets/client%20logos/imgi_42_volkswagen-hover.webp" alt="Volkswagen company logo">
+      </div>
+      <div class="glass-logo-item">
+        <div class="glass-logo-glow"></div>
+        <img src="assets/client%20logos/imgi_43_wuzutem-hover.webp" alt="Wuzutem company logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SECTION 2.5: TESTIMONIALS ═══════ -->
+  <section class="trust-testimonials" id="testimonials-proof">
+    <div class="testi-header">
+      <span class="testi-label">Real Results</span>
+      <h2 class="testi-title">Client <span class="accent">Success</span></h2>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testi-company">Volkswagen</div>
+        <div class="testi-industry">Automotive Manufacturing</div>
+        <div class="testi-quote">"Staton's PVD coatings have transformed our tooling endurance. The consistency across
+          high-volume production lines is exactly what we require for our stringent quality standards."</div>
+        <div class="testi-result">Result: <span>Reduced tool wear by 60%</span></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testi-company">Schaeffler</div>
+        <div class="testi-industry">Precision Bearings</div>
+        <div class="testi-quote">"We needed a surface solution that could withstand extreme friction and extend the
+          maintenance intervals of our components. Staton delivered beyond our expectations."</div>
+        <div class="testi-result">Result: <span>3.5× Component Lifespan</span></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testi-company">Mincovňa Kremnica</div>
+        <div class="testi-industry">Coin Minting & Engraving</div>
+        <div class="testi-quote">"The clarity and precision of the strikes have improved significantly. Staton's
+          advanced coating technology preserves the finest details on our dies for much longer."</div>
+        <div class="testi-result">Result: <span>4× Die Longevity</span></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testi-company">Kinex Bearings</div>
+        <div class="testi-industry">Aerospace Bearings</div>
+        <div class="testi-quote">"Reliability is non-negotiable in aerospace. We rely on Staton's performance coatings
+          to ensure our bearings operate smoothly under the most severe loads and temperatures."</div>
+        <div class="testi-result">Result: <span>Zero Friction Failures</span></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testi-company">Viena International</div>
+        <div class="testi-industry">Heavy Machinery Tooling</div>
+        <div class="testi-quote">"Before partnering with Staton, tool replacements were a major bottleneck. The custom
+          DLC coating they developed for our cutting tools drastically optimized our operational costs."</div>
+        <div class="testi-result">Result: <span>5× Tool Life Extension</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SECTION 3: PERFORMANCE METRICS ═══════ -->
+  <section class="trust-performance" id="performance">
+    <div class="perf-container">
+      <div class="metric-highlight-grid">
+
+        <!-- Surgical Tool Stat -->
+        <div class="metric-card" id="metric-surgical">
+          <div class="metric-value">
+            <span class="accent">100k+</span>
+          </div>
+          <div class="metric-label">Surgical Tool Longevity</div>
+          <p class="metric-desc">Staton's specialized biocompatible coatings significantly extend the operational life
+            of medical instruments in sterilization cycles.</p>
+          <p class="metric-context"
+            style="font-size: 0.85rem; color: rgba(13, 184, 74, 0.8); margin-top: 10px; font-weight: 500; font-style: italic;">
+            Used in high-precision medical applications.</p>
+          <div class="metric-comparison">
+            <div class="comp-item">
+              <span class="comp-num">100,000</span>
+              <span class="comp-label">STATON CYCLES</span>
+            </div>
+            <div class="comp-item">
+              <span class="comp-num">12,000</span>
+              <span class="comp-label">STANDARD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ra Stat -->
+        <div class="metric-card" id="metric-ra">
+          <div class="metric-value">
+            <span class="accent">Ra &lt; 0.1μm</span>
+          </div>
+          <div class="metric-label">Extreme Surface Precision</div>
+          <p class="metric-desc">Our fsARC™ and HiPIMS technologies achieve unparalleled surface smoothness, reducing
+            friction and wear in high-precision components.</p>
+          <p class="metric-context"
+            style="font-size: 0.85rem; color: rgba(13, 184, 74, 0.8); margin-top: 10px; font-weight: 500; font-style: italic;">
+            Tested in aerospace-grade components.</p>
+          <div class="metric-comparison">
+            <div class="comp-item">
+              <span class="comp-num">&lt; 0.1μm</span>
+              <span class="comp-label">SURFACE ROUGHNESS</span>
+            </div>
+            <div class="comp-item">
+              <span class="comp-num">0.4μm</span>
+              <span class="comp-label">AVG INDUSTRY</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mini-case-container">
+        <h2 class="mini-case-title">Proven Application Scenarios</h2>
+        <div class="mini-case-grid">
+          <div class="mini-case-card">
+            <div class="case-step">
+              <div class="case-label">Problem</div>
+              <div class="case-value">Premature failure of dry machining tools due to extreme thermal load.</div>
+            </div>
+            <div class="case-step">
+              <div class="case-label">Staton Solution</div>
+              <div class="case-value">Applied specialized AlTiN / TiAlN multi-layer PVD coating.</div>
+            </div>
+            <div class="case-step">
+              <div class="case-label">Result</div>
+              <div class="case-value result">+300% cutting speed capability and 4x longer tool life.</div>
+            </div>
+          </div>
+
+          <div class="mini-case-card">
+            <div class="case-step">
+              <div class="case-label">Problem</div>
+              <div class="case-value">Galling and sticking in precision injection molding components.</div>
+            </div>
+            <div class="case-step">
+              <div class="case-label">Staton Solution</div>
+              <div class="case-value">High-smoothness DLC (Diamond-Like Carbon) low-friction coating.</div>
+            </div>
+            <div class="case-step">
+              <div class="case-label">Result</div>
+              <div class="case-value result">Eliminated release agents, 65% reduction in mold maintenance.</div>
+            </div>
+          </div>
+
+          <div class="mini-case-card">
+            <div class="case-step">
+              <div class="case-label">Problem</div>
+              <div class="case-value">High wear on aerospace titanium alloy fastening components.</div>
+            </div>
+            <div class="case-step">
+              <div class="case-label">Staton Solution</div>
+              <div class="case-value">Advanced CrN coating with specialized adhesion layer.</div>
+            </div>
+            <div class="case-step">
+              <div class="case-label">Result</div>
+              <div class="case-value result">Passed rigorous 500-hour extreme salt spray and wear test.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SECTION 4: INDUSTRY PROOF ═══════ -->
+  <section class="trust-industry" id="voices">
+    <div class="ind-header">
+      <span class="ind-label">Global Applications</span>
+      <h2 class="ind-title">Industry <span class="accent">Proof</span></h2>
+    </div>
+
+    <div class="ind-grid">
+      <div class="ind-item">
+        <h3 class="ind-item-title">Oil & Gas</h3>
+        <p class="ind-item-desc">Built for extreme wear conditions</p>
+      </div>
+      <div class="ind-item">
+        <h3 class="ind-item-title">Medical</h3>
+        <p class="ind-item-desc">Precision-focused surface solutions</p>
+      </div>
+      <div class="ind-item">
+        <h3 class="ind-item-title">Aerospace</h3>
+        <p class="ind-item-desc">High-performance durability</p>
+      </div>
+      <div class="ind-item">
+        <h3 class="ind-item-title">Automotive</h3>
+        <p class="ind-item-desc">Enhanced component efficiency</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SECTION 5: CTA ═══════ -->
+  <section class="trust-cta" id="cta">
+    <div class="cta-container">
+      <h2 class="cta-headline">Ready to Improve Your Tool Performance?</h2>
+      <p class="cta-subtext">Talk to our experts and discover how Staton coating technology can reduce cost-per-part and
+        increase efficiency.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="cta-btn btn-primary">Get a Quote</a>
+        <a href="https://wa.me/919960184242" target="_blank" class="cta-btn btn-secondary">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer-staton">
+    <div class="footer-staton-container">
+      <div class="footer-staton-top">
+        <div class="footer-staton-left">
+          <div class="footer-logos-wrap" style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+            <a href="index.html" class="footer-staton-logo-link" style="display: block; text-decoration: none;">
+              <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. footer logo"
+                class="footer-staton-logo" style="margin-bottom: 0;">
+            </a>
+            <div class="footer-hipim-wrap">
+              <div class="hipim-logo-footer"><img src="assets/hipim%20logo/h%20surroundings.png" alt="" class="hipim-ring" aria-hidden="true"><img src="assets/hipim%20logo/H%20logo.png" alt="HI-PIM Logo" class="hipim-h"></div>
+              <div class="footer-hipim-name">HI-PIM Instruments PVT. Ltd</div>
+            </div>
+          </div>
+          <div class="footer-staton-socials">
+            <a href="#" class="footer-staton-social-link" aria-label="Facebook">
+              <svg viewBox="0 0 320 512">
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="footer-staton-social-link" aria-label="Instagram">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="footer-staton-social-link" aria-label="X">
+              <svg viewBox="0 0 512 512">
+                <path
+                  d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L273.1 181.7 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/111718722/" target="_blank" rel="noopener noreferrer" class="footer-staton-social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                </path>
+              </svg>
+            </a>
+          </div>
+          <h3 class="footer-staton-cta-title">Ready to redefine your industrial coating standards?</h3>
+        </div>
+
+        <div class="footer-staton-right">
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Solutions</div>
+            <ul class="footer-staton-list">
+              <li><a href="#">PVD Coating Machines</a></li>
+              <li><a href="#">Thin Film Technology</a></li>
+              <li><a href="#">Custom Engineering</a></li>
+              <li><a href="#">R&amp;D Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Company</div>
+            <ul class="footer-staton-list">
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#partners">Global Partners</a></li>
+              <li><a href="#performance">Performance</a></li>
+              <li><a href="#voices">Industry Voices</a></li>
+            </ul>
+          </div>
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Certifications</div>
+            <div class="footer-staton-certifications">
+              <img src="assets/certifications/imgi_45_ISO-9001-2008-LOGO.png" alt="ISO 9001 quality management certification logo" class="footer-cert-img">
+              <img src="assets/certifications/imgi_47_86877626-dUE9T.png" alt="Industrial quality certification logo" class="footer-cert-img">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-staton-bottom">
+        <div class="footer-copyright">© 2026 STATON s.r.o. All rights reserved.</div>
+        <div class="footer-staton-bottom-links">
+          <a href="privacy-policy.html" style="color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;margin-right:18px;">Privacy Policy</a>
+          <a href="terms.html" style="color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;margin-right:18px;">Terms &amp; Conditions</a>
+          <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;">Website Designed by <a href="https://www.prception.in/" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 90, 90); font-weight: 700; text-decoration: none; padding-left: 4px;">PRception</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ WHATSAPP FAB ═══════ -->
+  <a class="whatsapp-fab" href="https://wa.me/919960184242" target="_blank" rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- ═══════ SCROLL TO TOP FAB ═══════ -->
+  <a class="scroll-to-top-fab" id="scroll-to-top" aria-label="Scroll to top" href="#top">
+    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Hero Animations
+      const heroTl = gsap.timeline();
+
+      heroTl.fromTo(".hero-watermark",
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 2, ease: "power3.out", delay: 0.2 }
+      )
+        .fromTo(".hero-top-zone",
+          { x: 30, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1, ease: "power3.out" },
+          "-=1.5"
+        )
+        .fromTo(".hero-bottom-zone",
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: "power4.out" },
+          "-=1.2"
+        );
+
+      // 2. Client Grid Reveal
+      const logosTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".trust-logos",
+          start: "top 80%"
+        }
+      });
+
+      logosTl.to(".trust-logos-header", {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out"
+      })
+        .fromTo(".glass-logo-item",
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "back.out(1.2)" },
+          "-=0.4"
+        );
+
+      // 3. Metric Highlights Reveal
+      gsap.fromTo(".metric-card",
+        { y: 50, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: ".metric-highlight-grid",
+            start: "top 75%",
+          },
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power4.out"
+        }
+      );
+
+      // 4. Industry Proof Stagger
+      gsap.fromTo(".ind-item",
+        {
+          opacity: 0,
+          y: 40
+        },
+        {
+          scrollTrigger: {
+            trigger: ".ind-grid",
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "back.out(1.2)"
+        }
+      );
+
+      // 5. Testimonial Reveal
+      gsap.fromTo(".testimonial-card",
+        { y: 40, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: ".testimonial-grid",
+            start: "top 80%"
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out"
+        }
+      );
+
+      // 6. Mini Case Reveal
+      gsap.fromTo(".mini-case-title",
+        { y: 20, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: ".mini-case-container",
+            start: "top 85%"
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out"
+        }
+      );
+
+      gsap.fromTo(".mini-case-card",
+        { y: 30, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: ".mini-case-grid",
+            start: "top 85%"
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out"
+        }
+      );
+
+      // 7. CTA Reveal
+      gsap.fromTo(".cta-container",
+        { scale: 0.95, opacity: 0, y: 30 },
+        {
+          scrollTrigger: {
+            trigger: ".trust-cta",
+            start: "top 80%"
+          },
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "back.out(1.2)"
+        }
+      );
+    });
+  </script>
+</body>
+
+</html>

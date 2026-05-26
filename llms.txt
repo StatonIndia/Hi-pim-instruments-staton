@@ -1,0 +1,28 @@
+# Staton s.r.o. - Industrial PVD Coating & Engineering Solutions
+
+Staton s.r.o. is a global leader in PVD (Physical Vapor Deposition) coating technology and machine manufacturing. We specialize in fsARC™ filtered cathodic arc systems that deliver flawless, droplet-free performance for precision industrial engineering.
+
+## Key Information
+
+- **Website**: https://statoncoating.com/
+- **Core Technology**: fsARC™ Filtered Cathodic Arc, Magnetron Sputtering, PVD Coating.
+- **Primary Products**: OCTOARC (Multi-arc systems), OCTOMAG (Magnetron sputtering systems).
+- **Industries Served**: Automotive, Cutting Tools, Medical Devices, Aerospace.
+- **Partnership**: Collaboration with HI-PIM Instruments PVT. Ltd for India Support Shield.
+
+## Main Sections
+
+- [About Staton](https://statoncoating.com/about.html): Company history, European engineering heritage, and mission.
+- [Technology](https://statoncoating.com/technology.html): Detailed overview of fsARC™ technology and its advantages over conventional coating.
+- [Products](https://statoncoating.com/products.html): Specifications for OCTOARC and OCTOMAG machine series.
+- [Applications](https://statoncoating.com/applications.html): Case studies and solutions for various industrial sectors.
+- [Services](https://statoncoating.com/services.html): Overview of coating services, machine maintenance, and local support.
+- [Testimonials](https://statoncoating.com/testimonials.html): Success stories from global industrial leaders.
+- [Contact](https://statoncoating.com/contact.html): Inquiry forms and contact details for global and regional offices.
+
+## Technical Capabilities
+
+- **Surface Excellence**: fsARC™ technology eliminates macro-particles/droplets.
+- **Tool Life Enhancement**: Up to 5× increase in durability for cutting tools.
+- **Thermal Stability**: Coatings engineered for environments > 1000°C.
+- **Local Support**: 24/7 remote diagnostics and on-site engineering support in India.

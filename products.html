@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industrial PVD Coating Machines | OCTOARC & OCTOMAG Series</title>
+  <link rel="canonical" href="https://statoncoating.com/products.html">
+  <meta name="description"
+    content="Premium PVD coating platforms engineered for performance. Explore the OCTOARC high-deposition series and OCTOMAG advanced magnetron sputtering systems.">
+  <link rel="stylesheet" href="style.css?v=1.3">
+  <link rel="icon" type="image/png" href="assets/products/Staton%20Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ═══════ PRODUCTS PAGE - PREMIUM INDUSTRIAL DESIGN ═══════ */
+
+    :root {
+      --prod-green: #0db84a;
+      --prod-glow: rgba(13, 184, 74, 0.15);
+      --section-pad: 120px 48px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .accent {
+      color: var(--prod-green);
+    }
+
+    /* - Hero Section - */
+    .prod-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      z-index: 10;
+      background: #000;
+    }
+
+    .prod-hero-light {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: conic-gradient(from 0deg at 50% -10%,
+          transparent 125deg,
+          rgba(13, 184, 74, 0.05) 145deg,
+          rgba(13, 184, 74, 0.6) 180deg,
+          rgba(13, 184, 74, 0.05) 215deg,
+          transparent 235deg);
+      -webkit-mask-image: radial-gradient(ellipse 140% 120% at 50% -10%, black 10%, transparent 90%);
+      mask-image: radial-gradient(ellipse 140% 120% at 50% -10%, black 10%, transparent 90%);
+      pointer-events: none;
+      z-index: 1;
+      mix-blend-mode: screen;
+      filter: blur(30px);
+    }
+
+    .prod-hero-grain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.10;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      mix-blend-mode: screen;
+      -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 90%);
+      mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 90%);
+    }
+
+    .prod-hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1000px;
+    }
+
+    .prod-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--prod-green);
+      margin-bottom: 24px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .prod-hero-title {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 32px;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .prod-hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: rgba(255, 255, 255, 0.5);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* - Product Section - */
+    .product-section {
+      padding: var(--section-pad);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .product-section--reverse .product-container {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .product-image-side {
+      position: relative;
+    }
+
+    .product-image-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 40px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+      transition: transform 0.6s var(--ease-out-expo);
+    }
+
+    .product-image-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(13, 184, 74, 0.3);
+    }
+
+    .product-image-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      filter: drop-shadow(0 0 30px rgba(13, 184, 74, 0.15));
+    }
+
+    .product-info-side {
+      z-index: 2;
+    }
+
+    .product-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      color: var(--prod-green);
+      margin-bottom: 16px;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .product-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .product-desc {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 40px;
+    }
+
+    .product-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .prod-feat-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .prod-feat-icon {
+      width: 24px;
+      height: 24px;
+      background: rgba(13, 184, 74, 0.1);
+      border: 1px solid rgba(13, 184, 74, 0.3);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--prod-green);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .prod-feat-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .prod-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--prod-green);
+      color: #fff;
+      padding: 18px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: all 0.4s var(--ease-out-expo);
+      box-shadow: 0 10px 30px rgba(13, 184, 74, 0.3);
+    }
+
+    .prod-cta-btn:hover {
+      transform: translateY(-5px);
+      background: #0ea643;
+      box-shadow: 0 20px 40px rgba(13, 184, 74, 0.5);
+    }
+
+    /* - Technical Advantages Grid - */
+    .advantages-section {
+      padding: var(--section-pad);
+      background: #050505;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .adv-comparison-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .adv-header-row {
+      display: grid;
+      grid-template-columns: 1fr 180px 1fr;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 30px;
+      padding: 0 40px;
+    }
+
+    .adv-header-col {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .adv-header-col.left {
+      text-align: right;
+      color: #fff;
+    }
+
+    .adv-header-col.right {
+      text-align: left;
+      color: #fff;
+    }
+
+    .adv-header-col.center {
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.2em;
+    }
+
+    .adv-row {
+      display: grid;
+      grid-template-columns: 1fr 180px 1fr;
+      gap: 30px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 24px 40px;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .adv-row::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(13, 184, 74, 0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .adv-row.active::before {
+      opacity: 1;
+    }
+
+    .adv-row.active {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(13, 184, 74, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(13, 184, 74, 0.1);
+    }
+
+    .adv-value {
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s ease;
+    }
+
+    .adv-row.active .adv-value {
+      color: rgba(255, 255, 255, 1);
+    }
+
+    .adv-value.left {
+      text-align: right;
+    }
+
+    .adv-value.right {
+      text-align: left;
+    }
+
+    .adv-feature-pill {
+      background: rgba(13, 184, 74, 0.1);
+      border: 1px solid rgba(13, 184, 74, 0.3);
+      color: var(--prod-green);
+      border-radius: 100px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 20px rgba(13, 184, 74, 0.0);
+      transition: all 0.4s ease;
+      width: 180px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
+
+    .adv-row.active .adv-feature-pill {
+      background: var(--prod-green);
+      color: #fff;
+      box-shadow: 0 0 25px rgba(13, 184, 74, 0.4);
+      transform: scale(1.05);
+    }
+
+    /* - Video Section - */
+    .video-section {
+      padding: var(--section-pad);
+      text-align: center;
+    }
+
+    .video-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 40px;
+      overflow: hidden;
+      border: 1px solid rgba(13, 184, 74, 0.2);
+      box-shadow: 0 50px 150px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+    }
+
+    /* - Datasheet Section - */
+    .datasheet-section {
+      padding: 100px 48px;
+      background: #000;
+      text-align: center;
+    }
+
+    .datasheet-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(13, 184, 74, 0.3);
+      padding: 60px;
+      border-radius: 40px;
+      backdrop-filter: blur(20px);
+    }
+
+    .datasheet-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .datasheet-desc {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 40px;
+    }
+
+    /* - Mobile Responsive - */
+    @media (max-width: 1024px) {
+      .product-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .product-section--reverse .product-container {
+        grid-template-columns: 1fr;
+      }
+
+      .product-info-side {
+        order: 2;
+      }
+
+      .product-image-side {
+        order: 1;
+      }
+
+      .adv-header-row {
+        display: none;
+      }
+
+      .adv-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+        padding: 40px 30px;
+      }
+
+      .adv-value.left,
+      .adv-value.right {
+        text-align: center;
+      }
+
+      .adv-feature-pill {
+        order: -1;
+        display: inline-block;
+        margin: 0 auto;
+      }
+
+      .adv-value.left::before {
+        content: 'OCTOARC';
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: var(--prod-green);
+        letter-spacing: 0.1em;
+        margin-bottom: 6px;
+      }
+
+      .adv-value.right::before {
+        content: 'OCTOMAG';
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: 0.1em;
+        margin-bottom: 6px;
+      }
+
+      .adv-value.right {
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .product-features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .adv-feature-pill {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
+        padding: 0 20px;
+        line-height: 1;
+      }
+
+      .video-section {
+        padding: 40px 0;
+      }
+
+      .video-section .section-header {
+        margin-bottom: 32px;
+        padding: 0 24px;
+      }
+
+      .video-wrapper {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 40px;
+        aspect-ratio: 16 / 9;
+      }
+
+      .video-wrapper video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Datasheet CTA Mobile Optimization */
+      .datasheet-section {
+        padding: 50px 15px;
+        position: relative;
+        z-index: 100 !important;
+        background: #000;
+      }
+
+      .datasheet-card {
+        width: 92% !important;
+        max-width: 92% !important;
+        margin: 0 auto !important;
+        padding: 45px 20px !important;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(13, 184, 74, 0.5) !important;
+        position: relative;
+        z-index: 110 !important;
+        overflow: visible !important;
+        backdrop-filter: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      .datasheet-card .section-label {
+        color: #fff !important;
+        opacity: 0.8 !important;
+        display: block !important;
+        margin-bottom: 12px !important;
+        font-size: 0.7rem !important;
+        visibility: visible !important;
+      }
+
+      .datasheet-title {
+        color: #fff !important;
+        opacity: 1 !important;
+        font-size: 1.6rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 20px !important;
+        display: block !important;
+        visibility: visible !important;
+      }
+
+      .datasheet-title .accent {
+        color: #0db84a !important;
+        display: inline !important;
+      }
+
+      .datasheet-desc {
+        color: #fff !important;
+        opacity: 0.7 !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 0 !important;
+        line-height: 1.5 !important;
+        display: block !important;
+        visibility: visible !important;
+      }
+
+      .datasheet-card .prod-cta-btn {
+        display: inline-flex !important;
+        width: auto !important;
+        padding: 12px 30px !important;
+        font-size: 0.85rem !important;
+        margin: 40px auto 0 !important;
+        visibility: visible !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+      }
+
+      .product-image-card {
+        padding: 6px;
+        border-radius: 20px;
+      }
+
+      .product-image-card img {
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="parallax-grid" id="parallax-grid"></div>
+  <div class="vignette"></div>
+
+  <!-- ═══════ NAVIGATION (LOGO ONLY) ═══════ -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo-link" style="display: inline-block; pointer-events: auto; text-decoration: none;">
+      <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. navigation logo" class="nav-logo">
+    </a>
+    <button class="mob-hamburger" id="mob-hamburger"
+      aria-label="Open navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- ═══════ FLOATING NAVIGATION ═══════ -->
+  <div class="floating-nav" id="floating-nav" style="opacity:1;pointer-events:auto;">
+    <ul class="nav-links-pill">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="applications.html">Applications</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="contact-pill">Contact</a>
+  </div>
+
+  <!-- ═══════ MOBILE DRAWER NAV (ADD-ON — mobile ≤768px only) ═══════ -->
+  <div class="mob-overlay" id="mob-overlay"></div>
+  <div class="mob-drawer" id="mob-drawer">
+    <div class="mob-drawer-header">
+      <a href="index.html" class="mob-drawer-logo-link" style="display: inline-block; text-decoration: none;">
+        <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. mobile navigation logo" class="mob-drawer-logo">
+      </a>
+      <div class="mob-drawer-close" id="mob-drawer-close">
+        <svg viewBox="0 0 24 24" fill="none">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </div>
+    </div>
+    <ul class="mob-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="applications.html">Applications</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <div class="mob-nav-contact"><a href="contact.html">Contact</a></div>
+  </div>
+  <script>
+    (function () {
+      var btn = document.getElementById('mob-hamburger');
+      var drawer = document.getElementById('mob-drawer');
+      var overlay = document.getElementById('mob-overlay');
+      var close = document.getElementById('mob-drawer-close');
+      function openMenu() { btn.classList.add('mob-open'); drawer.classList.add('mob-open'); overlay.classList.add('mob-open'); drawer.style.pointerEvents = 'auto'; }
+      function closeMenu() { btn.classList.remove('mob-open'); drawer.classList.remove('mob-open'); overlay.classList.remove('mob-open'); drawer.style.pointerEvents = 'none'; }
+      btn.addEventListener('click', openMenu);
+      close.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+
+  <!-- ═══════ HERO SECTION ═══════ -->
+  <section class="prod-hero">
+    <div class="prod-hero-light"></div>
+    <div class="prod-hero-grain"></div>
+    <div class="prod-hero-content">
+      <div class="prod-eyebrow">Staton s.r.o. Machines</div>
+      <h1 class="prod-hero-title">Precision <span class="accent">PVD Platforms</span></h1>
+      <p class="prod-hero-subtitle">Engineering the future of surface performance with high-deposition arc and advanced
+        magnetron sputtering systems.</p>
+    </div>
+  </section>
+
+  <!-- ═══════ OCTOARC SERIES ═══════ -->
+  <section class="product-section" id="octoarc">
+    <div class="product-container">
+      <div class="product-info-side">
+        <span class="product-label">Arc Evaporation</span>
+        <h2 class="product-title">OCTOARC <span class="accent">Series</span></h2>
+        <p class="product-desc">
+          The OCTOARC series represents the pinnacle of high-deposition arc evaporation technology. Designed for
+          heavy-duty industrial applications, these machines deliver unmatched coating adhesion and productivity for
+          complex geometries.
+        </p>
+        <div class="product-features-grid">
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">High-deposition rate evaporation</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">fsARC™ droplet filtration</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">Precision for Cutting Tools & Inserts</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">Ideal for Coin Dies & Forming Tools</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">Advanced Injection Mold protection</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">Multi-cathode versatility</span>
+          </div>
+        </div>
+        <a href="#datasheet" class="prod-cta-btn">View Specifications →</a>
+      </div>
+      <div class="product-image-side">
+        <div class="product-image-card">
+          <img src="assets/products/octoarc.png" alt="OCTOARC multi-cathode PVD coating machine">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ OCTOMAG SERIES ═══════ -->
+  <section class="product-section product-section--reverse" id="octomag" style="background: #030303;">
+    <div class="product-container">
+      <div class="product-image-side">
+        <div class="product-image-card">
+          <img src="assets/products/octomag.png" alt="OCTOMAG magnetron sputtering coating system">
+        </div>
+      </div>
+      <div class="product-info-side">
+        <span class="product-label">Magnetron Sputtering</span>
+        <h2 class="product-title">OCTOMAG <span class="accent">Series</span></h2>
+        <p class="product-desc">
+          Engineered for ultra-smooth surface finishes, the OCTOMAG series utilizes advanced magnetron sputtering with
+          HiPIMS and DC modes. It is the definitive choice for precision engineering and decorative excellence.
+        </p>
+        <div class="product-features-grid">
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">HiPIMS & DC Sputtering modes</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">Ultra-smooth surface morphology</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">Low-temperature processing</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">Wear-resistant & Decorative</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">Micro-tools & Biocompatible coatings</span>
+          </div>
+          <div class="prod-feat-item">
+            <div class="prod-feat-icon">✓</div>
+            <span class="prod-feat-text">Exceptional density & adhesion</span>
+          </div>
+        </div>
+        <a href="#datasheet" class="prod-cta-btn">Explore Magnetron →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TECHNICAL ADVANTAGES ═══════ -->
+  <section class="advantages-section" id="advantages">
+    <div class="section-header">
+      <span class="section-label">Comparative Analysis</span>
+      <h2 class="section-title">Technical <span class="accent">Advantages</span></h2>
+    </div>
+    <div class="adv-comparison-container">
+      <div class="adv-header-row">
+        <div class="adv-header-col left">OCTOARC</div>
+        <div class="adv-header-col center">VS</div>
+        <div class="adv-header-col right">OCTOMAG</div>
+      </div>
+
+      <div class="adv-row-wrapper">
+        <div class="adv-row">
+          <div class="adv-value left">High Adhesion, Controlled Smoothness</div>
+          <div class="adv-feature-pill">Coating Surface</div>
+          <div class="adv-value right">Atomic Smoothness, Ultra-Dense</div>
+        </div>
+      </div>
+
+      <div class="adv-row-wrapper">
+        <div class="adv-row">
+          <div class="adv-value left">Extremely High (Fast Cycle Times)</div>
+          <div class="adv-feature-pill">Deposition Rate</div>
+          <div class="adv-value right">Controlled & Precise</div>
+        </div>
+      </div>
+
+      <div class="adv-row-wrapper">
+        <div class="adv-row">
+          <div class="adv-value left">Standard Industrial (up to 500°C)</div>
+          <div class="adv-feature-pill">Process Temp</div>
+          <div class="adv-value right">Low-Temp Capability (suitable for Plastics)</div>
+        </div>
+      </div>
+
+      <div class="adv-row-wrapper">
+        <div class="adv-row">
+          <div class="adv-value left">Wear Resistance & Productivity</div>
+          <div class="adv-feature-pill">Primary Strength</div>
+          <div class="adv-value right">Friction Reduction & Aesthetics</div>
+        </div>
+      </div>
+
+      <div class="adv-row-wrapper">
+        <div class="adv-row">
+          <div class="adv-value left">Cutting Tools, Molds, Heavy Duty</div>
+          <div class="adv-feature-pill">Best For</div>
+          <div class="adv-value right">Micro-Tools, Medical, Electronics</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ VIDEO SECTION ═══════ -->
+  <section class="video-section">
+    <div class="section-header">
+      <span class="section-label">Live Action</span>
+      <h2 class="section-title">Precision in <span class="accent">Motion</span></h2>
+    </div>
+    <div class="video-wrapper">
+      <video controls muted loop autoplay playsinline>
+        <source src="https://res.cloudinary.com/dkljbyhka/video/upload/v1777363844/Video_Project_5_m6jnde.mp4"
+          type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- ═══════ DATASHEET CTA ═══════ -->
+  <section class="datasheet-section" id="datasheet">
+    <div class="datasheet-card">
+      <span class="section-label">Technical Data</span>
+      <h2 class="datasheet-title">Ready for Deep <span class="accent">Technical Specs?</span></h2>
+      <p class="datasheet-desc">Download our comprehensive product datasheet for detailed chamber dimensions, cathode
+        configurations, and power specifications.</p>
+      <a href="#" class="prod-cta-btn">Download Full Datasheet <span>→</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer-staton">
+    <div class="footer-staton-container">
+      <div class="footer-staton-top">
+        <div class="footer-staton-left">
+          <div class="footer-logos-wrap" style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+            <a href="index.html" class="footer-staton-logo-link" style="display: block; text-decoration: none;">
+              <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. footer logo"
+                class="footer-staton-logo" style="margin-bottom: 0;">
+            </a>
+            <div class="footer-hipim-wrap">
+              <div class="hipim-logo-footer"><img src="assets/hipim%20logo/h%20surroundings.png" alt="" class="hipim-ring" aria-hidden="true"><img src="assets/hipim%20logo/H%20logo.png" alt="HI-PIM Logo" class="hipim-h"></div>
+              <div class="footer-hipim-name">HI-PIM Instruments PVT. Ltd</div>
+            </div>
+          </div>
+          <div class="footer-staton-socials">
+            <a href="#" class="footer-staton-social-link" aria-label="Facebook">
+              <svg viewBox="0 0 320 512">
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="footer-staton-social-link" aria-label="Instagram">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/111718722/" target="_blank" rel="noopener noreferrer" class="footer-staton-social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                </path>
+              </svg>
+            </a>
+          </div>
+          <h3 class="footer-staton-cta-title">Ready to redefine your industrial coating standards?</h3>
+        </div>
+        <div class="footer-staton-right">
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Solutions</div>
+            <ul class="footer-staton-list">
+              <li><a href="#">PVD Coating Machines</a></li>
+              <li><a href="#">Thin Film Technology</a></li>
+              <li><a href="#">Custom Engineering</a></li>
+              <li><a href="#">R&amp;D Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Company</div>
+            <ul class="footer-staton-list">
+              <li><a href="#octoarc">Octoarc</a></li>
+              <li><a href="#octomag">Octomag</a></li>
+              <li><a href="#advantages">Advantages</a></li>
+              <li><a href="#datasheet">Datasheet</a></li>
+            </ul>
+          </div>
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Certifications</div>
+            <div class="footer-staton-certifications">
+              <img src="assets/certifications/imgi_45_ISO-9001-2008-LOGO.png" alt="ISO 9001 quality management certification logo" class="footer-cert-img">
+              <img src="assets/certifications/imgi_47_86877626-dUE9T.png" alt="Industrial quality certification logo" class="footer-cert-img">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-staton-bottom">
+        <div class="footer-copyright">© 2026 STATON s.r.o. All rights reserved.</div>
+        <div class="footer-staton-bottom-links">
+          <a href="privacy-policy.html" style="color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;margin-right:18px;">Privacy Policy</a>
+          <a href="terms.html" style="color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;margin-right:18px;">Terms &amp; Conditions</a>
+          <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;">Website Designed by <a
+              href="https://www.prception.in/" target="_blank" rel="noopener noreferrer"
+              style="color: rgb(0, 90, 90); font-weight: 700; text-decoration: none; padding-left: 4px;">PRception</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ WHATSAPP FAB ═══════ -->
+  <a class="whatsapp-fab" href="https://wa.me/919960184242" target="_blank" rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- ═══════ SCROLL TO TOP FAB ═══════ -->
+  <a class="scroll-to-top-fab" id="scroll-to-top" aria-label="Scroll to top" href="#top">
+    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    // Reveal animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Section Load Animation
+    const heroTl = gsap.timeline();
+    heroTl.from('.prod-eyebrow', { opacity: 0, y: 20, duration: 0.8, ease: "power3.out", delay: 0.2 })
+      .from('.prod-hero-title', { opacity: 0, y: 30, duration: 1, ease: "power4.out" }, "-=0.4")
+      .from('.prod-hero-subtitle', { opacity: 0, y: 20, duration: 1, ease: "power3.out" }, "-=0.6");
+
+    gsap.utils.toArray('.product-section').forEach(section => {
+      gsap.from(section.querySelector('.product-info-side'), {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "restart reverse restart reverse"
+        },
+        x: section.classList.contains('product-section--reverse') ? 50 : -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      gsap.from(section.querySelector('.product-image-card'), {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "restart reverse restart reverse"
+        },
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      gsap.from(section.querySelector('.product-image-card img'), {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "restart reverse restart reverse"
+        },
+        yPercent: -150,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.2,
+        ease: "back.out(1.2)"
+      });
+    });
+
+    gsap.from('.adv-header-row', {
+      scrollTrigger: {
+        trigger: '.advantages-section',
+        start: "top 80%",
+      },
+      y: -30,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3.out"
+    });
+
+    gsap.utils.toArray('.adv-row-wrapper').forEach((wrapper, i) => {
+      // Active state when centered in viewport
+      ScrollTrigger.create({
+        trigger: wrapper,
+        start: "top 50%",
+        end: "bottom 50%",
+        toggleClass: { targets: wrapper.querySelector('.adv-row'), className: "active" }
+      });
+    });
+
+    const videoTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.video-section',
+        start: "top 95%",
+        end: "bottom 5%",
+        scrub: 0.8
+      }
+    });
+
+    videoTl.fromTo('.video-wrapper',
+      { scale: 0.5, opacity: 0.1, borderRadius: "80px" },
+      { scale: 1, opacity: 1, borderRadius: "40px", ease: "sine.out", force3D: true, duration: 1 }
+    )
+      .to('.video-wrapper', { duration: 0.5 }) // pause at full size in the center
+      .to('.video-wrapper',
+        { scale: 0.5, opacity: 0.1, borderRadius: "80px", ease: "sine.in", force3D: true, duration: 1 }
+      );
+
+    // Ensure video plays on mobile
+    const videoEl = document.querySelector('.video-wrapper video');
+    if (videoEl) {
+      videoEl.play().catch(() => { });
+    }
+  </script>
+
+  <!-- Liquid Gooey Filter -->
+  <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
+    version="1.1">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+</body>
+
+</html>

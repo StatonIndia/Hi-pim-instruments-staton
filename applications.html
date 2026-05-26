@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industrial PVD Applications | Automotive, Medical & Aerospace</title>
+  <link rel="canonical" href="https://statoncoating.com/applications.html">
+  <meta name="description"
+    content="High-performance PVD coatings for the world's most demanding sectors. Transforming durability in cutting tools, automotive components, and medical devices.">
+  <link rel="stylesheet" href="style.css?v=1.3">
+  <link rel="icon" type="image/png" href="assets/products/Staton%20Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ═══════ APPLICATIONS PAGE - PREMIUM DESIGN ═══════ */
+
+    :root {
+      --app-green: #0db84a;
+      --app-glow: rgba(13, 184, 74, 0.15);
+      --section-pad: 120px 48px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .accent {
+      color: var(--app-green);
+    }
+
+    /* - Hero Section - */
+    .app-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      z-index: 10;
+      background: radial-gradient(circle at center, #051a0b 0%, #000 70%);
+    }
+
+    .app-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      padding: 0 24px;
+    }
+
+    .app-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--app-green);
+      margin-bottom: 24px;
+    }
+
+    .app-hero-title {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+
+    .app-hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: rgba(255, 255, 255, 0.5);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* - Application Sections - */
+    .app-section {
+      padding: var(--section-pad);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-section:nth-child(even) {
+      background: #030303;
+    }
+
+    .app-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .app-section--reverse .app-container {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .app-info-side {
+      z-index: 2;
+    }
+
+    .app-tagline {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      color: var(--app-green);
+      margin-bottom: 16px;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .app-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .app-chemistry-callout {
+      display: inline-block;
+      background: rgba(13, 184, 74, 0.1);
+      border: 1px solid rgba(13, 184, 74, 0.3);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+
+    .app-chemistry-callout span {
+      color: var(--app-green);
+      margin-left: 8px;
+    }
+
+    .app-desc {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 40px;
+    }
+
+    .app-stat-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 4px solid var(--app-green);
+      padding: 24px 32px;
+      border-radius: 0 16px 16px 0;
+      max-width: 400px;
+    }
+
+    .app-stat-value {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .app-stat-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--app-green);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .app-image-side {
+      position: relative;
+    }
+
+    .app-image-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 40px;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    .app-image-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(13, 184, 74, 0.3);
+    }
+
+    .app-image-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      display: block;
+      filter: brightness(0.8);
+      transition: filter 0.4s;
+    }
+
+    .app-image-card:hover img {
+      filter: brightness(1);
+    }
+
+    /* - CTA Section - */
+    .app-cta {
+      padding: 80px 48px;
+      background: #000;
+      text-align: center;
+    }
+
+    .cta-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(13, 184, 74, 0.3);
+      padding: 60px 40px;
+      border-radius: 40px;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(13, 184, 74, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .cta-title {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+      letter-spacing: -0.04em;
+    }
+
+    .cta-desc {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 650px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--app-green);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(13, 184, 74, 0.3);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-5px);
+      background: #0ea643;
+      box-shadow: 0 20px 40px rgba(13, 184, 74, 0.5);
+    }
+
+    /* - Mobile Responsive - */
+    @media (max-width: 1024px) {
+      .app-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .app-section--reverse .app-container {
+        grid-template-columns: 1fr;
+      }
+
+      .app-info-side {
+        order: 2;
+      }
+
+      .app-image-side {
+        order: 1;
+      }
+
+    }
+
+    /* Mobile Breakpoint (Strictly ≤767px) */
+    @media (max-width: 767px) {
+      .app-hero {
+        min-height: 100vh;
+        height: auto;
+        padding: 100px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .app-hero-content {
+        padding: 0;
+      }
+
+      .app-hero-title {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+        margin-bottom: 24px;
+      }
+
+      .app-hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      /* CTA Mobile Fixes */
+      .app-cta {
+        padding: 60px 15px;
+        position: relative;
+        z-index: 100 !important;
+      }
+
+      .cta-card {
+        width: 92% !important;
+        margin: 0 auto !important;
+        padding: 45px 20px !important;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(13, 184, 74, 0.5) !important;
+        backdrop-filter: none !important;
+        position: relative;
+        z-index: 110 !important;
+        overflow: visible !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      .cta-title {
+        color: #fff !important;
+        opacity: 1 !important;
+        font-size: 1.8rem !important;
+        margin-bottom: 20px !important;
+        display: block !important;
+        visibility: visible !important;
+      }
+
+      .cta-title .accent {
+        color: #0db84a !important;
+        -webkit-text-fill-color: #0db84a !important;
+        background: none !important;
+        display: inline !important;
+      }
+
+      .cta-desc {
+        color: #fff !important;
+        opacity: 0.7 !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 0 !important;
+        display: block !important;
+        visibility: visible !important;
+        line-height: 1.6 !important;
+      }
+
+      .cta-btn {
+        display: inline-flex !important;
+        width: auto !important;
+        padding: 8px 20px !important;
+        font-size: 0.75rem !important;
+        margin: 50px auto 0 !important;
+        visibility: visible !important;
+        position: relative !important;
+        z-index: 5 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .app-title {
+        font-size: 2.5rem;
+      }
+
+      .app-stat-box {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="parallax-grid" id="parallax-grid"></div>
+  <div class="vignette"></div>
+
+  <!-- ═══════ NAVIGATION (LOGO ONLY) ═══════ -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo-link" style="display: inline-block; pointer-events: auto; text-decoration: none;">
+      <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. navigation logo" class="nav-logo">
+    </a>
+    <button class="mob-hamburger" id="mob-hamburger"
+      aria-label="Open navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- ═══════ FLOATING NAVIGATION ═══════ -->
+  <div class="floating-nav" id="floating-nav" style="opacity:1;pointer-events:auto;">
+    <ul class="nav-links-pill">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="applications.html" class="active">Applications</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="contact-pill">Contact</a>
+  </div>
+
+  <!-- ═══════ MOBILE DRAWER NAV (ADD-ON — mobile ≤768px only) ═══════ -->
+  <div class="mob-overlay" id="mob-overlay"></div>
+  <div class="mob-drawer" id="mob-drawer">
+    <div class="mob-drawer-header">
+      <a href="index.html" class="mob-drawer-logo-link" style="display: inline-block; text-decoration: none;">
+        <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. mobile navigation logo" class="mob-drawer-logo">
+      </a>
+      <div class="mob-drawer-close" id="mob-drawer-close">
+        <svg viewBox="0 0 24 24" fill="none">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </div>
+    </div>
+    <ul class="mob-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="applications.html" class="active">Applications</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <div class="mob-nav-contact"><a href="contact.html">Contact</a></div>
+  </div>
+  <script>
+    (function () {
+      var btn = document.getElementById('mob-hamburger');
+      var drawer = document.getElementById('mob-drawer');
+      var overlay = document.getElementById('mob-overlay');
+      var close = document.getElementById('mob-drawer-close');
+      function openMenu() { btn.classList.add('mob-open'); drawer.classList.add('mob-open'); overlay.classList.add('mob-open'); drawer.style.pointerEvents = 'auto'; }
+      function closeMenu() { btn.classList.remove('mob-open'); drawer.classList.remove('mob-open'); overlay.classList.remove('mob-open'); drawer.style.pointerEvents = 'none'; }
+      btn.addEventListener('click', openMenu);
+      close.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+
+  <!-- ═══════ HERO SECTION ═══════ -->
+  <section class="app-hero">
+    <div class="app-hero-content">
+      <div class="app-eyebrow">Industrial Excellence</div>
+      <h1 class="app-hero-title">Beyond <span class="accent">Surface Level</span></h1>
+      <p class="app-hero-subtitle">Deploying advanced PVD coating technology across the world's most demanding sectors,
+        from aerospace precision to medical biocompatibility.</p>
+    </div>
+  </section>
+
+  <!-- ═══════ 1. HIGH-SPEED CUTTING TOOLS ═══════ -->
+  <section class="app-section" id="tools">
+    <div class="app-container">
+      <div class="app-info-side">
+        <span class="app-tagline">Precision at High Velocities</span>
+        <h2 class="app-title">High-Speed <span class="accent">Cutting Tools</span></h2>
+        <div class="app-chemistry-callout">Coating Chemistry: <span>TiAlN & AlCrN</span></div>
+        <p class="app-desc">
+          Staton's high-performance coatings for drills, end mills, and hobs are engineered to withstand extreme thermal
+          loads. Our fsARC™ technology ensures a droplet-free, ultra-smooth surface that minimizes friction and chip
+          adhesion in high-speed machining environments.
+        </p>
+        <div class="app-stat-box">
+          <div class="app-stat-value">5×</div>
+          <div class="app-stat-label">Extended Tool Life</div>
+        </div>
+      </div>
+      <div class="app-image-side">
+        <div class="app-image-card">
+          <img src="assets/images/industry_tools.png" alt="High-speed industrial cutting tools with wear-resistant PVD coating">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ 2. AUTOMOTIVE COMPONENTS ═══════ -->
+  <section class="app-section app-section--reverse" id="automotive">
+    <div class="app-container">
+      <div class="app-image-side">
+        <div class="app-image-card">
+          <img src="assets/images/industry_automotive.png" alt="Precision automotive engine components with friction-reducing coating">
+        </div>
+      </div>
+      <div class="app-info-side">
+        <span class="app-tagline">Durability for the Road Ahead</span>
+        <h2 class="app-title">Automotive <span class="accent">Components</span></h2>
+        <div class="app-chemistry-callout">Coating Chemistry: <span>CrN & AlCrN</span></div>
+        <p class="app-desc">
+          From engine components and gearboxes to large forming dies, our coatings provide the hardness and wear
+          resistance necessary for the automotive industry's rigorous standards. Reduce friction, improve fuel
+          efficiency, and ensure the longevity of high-stress parts.
+        </p>
+        <div class="app-stat-box">
+          <div class="app-stat-value">3×</div>
+          <div class="app-stat-label">Wear Resistance vs Chrome</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ 3. MEDICAL & DENTAL ═══════ -->
+  <section class="app-section" id="medical">
+    <div class="app-container">
+      <div class="app-info-side">
+        <span class="app-tagline">Sterile Excellence, Proven Longevity</span>
+        <h2 class="app-title">Medical & <span class="accent">Dental</span></h2>
+        <div class="app-chemistry-callout">Coating Chemistry: <span>TiN & ZrN (Biocompatible)</span></div>
+        <p class="app-desc">
+          Staton provides specialized, biocompatible PVD coatings for orthopedic implants and surgical tools. Our
+          process ensures zero macro-particles, delivering a mirror-finish that meets the strictest ISO 13485 standards
+          while drastically increasing the life of reusable instruments.
+        </p>
+        <div class="app-stat-box">
+          <div class="app-stat-value">100,000</div>
+          <div class="app-stat-label">Cycles vs 12,000 Uncoated</div>
+        </div>
+      </div>
+      <div class="app-image-side">
+        <div class="app-image-card">
+          <img src="assets/images/industry_medical.png" alt="Biocompatible medical devices and surgical instruments with PVD coating">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ 4. AEROSPACE ═══════ -->
+  <section class="app-section app-section--reverse" id="aerospace">
+    <div class="app-container">
+      <div class="app-image-side">
+        <div class="app-image-card">
+          <img src="assets/images/industry_aerospace.png" alt="High-performance aerospace components for extreme thermal environments">
+        </div>
+      </div>
+      <div class="app-info-side">
+        <span class="app-tagline">Defying Extreme Environments</span>
+        <h2 class="app-title">Aerospace <span class="accent">Systems</span></h2>
+        <div class="app-chemistry-callout">Coating Chemistry: <span>CrAlYN & Heat-Resistant</span></div>
+        <p class="app-desc">
+          Engineering coatings for turbine blades and fasteners that endure extreme corrosive environments and thermal
+          cycling. Our aerospace-grade thin films offer superior oxidation resistance at temperatures exceeding 1000°C,
+          ensuring safety and performance in the skies.
+        </p>
+        <div class="app-stat-box">
+          <div class="app-stat-value">1000°C+</div>
+          <div class="app-stat-label">Thermal Stability Threshold</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ 5. PLASTIC INJECTION MOLDS ═══════ -->
+  <section class="app-section" id="molds">
+    <div class="app-container">
+      <div class="app-info-side">
+        <span class="app-tagline">Flawless Surfaces, Infinite Cycles</span>
+        <h2 class="app-title">Plastic Injection <span class="accent">Molds</span></h2>
+        <div class="app-chemistry-callout">Coating Chemistry: <span>CrN Anti-Corrosion</span></div>
+        <p class="app-desc">
+          Protect your investment in large injection molds with CrN coatings that offer exceptional anti-corrosion
+          properties and release characteristics. Maintain mirror-finish integrity and reduce maintenance downtime even
+          when processing aggressive plastics.
+        </p>
+        <div class="app-stat-box">
+          <div class="app-stat-value">ZERO</div>
+          <div class="app-stat-label">Corrosive Degradation</div>
+        </div>
+      </div>
+      <div class="app-image-side">
+        <div class="app-image-card">
+          <img src="assets/images/industry_molds.png" alt="Precision plastic injection molds with anti-stick PVD coating">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA SECTION ═══════ -->
+  <section class="app-cta">
+    <div class="cta-card">
+      <h2 class="cta-title">Optimize Your <span class="accent">Application.</span></h2>
+      <p class="cta-desc">Every industry has unique challenges. Our engineers work directly with you to develop the
+        perfect coating chemistry for your specific operational environment.</p>
+      <a href="contact.html" class="cta-btn">Talk to a Specialist →</a>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer-staton">
+    <div class="footer-staton-container">
+      <div class="footer-staton-top">
+        <div class="footer-staton-left">
+          <div class="footer-logos-wrap" style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+            <a href="index.html" class="footer-staton-logo-link" style="display: block; text-decoration: none;">
+              <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. footer logo"
+                class="footer-staton-logo" style="margin-bottom: 0;">
+            </a>
+            <div class="footer-hipim-wrap">
+              <div class="hipim-logo-footer"><img src="assets/hipim%20logo/h%20surroundings.png" alt="" class="hipim-ring" aria-hidden="true"><img src="assets/hipim%20logo/H%20logo.png" alt="HI-PIM Logo" class="hipim-h"></div>
+              <div class="footer-hipim-name">HI-PIM Instruments PVT. Ltd</div>
+            </div>
+          </div>
+          <div class="footer-staton-socials">
+            <a href="#" class="footer-staton-social-link" aria-label="Facebook">
+              <svg viewBox="0 0 320 512">
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="footer-staton-social-link" aria-label="Instagram">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/111718722/" target="_blank" rel="noopener noreferrer" class="footer-staton-social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                </path>
+              </svg>
+            </a>
+          </div>
+          <h3 class="footer-staton-cta-title">Ready to redefine your industrial coating standards?</h3>
+        </div>
+        <div class="footer-staton-right">
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Solutions</div>
+            <ul class="footer-staton-list">
+              <li><a href="#">PVD Coating Machines</a></li>
+              <li><a href="#">Thin Film Technology</a></li>
+              <li><a href="#">Custom Engineering</a></li>
+              <li><a href="#">R&amp;D Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Company</div>
+            <ul class="footer-staton-list">
+              <li><a href="#tools">Cutting Tools</a></li>
+              <li><a href="#automotive">Automotive</a></li>
+              <li><a href="#medical">Medical</a></li>
+              <li><a href="#aerospace">Aerospace</a></li>
+            </ul>
+          </div>
+          <div class="footer-staton-col">
+            <div class="footer-staton-col-title">Certifications</div>
+            <div class="footer-staton-certifications">
+              <img src="assets/certifications/imgi_45_ISO-9001-2008-LOGO.png" alt="ISO 9001 quality management certification logo" class="footer-cert-img">
+              <img src="assets/certifications/imgi_47_86877626-dUE9T.png" alt="Industrial quality certification logo" class="footer-cert-img">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-staton-bottom">
+        <div class="footer-copyright">© 2026 STATON s.r.o. All rights reserved.</div>
+        <div class="footer-staton-bottom-links">
+          <a href="privacy-policy.html" style="color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;margin-right:18px;">Privacy Policy</a>
+          <a href="terms.html" style="color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;margin-right:18px;">Terms &amp; Conditions</a>
+          <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;">Website Designed by <a
+              href="https://www.prception.in/" target="_blank" rel="noopener noreferrer"
+              style="color: rgb(0, 90, 90); font-weight: 700; text-decoration: none; padding-left: 4px;">PRception</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ WHATSAPP FAB ═══════ -->
+  <a class="whatsapp-fab" href="https://wa.me/919960184242" target="_blank" rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- ═══════ SCROLL TO TOP FAB ═══════ -->
+  <a class="scroll-to-top-fab" id="scroll-to-top" aria-label="Scroll to top" href="#top">
+    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reveal animations
+    gsap.utils.toArray('.app-section').forEach(section => {
+      gsap.from(section.querySelector('.app-info-side'), {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+        },
+        x: section.classList.contains('app-section--reverse') ? 50 : -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      gsap.from(section.querySelector('.app-image-card'), {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+        },
+        x: section.classList.contains('app-section--reverse') ? -50 : 50,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out"
+      });
+    });
+
+    gsap.from('.cta-card', {
+      scrollTrigger: {
+        trigger: '.app-cta',
+        start: "top 85%",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+  </script>
+
+  <!-- Liquid Gooey Filter -->
+  <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
+    version="1.1">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+</body>
+
+</html>
