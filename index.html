@@ -9,7 +9,7 @@
   <meta name="description"
     content="Staton s.r.o. is a global leader in PVD coating technology and machine manufacturing. Discover fsARC™ filtered cathodic arc systems for precision industrial engineering.">
   <meta name="keywords" content="PVD coating, fsARC, cathodic arc, cutting tools, coating machines, Staton">
-  <link rel="stylesheet" href="style.css?v=1.3">
+  <link rel="stylesheet" href="style.css?v=1.4">
   <link rel="icon" type="image/png" href="assets/products/Staton%20Logo.png">
   <script type="importmap">
   {
@@ -22,6 +22,21 @@
 
   <!-- Preload critical first hero frame -->
   <link rel="preload" as="image" href="assets/hero/ezgif-frame-001_converted.webp" fetchpriority="high">
+
+  <!-- CDN preconnect: resolves DNS + TLS before GSAP scripts are requested -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <!-- Preload GSAP bundle so it's ready before the page finishes parsing -->
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js">
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js">
+
+  <!-- Preload Tool Workflow gear images so they're decoded before the section scrolls into view -->
+  <link rel="preload" as="image" href="assets/toolprocess/one.png" fetchpriority="low">
+  <link rel="preload" as="image" href="assets/toolprocess/two.png" fetchpriority="low">
+  <link rel="preload" as="image" href="assets/toolprocess/third.png" fetchpriority="low">
+  <link rel="preload" as="image" href="assets/toolprocess/four.png" fetchpriority="low">
 </head>
 
 <body class="loading">
@@ -253,13 +268,13 @@
         <div class="gear-shadow"></div>
         <div class="gear-rotator" id="gear-rotator">
           <img src="assets/toolprocess/one.png" alt="Industrial tool stripping stage - removing old coating"
-            class="gear-img active" data-stage="1">
+            class="gear-img active" data-stage="1" decoding="async" fetchpriority="low">
           <img src="assets/toolprocess/two.png" alt="Precision tool sharpening and edge restoration stage"
-            class="gear-img" data-stage="2">
+            class="gear-img" data-stage="2" decoding="async" fetchpriority="low">
           <img src="assets/toolprocess/third.png" alt="Advanced ultrasonic tool cleaning stage" class="gear-img"
-            data-stage="3">
+            data-stage="3" decoding="async" fetchpriority="low">
           <img src="assets/toolprocess/four.png" alt="Final PVD coating stage - applying wear-resistant layer"
-            class="gear-img" data-stage="4">
+            class="gear-img" data-stage="4" decoding="async" fetchpriority="low">
         </div>
       </div>
 

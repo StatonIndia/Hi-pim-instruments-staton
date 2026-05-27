@@ -1207,6 +1207,16 @@ body:not(.loading) .floating-nav {
   z-index: 1;
 }
 
+/* Mobile: lighter blur — backdrop-filter: blur(12px) forces an expensive
+   GPU composite pass on every repaint; halving it gives the same frosted
+   look with significantly less paint cost on iOS Safari */
+@media (max-width: 900px) {
+  .stage-info {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+}
+
 .stage-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -1242,9 +1252,17 @@ body:not(.loading) .floating-nav {
 @media (max-width: 900px) {
   /* Mobile/tablet: stage containers are revealed by CSS class, not GSAP scrub.
      The base .lifecycle-stage already has opacity:0 + translateY(20px).
-     Adding the transition here lets active-stage animate them in smoothly. */
+     Adding the transition here lets active-stage animate them in smoothly.
+     will-change pre-allocates a compositor layer so the first paint of the
+     reveal is instant rather than triggering a new layer allocation mid-scroll. */
   .lifecycle-stage {
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    will-change: opacity, transform;
+  }
+
+  .lifecycle-stage .stage-title,
+  .lifecycle-stage .stage-desc {
+    will-change: opacity, transform;
   }
 
   /* Reveal the whole card (container + text) when the class is toggled in JS */
@@ -1283,11 +1301,11 @@ body:not(.loading) .floating-nav {
   }
 
   .lifecycle-stage:nth-child(3) {
-    top: 1000px;
+    top: 920px;
   }
 
   .lifecycle-stage:nth-child(4) {
-    top: 1400px;
+    top: 1320px;
     right: 5%;
   }
 
@@ -1322,11 +1340,11 @@ body:not(.loading) .floating-nav {
   }
 
   .lifecycle-stage:nth-child(3) {
-    top: 760px;
+    top: 690px;
   }
 
   .lifecycle-stage:nth-child(4) {
-    top: 1050px;
+    top: 970px;
   }
 
   .lifecycle-gear-wrapper {

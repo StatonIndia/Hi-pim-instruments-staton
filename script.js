@@ -1032,8 +1032,13 @@
     // ScrollTrigger tracks raw scroll progress only (no scrub)
     let _sp = 0, _lp = 0;
     // Lerp factor: what fraction of the remaining distance to cover each frame.
-    // 0.12 on desktop feels immediate yet fluid; 0.08 on mobile gives a gentle glide.
-    const _lf = isMobileOrTouch ? 0.08 : 0.12;
+    // Desktop: 1.0 = direct pass-through (no extra smoothing).
+    //   The desktop virtual scroll driver already lerps pageYOffset (factor 0.18),
+    //   so _sp is itself smoothed. Adding a second lerp here caused the gear to
+    //   keep running after the user stopped scrolling ("double-momentum" bug).
+    //   With 1.0, _lp = _sp every frame — the gear is exactly 1:1 with scroll.
+    // Mobile: 0.08 keeps the gentle glide feel that works well with touch events.
+    const _lf = isMobileOrTouch ? 0.08 : 1.0;
 
     ScrollTrigger.create({
       trigger: ".lifecycle-track",
@@ -1077,6 +1082,34 @@
   function updateLifecycle() {
     // Keep function signature for master loop, but nothing inside as GSAP is driving it
   }
+
+  // ─── Lifecycle: IntersectionObserver failsafe (mobile) ─────────────────────
+  // GSAP's ScrollTrigger is CDN-loaded and may initialise after the user has
+  // already scrolled into the lifecycle section.  This lightweight observer runs
+  // independently: it fires active-stage the instant each stage card enters the
+  // viewport so text never waits for GSAP.  GSAP's own onUpdate will still
+  // toggle the class via scroll progress — the observer just guarantees the
+  // *first* reveal is never delayed by a slow CDN response.
+  if (isMobileOrTouch && lifecycleSection && 'IntersectionObserver' in window) {
+    const ioStages = lifecycleSection.querySelectorAll('.lifecycle-stage');
+    if (ioStages.length) {
+      const stageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active-stage');
+            // Keep observing so GSAP can remove the class when scrolling back up;
+            // the observer re-adds it if the card re-enters the viewport.
+          }
+        });
+      }, {
+        rootMargin: '0px 0px -10% 0px', // trigger slightly before bottom of viewport
+        threshold: 0.15
+      });
+
+      ioStages.forEach(stage => stageObserver.observe(stage));
+    }
+  }
+  // ───────────────────────────────────────────────────────────────────────────
 
   // ═══════════════════════════════════════════════════════════
   // PERFORMANCE & ROI - PROGRESS BARS
