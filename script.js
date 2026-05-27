@@ -966,31 +966,28 @@
     const isMobilePath = window.innerWidth <= 600;
     const motionPathEl = isMobilePath ? document.getElementById('motion-path-mobile') : document.getElementById('motion-path');
 
-    // Set initial states for stages
-    gsap.set(stages, { opacity: 0, y: 50 });
+    // Mobile/tablet (≤900px): CSS class drives card + text reveal — no GSAP inline styles
+    // Desktop: GSAP scrub drives everything
+    const useCssTextReveal = isMobileOrTouch || window.innerWidth <= 900;
+
+    // Desktop: GSAP owns opacity so it can animate them in via the lerp timeline.
+    // Mobile: CSS already has opacity:0 on .lifecycle-stage; skip gsap.set so the
+    //         active-stage class can override without fighting inline styles.
+    if (!useCssTextReveal) {
+      gsap.set(stages, { opacity: 0, y: 50 });
+    }
 
     // Get path length for dash animation
     let pathLength = 0;
     try { pathLength = motionPathEl.getTotalLength(); } catch (e) { pathLength = 2500; }
 
-    // Prepare dash animation (path starts fully hidden)
-    gsap.set(motionPathEl, {
-      strokeDasharray: pathLength,
-      strokeDashoffset: pathLength
-    });
+    gsap.set(motionPathEl, { strokeDasharray: pathLength, strokeDashoffset: pathLength });
 
-    // PRE-POSITION the gear at the start of the motion path BEFORE it becomes visible.
     gsap.set(gearWrapper, {
-      motionPath: {
-        path: motionPathEl,
-        align: motionPathEl,
-        alignOrigin: [0.5, 0.5],
-        start: 0,
-        end: 0
-      }
+      motionPath: { path: motionPathEl, align: motionPathEl, alignOrigin: [0.5, 0.5], start: 0, end: 0 }
     });
 
-    // Reveal components as soon as the track enters the viewport
+    // Reveal gear + path as soon as the section enters view
     ScrollTrigger.create({
       trigger: ".lifecycle-track",
       start: "top 90%",
@@ -1003,64 +1000,77 @@
 
     const tlDuration = 10;
 
-    const lifecycleTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".lifecycle-track",
-        start: "top center",
-        end: "bottom center",
-        scrub: isMobileOrTouch ? 0.8 : 1.5,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          let stageIndex = 0;
-          if (progress > 0.33 && progress <= 0.66) stageIndex = 1;
-          else if (progress > 0.66 && progress <= 0.9) stageIndex = 2;
-          else if (progress > 0.9) stageIndex = 3;
+    // Build the timeline PAUSED — driven by the lerp ticker below instead of scrub.
+    // This eliminates the "stuck then releases" feeling: the gear responds the instant
+    // you scroll and decelerates naturally, on both mouse-wheel and touch.
+    const lifecycleTl = gsap.timeline({ paused: true });
 
-          gearImages.forEach((img, idx) => {
-            if (idx === stageIndex) {
-              img.classList.add('active');
-            } else {
-              img.classList.remove('active');
-            }
+    lifecycleTl.to(motionPathEl, { strokeDashoffset: 0, duration: tlDuration, ease: "none" }, 0);
+
+    lifecycleTl.to(gearWrapper, {
+      motionPath: { path: motionPathEl, align: motionPathEl, alignOrigin: [0.5, 0.5] },
+      duration: tlDuration, ease: "none", force3D: true
+    }, 0);
+
+    lifecycleTl.to(gearRotator, { rotation: 1200, duration: tlDuration, ease: "none", force3D: true }, 0);
+
+    // Stage card animations — desktop only (mobile uses CSS active-stage class)
+    const stageTimes = [0, 3.33, 6.66, 9.2];
+    const stageTextThresholds = [0.04, 0.30, 0.62, 0.85];
+    stages.forEach((stage, i) => {
+      const title = stage.querySelector('.stage-title');
+      const desc  = stage.querySelector('.stage-desc');
+      const stTl  = gsap.timeline();
+      if (!useCssTextReveal) {
+        stTl.to(stage, { opacity: 1, y: 0, duration: 1,   ease: "power2.out" })
+            .to(title, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.7")
+            .to(desc,  { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.6");
+      }
+      lifecycleTl.add(stTl, Math.max(0, stageTimes[i] - 0.4));
+    });
+
+    // ScrollTrigger tracks raw scroll progress only (no scrub)
+    let _sp = 0, _lp = 0;
+    // Lerp factor: what fraction of the remaining distance to cover each frame.
+    // 0.12 on desktop feels immediate yet fluid; 0.08 on mobile gives a gentle glide.
+    const _lf = isMobileOrTouch ? 0.08 : 0.12;
+
+    ScrollTrigger.create({
+      trigger: ".lifecycle-track",
+      start: "top center",
+      end: "bottom center",
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        _sp = self.progress;
+
+        // Gear image crossfade (real scroll position, not lerped)
+        const p = self.progress;
+        let si = 0;
+        if (p > 0.33 && p <= 0.66) si = 1;
+        else if (p > 0.66 && p <= 0.9) si = 2;
+        else if (p > 0.9) si = 3;
+        gearImages.forEach((img, idx) => {
+          if (idx === si) img.classList.add('active');
+          else img.classList.remove('active');
+        });
+
+        // Mobile/tablet: CSS-class card + text reveal (appears/disappears on scroll)
+        if (useCssTextReveal) {
+          stages.forEach((stage, idx) => {
+            if (p >= stageTextThresholds[idx]) stage.classList.add('active-stage');
+            else stage.classList.remove('active-stage');
           });
         }
       }
     });
 
-    // Draw the path ahead of the gear
-    lifecycleTl.to(motionPathEl, {
-      strokeDashoffset: 0,
-      duration: tlDuration,
-      ease: "none"
-    }, 0);
-
-    // Animate gear along path
-    lifecycleTl.to(gearWrapper, {
-      motionPath: {
-        path: motionPathEl,
-        align: motionPathEl,
-        alignOrigin: [0.5, 0.5]
-      },
-      duration: tlDuration,
-      ease: "none"
-    }, 0);
-
-    // Continuous smooth rotation
-    lifecycleTl.to(gearRotator, { rotation: 1200, duration: tlDuration, ease: "none" }, 0);
-
-    // Fade in text stages and their internal content
-    const stageTimes = [0, 3.33, 6.66, 9.2];
-    stages.forEach((stage, i) => {
-      const title = stage.querySelector('.stage-title');
-      const desc = stage.querySelector('.stage-desc');
-
-      const stTl = gsap.timeline();
-      stTl.to(stage, { opacity: 1, y: 0, duration: 1, ease: "power2.out" })
-        .to(title, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.7")
-        .to(desc, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.6");
-
-      lifecycleTl.add(stTl, Math.max(0, stageTimes[i] - 0.4));
+    // Lerp ticker: every rAF frame, nudge _lp toward _sp and update the timeline.
+    // Stops computing once settled (< 0.01% difference) to save CPU.
+    gsap.ticker.add(() => {
+      const diff = _sp - _lp;
+      if (Math.abs(diff) < 0.0001) return;
+      _lp += diff * _lf;
+      lifecycleTl.progress(_lp);
     });
   }
 
