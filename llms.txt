@@ -4,7 +4,7 @@ Staton s.r.o. is a global leader in PVD (Physical Vapor Deposition) coating tech
 
 ## Key Information
 
-- **Website**: https://statoncoating.com/
+- **Website**: https://www.statonindia.com/
 - **Core Technology**: fsARC™ Filtered Cathodic Arc, Magnetron Sputtering, PVD Coating.
 - **Primary Products**: OCTOARC (Multi-arc systems), OCTOMAG (Magnetron sputtering systems).
 - **Industries Served**: Automotive, Cutting Tools, Medical Devices, Aerospace.
@@ -12,13 +12,13 @@ Staton s.r.o. is a global leader in PVD (Physical Vapor Deposition) coating tech
 
 ## Main Sections
 
-- [About Staton](https://statoncoating.com/about.html): Company history, European engineering heritage, and mission.
-- [Technology](https://statoncoating.com/technology.html): Detailed overview of fsARC™ technology and its advantages over conventional coating.
-- [Products](https://statoncoating.com/products.html): Specifications for OCTOARC and OCTOMAG machine series.
-- [Applications](https://statoncoating.com/applications.html): Case studies and solutions for various industrial sectors.
-- [Services](https://statoncoating.com/services.html): Overview of coating services, machine maintenance, and local support.
-- [Testimonials](https://statoncoating.com/testimonials.html): Success stories from global industrial leaders.
-- [Contact](https://statoncoating.com/contact.html): Inquiry forms and contact details for global and regional offices.
+- [About Staton](https://www.statonindia.com/about.html): Company history, European engineering heritage, and mission.
+- [Technology](https://www.statonindia.com/technology.html): Detailed overview of fsARC™ technology and its advantages over conventional coating.
+- [Products](https://www.statonindia.com/products.html): Specifications for OCTOARC and OCTOMAG machine series.
+- [Applications](https://www.statonindia.com/applications.html): Case studies and solutions for various industrial sectors.
+- [Services](https://www.statonindia.com/services.html): Overview of coating services, machine maintenance, and local support.
+- [Testimonials](https://www.statonindia.com/testimonials.html): Success stories from global industrial leaders.
+- [Contact](https://www.statonindia.com/contact.html): Inquiry forms and contact details for global and regional offices.
 
 ## Technical Capabilities
 
