@@ -2132,6 +2132,400 @@
         margin-top: 20px !important;
       }
     }
+
+    /* ═══════════════════════════════════════════════════════════
+       WEAR ANALYSIS SECTION — Tech Page Exclusive Layout
+       ═══════════════════════════════════════════════════════════ */
+
+    .wa-section {
+      position: relative;
+      z-index: 1;
+      padding: 120px 48px 80px;
+      scroll-margin-top: 80px;
+      background: linear-gradient(180deg, rgba(13,184,74,0.03) 0%, transparent 300px);
+    }
+
+    /* — Header — */
+    .wa-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 52px;
+    }
+
+    .wa-eyebrow {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.45em;
+      color: var(--tech-green);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .wa-headline {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .wa-sub {
+      font-size: clamp(0.88rem, 1.4vw, 1rem);
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+    }
+
+    /* — Context Box — */
+    .wa-context {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      max-width: 1100px;
+      margin: 0 auto 64px;
+      padding: 24px 28px;
+      background: rgba(13,184,74,0.05);
+      border: 1px solid rgba(13,184,74,0.18);
+      border-left: 3px solid var(--tech-green);
+      border-radius: 14px;
+    }
+
+    .wa-context-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      color: var(--tech-green);
+      margin-top: 2px;
+    }
+
+    .wa-context-icon svg { width: 22px; height: 22px; }
+
+    .wa-context-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .wa-context-text {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    .wa-context-text strong {
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+    }
+
+    /* — Analysis Blocks — */
+    .wa-blocks {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    .wa-block {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .wa-block.wa-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* — Block Header — */
+    .wa-block-head {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.3);
+    }
+
+    .wa-block-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: rgba(13,184,74,0.25);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      min-width: 44px;
+    }
+
+    .wa-block-cond {
+      display: block;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: rgba(13,184,74,0.7);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .wa-block-title {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    .wa-reduction {
+      margin-left: auto;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: rgba(13,184,74,0.12);
+      color: #6ff09a;
+      border: 1px solid rgba(13,184,74,0.3);
+      white-space: nowrap;
+    }
+
+    /* — Images Row — */
+    .wa-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .wa-img-panel {
+      position: relative;
+    }
+
+    .wa-img-panel + .wa-img-panel {
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .wa-img-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: rgba(0,0,0,0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .wa-img--staton .wa-img-top {
+      background: rgba(13,184,74,0.05);
+      border-bottom-color: rgba(13,184,74,0.15);
+    }
+
+    .wa-img-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .wa-img--staton .wa-img-name {
+      color: #6ff09a;
+    }
+
+    .wa-img-badge {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 100px;
+      background: rgba(13,184,74,0.14);
+      color: #6ff09a;
+      border: 1px solid rgba(13,184,74,0.3);
+    }
+
+    .wa-img-badge--comp {
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.45);
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    .wa-img-frame {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #050505;
+    }
+
+    .wa-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.85) contrast(1.1) saturate(0.75);
+      transition: filter 0.5s ease;
+    }
+
+    .wa-img-panel:hover .wa-img-frame img {
+      filter: brightness(1) contrast(1.1) saturate(0.85);
+    }
+
+    /* — Data Comparison Panel — */
+    .wa-data {
+      padding: 24px 28px;
+      background: rgba(0,0,0,0.25);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .wa-data-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .wa-data-row {
+      display: grid;
+      grid-template-columns: 160px 1fr auto auto;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 0;
+    }
+
+    .wa-data-row + .wa-data-row {
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .wa-data-name {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #6ff09a;
+      white-space: nowrap;
+    }
+
+    .wa-data-name--comp {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .wa-bar-track {
+      height: 6px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .wa-bar {
+      height: 100%;
+      border-radius: 100px;
+      width: var(--w, 0%);
+      transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .wa-block:not(.wa-visible) .wa-bar {
+      width: 0% !important;
+    }
+
+    .wa-bar--staton {
+      background: linear-gradient(90deg, #0db84a, #6ff09a);
+    }
+
+    .wa-bar--comp {
+      background: rgba(255,255,255,0.18);
+    }
+
+    .wa-meas {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .wa-meas--staton { color: #6ff09a; }
+    .wa-meas--comp   { color: rgba(255,255,255,0.4); }
+
+    .wa-mu {
+      font-size: 0.65rem;
+      font-weight: 600;
+      opacity: 0.75;
+    }
+
+    .wa-lower-tag {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 100px;
+      background: rgba(13,184,74,0.12);
+      color: #6ff09a;
+      border: 1px solid rgba(13,184,74,0.28);
+      white-space: nowrap;
+    }
+
+    /* — Insight — */
+    .wa-insight {
+      padding: 18px 28px 22px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* — Methodology Note — */
+    .wa-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      max-width: 1100px;
+      margin: 48px auto 0;
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.65;
+      font-style: italic;
+    }
+
+    .wa-note svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      opacity: 0.45;
+    }
+
+    /* — Responsive — */
+    @media (max-width: 1024px) {
+      .wa-section { padding: 80px 32px 60px; }
+      .wa-data-row { grid-template-columns: 130px 1fr auto auto; gap: 12px; }
+    }
+
+    @media (max-width: 768px) {
+      .wa-section { padding: 64px 20px 48px; }
+
+      .wa-block-head { flex-wrap: wrap; gap: 12px; }
+      .wa-reduction  { margin-left: 0; }
+
+      .wa-images { grid-template-columns: 1fr; }
+      .wa-img-panel + .wa-img-panel { border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
+
+      .wa-data-row { grid-template-columns: 1fr auto; gap: 8px; }
+      .wa-data-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+      .wa-bar-track { flex: 1 1 100%; order: 3; }
+      .wa-lower-tag { order: 4; }
+
+      .wa-context { flex-direction: column; gap: 10px; padding: 18px; }
+    }
+
+    @media (max-width: 480px) {
+      .wa-block-num { font-size: 1.4rem; }
+      .wa-meas { font-size: 0.9rem; }
+    }
   </style>
 </head>
 
@@ -2941,6 +3335,212 @@
   </section>
 
 
+  <!-- ═══════ WEAR ANALYSIS ═══════ -->
+  <section class="wa-section" id="wear-analysis">
+
+    <!-- Section Header -->
+    <div class="wa-header">
+      <span class="wa-eyebrow">PERFORMANCE VALIDATION</span>
+      <h2 class="wa-headline">Microscopic Wear Analysis &amp; <span class="accent">Performance Validation</span></h2>
+      <p class="wa-sub">Controlled milling tests with microscopic edge analysis provide measurable, objective evidence of coating performance. Wear width values were obtained through calibrated microscopy under identical machining conditions across all samples.</p>
+    </div>
+
+    <!-- Context box -->
+    <div class="wa-context">
+      <div class="wa-context-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+      </div>
+      <div>
+        <h4 class="wa-context-title">Why Wear Width Matters</h4>
+        <p class="wa-context-text">Surface appearance alone does not determine coating performance. A smoother-looking edge does not always indicate superior durability. In cutting tool analysis, <strong>lower wear width values indicate better wear resistance, longer tool life, and improved edge stability</strong> under identical machining conditions.</p>
+      </div>
+    </div>
+
+    <!-- Analysis Blocks -->
+    <div class="wa-blocks">
+
+      <!-- Block 1: 50m -->
+      <div class="wa-block">
+        <div class="wa-block-head">
+          <div class="wa-block-num">01</div>
+          <div class="wa-block-meta">
+            <span class="wa-block-cond">TEST CONDITION</span>
+            <h3 class="wa-block-title">After 50m Milling Distance</h3>
+          </div>
+          <span class="wa-reduction">46% Less Wear</span>
+        </div>
+
+        <div class="wa-images">
+          <div class="wa-img-panel wa-img--staton">
+            <div class="wa-img-top">
+              <span class="wa-img-name">STATON TIXAL</span>
+              <span class="wa-img-badge">Staton Coating</span>
+            </div>
+            <div class="wa-img-frame">
+              <img src="assets/comparison%20images/STATON%20TIXAL_mag.5x_after%20milling%20of%2050m_3rd%20cutting%20edge.jpg"
+                alt="STATON TIXAL cutting edge after 50m milling" loading="lazy">
+            </div>
+          </div>
+          <div class="wa-img-panel wa-img--comp">
+            <div class="wa-img-top">
+              <span class="wa-img-name">Competitor A</span>
+              <span class="wa-img-badge wa-img-badge--comp">Competitor</span>
+            </div>
+            <div class="wa-img-frame">
+              <img src="assets/comparison%20images/IONBOND%20Aurora%20X%20Plus_mag.5x_after%20milling%20of%2050m_1st%20cutting%20edge.jpg"
+                alt="Competitor A cutting edge after 50m milling" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-data">
+          <div class="wa-data-label">WEAR WIDTH MEASUREMENT</div>
+          <div class="wa-data-row">
+            <span class="wa-data-name">STATON TIXAL</span>
+            <div class="wa-bar-track">
+              <div class="wa-bar wa-bar--staton" style="--w:54%"></div>
+            </div>
+            <span class="wa-meas wa-meas--staton">58.35 <span class="wa-mu">μm</span></span>
+            <span class="wa-lower-tag">Lower Wear ✓</span>
+          </div>
+          <div class="wa-data-row wa-data-row--comp">
+            <span class="wa-data-name wa-data-name--comp">Competitor A</span>
+            <div class="wa-bar-track">
+              <div class="wa-bar wa-bar--comp" style="--w:100%"></div>
+            </div>
+            <span class="wa-meas wa-meas--comp">107.42 <span class="wa-mu">μm</span></span>
+          </div>
+        </div>
+
+        <p class="wa-insight">STATON TIXAL maintains a cleaner cutting edge profile with measurably reduced wear progression. Lower wear width indicates improved coating adhesion and better edge retention under identical machining conditions.</p>
+      </div>
+
+      <!-- Block 2: 140m -->
+      <div class="wa-block">
+        <div class="wa-block-head">
+          <div class="wa-block-num">02</div>
+          <div class="wa-block-meta">
+            <span class="wa-block-cond">TEST CONDITION</span>
+            <h3 class="wa-block-title">After 140m Milling Distance</h3>
+          </div>
+          <span class="wa-reduction">62% Less Wear</span>
+        </div>
+
+        <div class="wa-images">
+          <div class="wa-img-panel wa-img--staton">
+            <div class="wa-img-top">
+              <span class="wa-img-name">STATON TIXAL</span>
+              <span class="wa-img-badge">Staton Coating</span>
+            </div>
+            <div class="wa-img-frame">
+              <img src="assets/comparison%20images/TIXAL_CMP011_dep.7.7.25_zv.10x_140m_03m.jpg"
+                alt="STATON TIXAL cutting edge after 140m milling" loading="lazy">
+            </div>
+          </div>
+          <div class="wa-img-panel wa-img--comp">
+            <div class="wa-img-top">
+              <span class="wa-img-name">Competitor B</span>
+              <span class="wa-img-badge wa-img-badge--comp">Competitor</span>
+            </div>
+            <div class="wa-img-frame">
+              <img src="assets/comparison%20images/AURORA%20X%20PLUS_CMP001_zv.10x_140m_02m.jpg"
+                alt="Competitor B cutting edge after 140m milling" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-data">
+          <div class="wa-data-label">WEAR WIDTH MEASUREMENT</div>
+          <div class="wa-data-row">
+            <span class="wa-data-name">STATON TIXAL</span>
+            <div class="wa-bar-track">
+              <div class="wa-bar wa-bar--staton" style="--w:38%"></div>
+            </div>
+            <span class="wa-meas wa-meas--staton">49.29 <span class="wa-mu">μm</span></span>
+            <span class="wa-lower-tag">Lower Wear ✓</span>
+          </div>
+          <div class="wa-data-row wa-data-row--comp">
+            <span class="wa-data-name wa-data-name--comp">Competitor B</span>
+            <div class="wa-bar-track">
+              <div class="wa-bar wa-bar--comp" style="--w:100%"></div>
+            </div>
+            <span class="wa-meas wa-meas--comp">129.33 <span class="wa-mu">μm</span></span>
+          </div>
+        </div>
+
+        <p class="wa-insight">Consistent wear control across 140m demonstrates stable coating performance under sustained machining loads. The significant difference in wear width at this distance confirms the long-term durability advantage of STATON coatings.</p>
+      </div>
+
+      <!-- Block 3: 270m -->
+      <div class="wa-block">
+        <div class="wa-block-head">
+          <div class="wa-block-num">03</div>
+          <div class="wa-block-meta">
+            <span class="wa-block-cond">TEST CONDITION</span>
+            <h3 class="wa-block-title">After 270m Milling Distance</h3>
+          </div>
+          <span class="wa-reduction">19% Less Wear</span>
+        </div>
+
+        <div class="wa-images">
+          <div class="wa-img-panel wa-img--staton">
+            <div class="wa-img-top">
+              <span class="wa-img-name">STATON X-CRAL</span>
+              <span class="wa-img-badge">Staton Coating</span>
+            </div>
+            <div class="wa-img-frame">
+              <img src="assets/comparison%20images/STATON%20X-CRAL_mag.20x_after%20milling%20of%20270m_1st%20cutting%20edge.jpg"
+                alt="STATON X-CRAL cutting edge after 270m milling" loading="lazy">
+            </div>
+          </div>
+          <div class="wa-img-panel wa-img--comp">
+            <div class="wa-img-top">
+              <span class="wa-img-name">Competitor C</span>
+              <span class="wa-img-badge wa-img-badge--comp">Competitor</span>
+            </div>
+            <div class="wa-img-frame">
+              <img src="assets/comparison%20images/Balzers%20ALCRONA_mag.20x_after%20milling%20of%20270m_1st%20cutting%20edge.jpg"
+                alt="Competitor C cutting edge after 270m milling" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-data">
+          <div class="wa-data-label">WEAR WIDTH MEASUREMENT</div>
+          <div class="wa-data-row">
+            <span class="wa-data-name">STATON X-CRAL</span>
+            <div class="wa-bar-track">
+              <div class="wa-bar wa-bar--staton" style="--w:81%"></div>
+            </div>
+            <span class="wa-meas wa-meas--staton">25.29 <span class="wa-mu">μm</span></span>
+            <span class="wa-lower-tag">Lower Wear ✓</span>
+          </div>
+          <div class="wa-data-row wa-data-row--comp">
+            <span class="wa-data-name wa-data-name--comp">Competitor C</span>
+            <div class="wa-bar-track">
+              <div class="wa-bar wa-bar--comp" style="--w:100%"></div>
+            </div>
+            <span class="wa-meas wa-meas--comp">31.30 <span class="wa-mu">μm</span></span>
+          </div>
+        </div>
+
+        <p class="wa-insight">At 270m milling distance, STATON X-CRAL demonstrates continued edge stability and controlled coating wear. Extended test conditions confirm consistent adhesion and durability under demanding, prolonged machining cycles.</p>
+      </div>
+
+    </div><!-- /wa-blocks -->
+
+    <!-- Methodology Note -->
+    <div class="wa-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      All measurements shown are based on microscopic wear analysis performed under controlled machining conditions. Competitor identities are intentionally anonymized. Performance may vary depending on workpiece material, cutting parameters, and application environment.
+    </div>
+
+  </section>
+
   <!-- ═══════ CONTACT / CONVERSION FOOTER ═══════ -->
   <!-- ═══════ CTA / CONTACT SECTION ═══════ -->
   <section class="contact-section section" id="contact">
@@ -3637,6 +4237,37 @@
         resizeTimer = setTimeout(() => { resize(); createParticles(); }, 150);
       });
       resize(); createParticles(); animId = requestAnimationFrame(draw);
+    })();
+
+    // ── Wear Analysis block animations ──
+    (function () {
+      const blocks = document.querySelectorAll('.wa-block');
+      if (!blocks.length) return;
+
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        blocks.forEach((block, i) => {
+          gsap.set(block, { opacity: 0, y: 40 });
+          ScrollTrigger.create({
+            trigger: block,
+            start: 'top 85%',
+            once: true,
+            onEnter: () => gsap.to(block, {
+              opacity: 1, y: 0,
+              duration: 0.85,
+              delay: i * 0.1,
+              ease: 'power3.out',
+              onStart: () => block.classList.add('wa-visible')
+            })
+          });
+        });
+      } else {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('wa-visible'); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.1 });
+        blocks.forEach(b => obs.observe(b));
+      }
     })();
   </script>
 </body>

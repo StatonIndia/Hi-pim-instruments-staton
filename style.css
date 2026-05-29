@@ -6121,3 +6121,1051 @@ button,
     padding-right: 20px !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   PERFORMANCE COMPARISON SECTION
+   ═══════════════════════════════════════════════════════════════ */
+
+.perf-section {
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.perf-bg-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 700px;
+  background: radial-gradient(ellipse at center top, rgba(7, 146, 58, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* — Header ——————————————————————————— */
+.perf-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.perf-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--copper-light);
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.perf-headline {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.perf-accent {
+  color: var(--green);
+}
+
+.perf-subheadline {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  color: var(--text-dim);
+  line-height: 1.75;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* — Comparison Blocks ——————————————— */
+.perf-comparisons {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.perf-block {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.85s var(--ease-out-expo), transform 0.85s var(--ease-out-expo);
+}
+
+.perf-block.perf-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.perf-block-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.perf-block-tag {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  color: var(--copper-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border: 1px solid rgba(213, 148, 81, 0.3);
+  border-radius: 100px;
+  background: rgba(213, 148, 81, 0.06);
+}
+
+.perf-block-title {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+/* — Pair (side-by-side) ————————————— */
+.perf-pair {
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* — VS divider ———————————————————— */
+.perf-vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  border-left: 1px solid var(--glass-border);
+  border-right: 1px solid var(--glass-border);
+}
+
+.perf-vs-line {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+.perf-vs-label {
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: 14px 0;
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  padding: 14px 5px;
+  user-select: none;
+}
+
+/* — Individual image cards ————————— */
+.perf-card {
+  position: relative;
+  overflow: hidden;
+  background: #080808;
+}
+
+.perf-card--staton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 10%, var(--green) 50%, transparent 90%);
+  z-index: 5;
+  opacity: 0.55;
+}
+
+.perf-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 4;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 100px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.perf-badge--staton {
+  background: rgba(7, 146, 58, 0.18);
+  color: #5ee88a;
+  border: 1px solid rgba(7, 146, 58, 0.38);
+}
+
+.perf-badge--competitor {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+  border: 1px solid var(--glass-border);
+}
+
+.perf-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.perf-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.88) contrast(1.06) saturate(0.85);
+  transition: transform 0.9s var(--ease-out-expo), filter 0.6s ease;
+}
+
+.perf-card:hover .perf-img-wrap img {
+  transform: scale(1.045);
+  filter: brightness(1.0) contrast(1.1) saturate(1.0);
+}
+
+.perf-card-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(130deg, transparent 35%, rgba(255, 255, 255, 0.025) 50%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.perf-card:hover .perf-card-shimmer {
+  opacity: 1;
+}
+
+/* — Caption ——————————————————————— */
+.perf-caption {
+  margin-top: 18px;
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  padding-left: 14px;
+  border-left: 2px solid rgba(7, 146, 58, 0.35);
+}
+
+/* — Performance Highlights grid ——— */
+.perf-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 52px;
+  position: relative;
+  z-index: 1;
+}
+
+.perf-feature {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 28px 22px;
+  transition: background 0.4s var(--ease-out-expo), border-color 0.4s, transform 0.4s var(--ease-out-expo), box-shadow 0.4s;
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.perf-feature.perf-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.perf-feature:hover {
+  background: var(--glass-bg-strong);
+  border-color: rgba(7, 146, 58, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(7, 146, 58, 0.1);
+}
+
+.perf-feature-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(7, 146, 58, 0.08);
+  border: 1px solid rgba(7, 146, 58, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--green);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.perf-feature:hover .perf-feature-icon {
+  background: rgba(7, 146, 58, 0.14);
+  border-color: rgba(7, 146, 58, 0.35);
+}
+
+.perf-feature-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.perf-feature-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.perf-feature-desc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* — Disclaimer ———————————————————— */
+.perf-disclaimer {
+  text-align: center;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 780px;
+  margin: 0 auto 52px;
+  padding: 14px 20px;
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: var(--glass-bg);
+  position: relative;
+  z-index: 1;
+}
+
+/* — CTA block ————————————————————— */
+.perf-cta {
+  text-align: center;
+  padding: 56px 40px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.perf-cta-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 130%, rgba(7, 146, 58, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.perf-cta-title {
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.perf-cta .cta-btn {
+  position: relative;
+  z-index: 1;
+}
+
+/* — Responsive: tablet (≤1024px) ———— */
+@media (max-width: 1024px) {
+  .perf-section {
+    padding: 80px 32px 60px;
+  }
+
+  .perf-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* — Responsive: mobile (≤768px) ———— */
+@media (max-width: 768px) {
+  .perf-section {
+    padding: 64px 20px 48px;
+  }
+
+  .perf-header {
+    margin-bottom: 48px;
+  }
+
+  .perf-comparisons {
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .perf-pair {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+  }
+
+  .perf-vs {
+    flex-direction: row;
+    min-height: 36px;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    border-left: none;
+    border-right: none;
+  }
+
+  .perf-vs-line {
+    flex: 1;
+    width: auto;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.08), transparent);
+  }
+
+  .perf-vs-label {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    padding: 0 14px;
+    font-size: 0.58rem;
+  }
+
+  .perf-highlights {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .perf-cta {
+    padding: 40px 20px;
+    border-radius: 18px;
+  }
+}
+
+/* — Responsive: small mobile (≤480px) */
+@media (max-width: 480px) {
+  .perf-block-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .perf-cta-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* — Wear Analysis Intro ————————————— */
+.perf-wear-analysis-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.perf-wear-analysis-title {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.perf-wear-analysis-desc {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* — Card data panel (below image) ——— */
+.perf-card-data {
+  padding: 16px 18px 18px;
+  background: rgba(0, 0, 0, 0.35);
+  border-top: 1px solid var(--glass-border);
+  position: relative;
+  z-index: 2;
+}
+
+.perf-card--staton .perf-card-data {
+  background: rgba(7, 146, 58, 0.04);
+  border-top-color: rgba(7, 146, 58, 0.18);
+}
+
+/* — Wear row (label + value + badge) — */
+.perf-wear-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.perf-wear-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.perf-wear-value {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.perf-card--staton .perf-wear-value {
+  color: #5ee88a;
+}
+
+.perf-wear-unit {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: inherit;
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+/* — "Lower Wear" badge ——————————————— */
+.perf-wear-badge {
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.perf-wear-badge--lower {
+  background: rgba(7, 146, 58, 0.16);
+  color: #5ee88a;
+  border: 1px solid rgba(7, 146, 58, 0.32);
+}
+
+/* — Performance insight text ————————— */
+.perf-insight {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.perf-card--staton .perf-insight {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* — Why Wear Width Matters box ————————— */
+.perf-info-box {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto 64px;
+  padding: 28px 32px;
+  background: rgba(7, 146, 58, 0.04);
+  border: 1px solid rgba(7, 146, 58, 0.2);
+  border-left: 3px solid var(--green);
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.perf-info-box.perf-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.perf-info-box-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+  margin-top: 2px;
+}
+
+.perf-info-box-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.perf-info-box-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.perf-info-box-text {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.perf-info-box-note {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* — Responsive overrides for new elements — */
+@media (max-width: 1024px) {
+  .perf-info-box {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .perf-info-box {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+
+  .perf-info-box-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .perf-card-data {
+    padding: 14px 16px 16px;
+  }
+
+  .perf-wear-value {
+    font-size: 0.95rem;
+  }
+
+  .perf-wear-analysis-intro {
+    margin-bottom: 36px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PERFORMANCE PROOF SECTION (Homepage simplified view)
+   ═══════════════════════════════════════════════════════════════ */
+
+.perf-proof {
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.perf-proof-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse at center top, rgba(7, 146, 58, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* — Header ———————————————————————————— */
+.perf-proof-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.perf-proof-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--copper-light);
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.perf-proof-headline {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.perf-proof-accent {
+  color: var(--green);
+}
+
+.perf-proof-sub {
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+/* — Card Grid ————————————————————————— */
+.perf-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  position: relative;
+  z-index: 1;
+}
+
+/* — Individual Card ————————————————— */
+.ppc-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: border-color 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo), box-shadow 0.4s;
+  opacity: 0;
+  transform: translateY(44px);
+}
+
+.ppc-card.perf-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ppc-card:hover {
+  border-color: rgba(7, 146, 58, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* — Thumbnail ———————————————————————— */
+.ppc-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #050505;
+}
+
+.ppc-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.82) contrast(1.08) saturate(0.8);
+  transition: transform 0.9s var(--ease-out-expo), filter 0.6s ease;
+}
+
+.ppc-card:hover .ppc-thumb img {
+  transform: scale(1.05);
+  filter: brightness(0.95) contrast(1.1) saturate(0.9);
+}
+
+/* — Card Body ———————————————————————— */
+.ppc-body {
+  padding: 20px 22px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* — Row (STATON / Competitor) ———————— */
+.ppc-row {
+  padding: 14px 0;
+}
+
+.ppc-row--staton {
+  padding-bottom: 0;
+}
+
+.ppc-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.ppc-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.ppc-name--comp {
+  color: var(--text-dim);
+}
+
+/* — "Lower Wear" badge ——————————————— */
+.ppc-lower-badge {
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: rgba(7, 146, 58, 0.16);
+  color: #5ee88a;
+  border: 1px solid rgba(7, 146, 58, 0.3);
+  white-space: nowrap;
+}
+
+/* — Value ———————————————————————————— */
+.ppc-value-wrap {
+  margin-bottom: 8px;
+}
+
+.ppc-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.ppc-value--staton {
+  color: #5ee88a;
+}
+
+.ppc-value--comp {
+  color: var(--text-dim);
+  font-size: 1.4rem;
+}
+
+.ppc-unit {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+/* — Bar indicator ——————————————————— */
+.ppc-bar-wrap {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.ppc-bar {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 1s var(--ease-out-expo);
+}
+
+.ppc-bar--staton {
+  background: linear-gradient(90deg, var(--green), #5ee88a);
+}
+
+.ppc-bar--comp {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* — Statement ———————————————————————— */
+.ppc-statement {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.ppc-statement--comp {
+  color: var(--text-muted);
+}
+
+/* — VS Separator ———————————————————— */
+.ppc-separator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.ppc-separator::before,
+.ppc-separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--glass-border);
+}
+
+/* — Card Footer ————————————————————— */
+.ppc-footer {
+  padding: 10px 22px 14px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  border-top: 1px solid var(--glass-border);
+  background: rgba(213, 148, 81, 0.03);
+}
+
+/* — Summary Stats Row ——————————————— */
+.perf-proof-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  max-width: 1200px;
+  margin: 0 auto 52px;
+  padding: 24px 32px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.perf-proof-stats.perf-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pps-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.pps-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+/* — CTA ————————————————————————————— */
+.perf-proof-cta {
+  text-align: center;
+  padding: 56px 40px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.perf-proof-cta.perf-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.perf-proof-cta-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 130%, rgba(7, 146, 58, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.perf-proof-cta-title {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.perf-proof-cta-desc {
+  font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+  color: var(--text-dim);
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0 auto 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.perf-proof-cta .cta-btn {
+  position: relative;
+  z-index: 1;
+}
+
+/* — Responsive: tablet (≤1024px) ———— */
+@media (max-width: 1024px) {
+  .perf-proof {
+    padding: 80px 32px 60px;
+  }
+
+  .perf-proof-grid {
+    gap: 18px;
+  }
+
+  .pps-item {
+    font-size: 0.78rem;
+  }
+}
+
+/* — Responsive: tablet portrait (≤860px) — */
+@media (max-width: 860px) {
+  .perf-proof-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  .ppc-card:hover {
+    transform: none;
+  }
+}
+
+/* — Responsive: mobile (≤600px) ———— */
+@media (max-width: 600px) {
+  .perf-proof {
+    padding: 64px 20px 48px;
+  }
+
+  .perf-proof-header {
+    margin-bottom: 40px;
+  }
+
+  .perf-proof-stats {
+    gap: 10px 20px;
+    padding: 18px 20px;
+  }
+
+  .pps-item {
+    font-size: 0.76rem;
+  }
+
+  .perf-proof-cta {
+    padding: 36px 20px;
+    border-radius: 18px;
+  }
+}

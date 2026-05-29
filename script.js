@@ -1952,6 +1952,118 @@
     });
   }
 
+  // ═══════════════════════════════════════════════════════════
+  // PERFORMANCE COMPARISON SECTION — scroll animations
+  // ═══════════════════════════════════════════════════════════
+  (function initPerfSection() {
+    const perfBlocks = document.querySelectorAll('.perf-block');
+    const perfFeatures = document.querySelectorAll('.perf-feature');
+    const perfInfoBox = document.querySelector('.perf-info-box');
+    const perfCta = document.querySelector('.perf-cta');
+    const perfStats = document.querySelector('.perf-proof-stats');
+    const perfProofCta = document.querySelector('.perf-proof-cta');
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      // Comparison blocks: staggered fade-up
+      perfBlocks.forEach((block, i) => {
+        gsap.set(block, { opacity: 0, y: 52 });
+        ScrollTrigger.create({
+          trigger: block,
+          start: 'top 88%',
+          once: true,
+          onEnter: () => {
+            gsap.to(block, {
+              opacity: 1,
+              y: 0,
+              duration: isMobileOrTouch ? 0.55 : 0.85,
+              delay: isMobileOrTouch ? 0 : i * 0.08,
+              ease: 'power3.out',
+              onStart: () => block.classList.add('perf-visible')
+            });
+          }
+        });
+      });
+
+      // Feature grid: staggered cascade
+      perfFeatures.forEach((feature, i) => {
+        gsap.set(feature, { opacity: 0, y: 32 });
+        ScrollTrigger.create({
+          trigger: feature,
+          start: 'top 90%',
+          once: true,
+          onEnter: () => {
+            gsap.to(feature, {
+              opacity: 1,
+              y: 0,
+              duration: isMobileOrTouch ? 0.45 : 0.7,
+              delay: isMobileOrTouch ? 0 : i * 0.1,
+              ease: 'power3.out',
+              onStart: () => feature.classList.add('perf-visible')
+            });
+          }
+        });
+      });
+
+      // Info box fade-up
+      if (perfInfoBox) {
+        gsap.set(perfInfoBox, { opacity: 0, y: 28 });
+        ScrollTrigger.create({
+          trigger: perfInfoBox,
+          start: 'top 88%',
+          once: true,
+          onEnter: () => {
+            gsap.to(perfInfoBox, {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: 'power3.out',
+              onStart: () => perfInfoBox.classList.add('perf-visible')
+            });
+          }
+        });
+      }
+
+      // CTA block fade-up (legacy .perf-cta)
+      if (perfCta) {
+        gsap.set(perfCta, { opacity: 0, y: 28 });
+        ScrollTrigger.create({
+          trigger: perfCta, start: 'top 90%', once: true,
+          onEnter: () => gsap.to(perfCta, { opacity: 1, y: 0, duration: 0.75, ease: 'power3.out' })
+        });
+      }
+
+      // Stats row + proof CTA (homepage)
+      [perfStats, perfProofCta].forEach(el => {
+        if (!el) return;
+        gsap.set(el, { opacity: 0, y: 24 });
+        ScrollTrigger.create({
+          trigger: el, start: 'top 90%', once: true,
+          onEnter: () => gsap.to(el, {
+            opacity: 1, y: 0, duration: 0.75, ease: 'power3.out',
+            onStart: () => el.classList.add('perf-visible')
+          })
+        });
+      });
+
+    } else {
+      // Fallback: IntersectionObserver for no-GSAP environments
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('perf-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      perfBlocks.forEach(el => observer.observe(el));
+      perfFeatures.forEach(el => observer.observe(el));
+      if (perfInfoBox) observer.observe(perfInfoBox);
+      if (perfStats) observer.observe(perfStats);
+      if (perfProofCta) observer.observe(perfProofCta);
+    }
+  })();
+
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
