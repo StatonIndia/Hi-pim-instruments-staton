@@ -8,7 +8,6 @@ Staton s.r.o. is a global leader in PVD (Physical Vapor Deposition) coating tech
 - **Core Technology**: fsARC™ Filtered Cathodic Arc, Magnetron Sputtering, PVD Coating.
 - **Primary Products**: OCTOARC (Multi-arc systems), OCTOMAG (Magnetron sputtering systems).
 - **Industries Served**: Automotive, Cutting Tools, Medical Devices, Aerospace.
-- **Partnership**: Collaboration with HI-PIM Instruments PVT. Ltd for India Support Shield.
 
 ## Main Sections
 

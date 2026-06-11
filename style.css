@@ -3953,12 +3953,18 @@ body:not(.loading) .floating-nav {
 
 @media (max-width: 992px) {
   .clients-grid {
-    gap: 40px 60px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 30px 24px;
+    justify-items: center;
+    align-items: center;
   }
 
   .client-card {
-    width: 140px;
-    height: 60px;
+    width: 100%;
+    max-width: 130px;
+    height: 55px;
+    flex: unset;
   }
 }
 

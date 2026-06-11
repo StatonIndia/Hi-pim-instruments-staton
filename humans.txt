@@ -16,5 +16,4 @@
 
 /* THANKS */
     Company: STATON s.r.o.
-    Partners: HI-PIM Instruments PVT. Ltd
     Certifications: ISO 9001:2008

@@ -1174,220 +1174,6 @@
     }
 
 
-    /* - Coating Finder Matrix - */
-    .finder-matrix {
-      max-width: 1150px;
-      margin: 50px auto 0;
-      background: rgba(10, 10, 10, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 32px;
-      overflow: hidden;
-      backdrop-filter: blur(30px);
-      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .matrix-tabs {
-      display: flex;
-      background: rgba(255, 255, 255, 0.02);
-      padding: 12px;
-      gap: 12px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .matrix-tab {
-      flex: 1;
-      padding: 18px 15px;
-      text-align: center;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.3);
-      cursor: pointer;
-      border-radius: 16px;
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid transparent;
-    }
-
-    .matrix-tab:hover {
-      color: rgba(255, 255, 255, 0.6);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .matrix-tab.active {
-      background: rgba(13, 184, 74, 0.08);
-      color: var(--tech-green);
-      border-color: rgba(13, 184, 74, 0.3);
-      box-shadow: inset 0 0 20px rgba(13, 184, 74, 0.05);
-    }
-
-    .matrix-tab.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 20%;
-      right: 20%;
-      height: 2px;
-      background: var(--tech-green);
-      box-shadow: 0 0 10px var(--tech-green);
-      border-radius: 2px 2px 0 0;
-    }
-
-    .matrix-content {
-      padding: 50px 70px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: center;
-      min-height: 400px;
-    }
-
-    .matrix-info {
-      position: relative;
-    }
-
-    .matrix-info-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--tech-green);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-
-    .matrix-info h4 {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 900;
-      margin-bottom: 20px;
-      color: #fff;
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-    }
-
-    .matrix-info p {
-      font-size: 1.05rem;
-      color: rgba(255, 255, 255, 0.45);
-      line-height: 1.7;
-      margin-bottom: 32px;
-      font-weight: 300;
-    }
-
-    .matrix-perf {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.015);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 24px;
-      position: relative;
-    }
-
-    .matrix-perf::before {
-      content: 'DIAGNOSTIC DATA';
-      position: absolute;
-      top: -10px;
-      left: 30px;
-      background: #0a0a0a;
-      padding: 0 10px;
-      font-size: 0.6rem;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.2);
-      letter-spacing: 0.2em;
-    }
-
-    .perf-bar-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .perf-label {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-
-    .perf-label span:first-child {
-      font-size: 0.7rem;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.3);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .perf-label span:last-child {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .perf-bar-bg {
-      height: 4px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .perf-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--tech-green), #fff);
-      width: 0%;
-      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 0 15px rgba(13, 184, 74, 0.4);
-    }
-
-    @media (max-width: 991px) {
-      .matrix-content {
-        grid-template-columns: 1fr;
-        padding: 24px 20px;
-        gap: 20px;
-        min-height: auto;
-      }
-
-      .matrix-tabs {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 8px;
-        gap: 8px;
-      }
-
-      .matrix-tab {
-        flex: 1 1 calc(50% - 8px);
-        min-width: 110px;
-        padding: 8px !important;
-        font-size: 0.65rem;
-      }
-
-      .matrix-info h4 {
-        font-size: 1.5rem;
-        margin-bottom: 6px;
-      }
-
-      .matrix-info p {
-        font-size: 0.9rem;
-        margin-bottom: 16px;
-        line-height: 1.5;
-      }
-
-      .matrix-perf {
-        padding: 16px;
-        gap: 12px;
-      }
-
-      .perf-label span:last-child {
-        font-size: 0.95rem;
-      }
-    }
-
 
     /* - fsARC Proof Section - */
     .fsarc-proof {
@@ -1628,14 +1414,6 @@
       color: rgba(255, 255, 255, 0.55);
       line-height: 1.7;
       background: rgba(13, 184, 74, 0.03);
-    }
-
-    /* - Coating Finder - */
-    .coating-finder {
-      padding: 110px 48px;
-      background: #050505;
-      position: relative;
-      z-index: 5;
     }
 
     .coating-cards-grid {
@@ -1971,10 +1749,6 @@
         padding: 60px 20px;
       }
 
-      .coating-finder {
-        padding: 50px 20px;
-      }
-
       .tech-panel {
         flex-direction: column !important;
         gap: 40px;
@@ -2099,12 +1873,6 @@
       }
       .tech-hipims {
         padding: 40px 16px !important;
-      }
-      .coating-finder {
-        padding: 40px 16px !important;
-      }
-      .matrix-content {
-        padding: 20px 12px !important;
       }
       .tech-panel {
         padding: 30px 20px !important;
@@ -2852,9 +2620,7 @@
         <span class="tech-section-label">PROOF</span>
         <h2 class="tech-section-heading">Eliminate the Droplets. <span class="accent">Maximize the Speed.</span></h2>
         <p style="font-size:1.1rem;color:rgba(255,255,255,0.45);max-width:780px;margin:24px auto 0;line-height:1.7;">
-          While standard cathodic arc machines spray molten droplets that roughen surfaces and reduce tool life,
-          Staton's fsARC® technology electromagnetically filters every droplet - delivering sputtering-level smoothness
-          with arc-level adhesion.</p>
+          While standard cathodic arc machines spray molten droplets that roughen surfaces and reduce tool life, Staton's fsARC® technology uses a system of magnetic fields to split and accelerate the cathodic arc spot - thereby minimising droplet formation, ensuring a homogeneous coating with high adhesion and hardness.</p>
       </div>
       <div class="comparison-split">
         <div class="comparison-side comparison-side--bad">
@@ -2903,7 +2669,7 @@
       </div>
       <div class="fsarc-callout">Staton's fsARC® cathode uses a high-current magnetic oscillation system to split the
         cathodic arc - dramatically reducing macro-particle formation. Coatings produced with fsARC® consistently
-        achieve Ra values comparable to magnetron sputtering, while maintaining the superior hardness and adhesion of
+        achieve Ra values comparable to HiPIMS magnetron sputtering, while maintaining the superior hardness and adhesion of
         cathodic arc deposition.</div>
     </div>
   </section>
@@ -3020,63 +2786,6 @@
           </div>
         </div>
       </div>
-  </section>
-
-  <!-- ═══════ COATING FINDER MATRIX ═══════ -->
-  <section class="coating-finder" id="coatings">
-    <div class="tech-section-header">
-      <span class="tech-section-label">SOLUTION FINDER</span>
-      <h2 class="tech-section-heading">Find Your Optimized <span class="accent">Coating</span></h2>
-      <p
-        style="font-size:1.15rem;color:rgba(255,255,255,0.4);max-width:700px;margin:24px auto 0;line-height:1.7;font-weight:300;">
-        Select your industrial application to discover the high-performance thin-film chemistry engineered for your
-        specific operational challenges.
-      </p>
-    </div>
-
-    <div class="finder-matrix">
-      <div class="matrix-tabs">
-        <div class="matrix-tab active" data-target="cutting">Cutting Tools</div>
-        <div class="matrix-tab" data-target="automotive">Automotive</div>
-        <div class="matrix-tab" data-target="medical">Medical</div>
-        <div class="matrix-tab" data-target="molds">Molds & Dies</div>
-      </div>
-
-      <div class="matrix-content" id="matrix-body">
-        <div class="matrix-info">
-          <span class="matrix-info-label" id="matrix-category">INDUSTRIAL CATEGORY</span>
-          <h3 id="matrix-title">High-Speed Machining</h3>
-          <p id="matrix-desc">Extreme oxidation resistance and hot hardness for dry machining and interrupted cuts in
-            hardened steels. Our TiAlN and AlCrN systems provide the thermal stability required for 1000°C+ operations.
-          </p>
-          <div class="coating-card-coatings" id="matrix-pills">
-            <span class="coating-pill">TiAlN</span>
-            <span class="coating-pill">AlCrN</span>
-            <span class="coating-pill">TiSiN</span>
-          </div>
-        </div>
-        <div class="matrix-perf">
-          <div class="perf-bar-wrap">
-            <div class="perf-label"><span>Hardness</span><span id="val-hardness">3,200 HV</span></div>
-            <div class="perf-bar-bg">
-              <div class="perf-bar-fill" style="width: 90%;"></div>
-            </div>
-          </div>
-          <div class="perf-bar-wrap">
-            <div class="perf-label"><span>Temp Resistance</span><span id="val-temp">900°C</span></div>
-            <div class="perf-bar-bg">
-              <div class="perf-bar-fill" style="width: 85%;"></div>
-            </div>
-          </div>
-          <div class="perf-bar-wrap">
-            <div class="perf-label"><span>Low Friction</span><span id="val-friction">0.4 μ</span></div>
-            <div class="perf-bar-bg">
-              <div class="perf-bar-fill" style="width: 40%;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ═══════ ADVANCED COATING TYPES ═══════ -->
@@ -3583,7 +3292,8 @@
 
         <!-- Right: The Form -->
         <div class="form-glass-wrapper">
-          <form class="contact-form" id="contact-form" action="mailto:hipiminstruments@gmail.com" method="post" enctype="text/plain">
+          <!-- HIDDEN until domain change: form action was mailto:hipiminstruments@gmail.com -->
+          <form class="contact-form" id="contact-form" action="mailto:India@staton.in" method="post" enctype="text/plain">
             <div class="form-field">
               <input type="text" id="field-name" placeholder=" " autocomplete="name">
               <label for="field-name">Your Name</label>
@@ -3634,10 +3344,12 @@
               <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. footer logo"
                 class="footer-staton-logo" style="margin-bottom: 0;">
             </a>
+            <!-- HIDDEN until domain change:
             <div class="footer-hipim-wrap">
               <div class="hipim-logo-footer"><img src="assets/hipim%20logo/h%20surroundings.png" alt="" class="hipim-ring" aria-hidden="true"><img src="assets/hipim%20logo/H%20logo.png" alt="HI-PIM Logo" class="hipim-h"></div>
               <div class="footer-hipim-name">HI-PIM Instruments PVT. Ltd</div>
             </div>
+            -->
           </div>
           <div class="footer-staton-socials">
             <a href="#" class="footer-staton-social-link" aria-label="Facebook">
@@ -3978,30 +3690,6 @@
         opacity: 0, y: 40, duration: 1.2, ease: 'power3.out'
       });
 
-      // - Coating Finder Reveal -
-      gsap.from('.coating-finder .tech-section-header', {
-        scrollTrigger: {
-          trigger: '.coating-finder',
-          start: 'top 80%',
-        },
-        opacity: 0,
-        y: 40,
-        duration: 1,
-        ease: 'power3.out'
-      });
-
-      gsap.from('.finder-matrix', {
-        scrollTrigger: {
-          trigger: '.finder-matrix',
-          start: 'top 85%',
-        },
-        opacity: 0,
-        scale: 0.98,
-        y: 60,
-        duration: 1.4,
-        ease: 'expo.out'
-      });
-
       // - Portfolio Cards Expanding Animation -
       gsap.utils.toArray('.portfolio-card').forEach((card) => {
         gsap.fromTo(card,
@@ -4032,72 +3720,6 @@
         opacity: 0, scale: 0.9, stagger: 0.2, duration: 0.7, ease: 'back.out(1.4)'
       });
 
-
-      // - Matrix Finder Logic -
-      const matrixTabs = document.querySelectorAll('.matrix-tab');
-      const matrixData = {
-        cutting: {
-          title: "High-Speed Machining",
-          desc: "Extreme oxidation resistance and hot hardness for dry machining and interrupted cuts in hardened steels. Our TiAlN and AlCrN systems provide the thermal stability required for 1000°C+ operations.",
-          pills: ["TiAlN", "AlCrN", "TiSiN"],
-          perf: { hardness: "3,200 HV", temp: "900°C", friction: "0.4 μ" },
-          bars: [90, 85, 40]
-        },
-        automotive: {
-          title: "Engine & Drive Components",
-          desc: "Low-friction DLC coatings for fuel injection systems and valvetrains. CrN and AlCrN for large-scale forming dies requiring high wear resistance.",
-          pills: ["DLC", "ta-C", "CrN", "AlCrN"],
-          perf: { hardness: "2,000 HV", temp: "400°C", friction: "0.05 μ" },
-          bars: [60, 40, 95]
-        },
-        medical: {
-          title: "Surgical & Dental Implants",
-          desc: "Biocompatible TiN and ZrN coatings that meet FDA standards. Highly corrosion-resistant and non-toxic, with zero macro-particle surface finish.",
-          pills: ["TiN", "ZrN", "CrN", "DLC"],
-          perf: { hardness: "2,300 HV", temp: "500°C", friction: "0.2 μ" },
-          bars: [70, 50, 75]
-        },
-        molds: {
-          title: "Precision Molds & Dies",
-          desc: "Specialized CrN and MAHLEN coatings for anti-sticking and easy release. Excellent corrosion protection for processing aggressive plastics.",
-          pills: ["CrN", "CrCN", "AlCrN", "MAHLEN"],
-          perf: { hardness: "3,300 HV", temp: "800°C", friction: "0.1 μ" },
-          bars: [85, 80, 85]
-        }
-      };
-
-      matrixTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          const target = tab.dataset.target;
-          const data = matrixData[target];
-
-          matrixTabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-
-          const body = document.getElementById('matrix-body');
-          gsap.to(body, {
-            opacity: 0, x: -20, duration: 0.3, onComplete: () => {
-              document.getElementById('matrix-category').innerText = tab.innerText + " Solution";
-              document.getElementById('matrix-title').innerText = data.title;
-              document.getElementById('matrix-desc').innerText = data.desc;
-
-              const pillContainer = document.getElementById('matrix-pills');
-              pillContainer.innerHTML = data.pills.map(p => `<span class="coating-pill">${p}</span>`).join('');
-
-              document.getElementById('val-hardness').innerText = data.perf.hardness;
-              document.getElementById('val-temp').innerText = data.perf.temp;
-              document.getElementById('val-friction').innerText = data.perf.friction;
-
-              const bars = document.querySelectorAll('.perf-bar-fill');
-              bars.forEach((bar, i) => {
-                gsap.to(bar, { width: data.bars[i] + '%', duration: 1, ease: "power4.out", delay: i * 0.1 });
-              });
-
-              gsap.to(body, { opacity: 1, x: 0, duration: 0.4 });
-            }
-          });
-        });
-      });
 
       // ═══════ PORTFOLIO CAROUSEL ═══════
       const slider = document.getElementById('portfolio-slider');

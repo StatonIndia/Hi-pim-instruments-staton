@@ -1516,9 +1516,12 @@
   // Overflow containers (dropdowns, modals) are exempted so they
   // still scroll normally.  Mobile keeps the original passive listener.
   // ═══════════════════════════════════════════════════════════
-  if (isMobileOrTouch) {
+  if (isMobileOrTouch || !heroSection) {
     window.addEventListener('scroll', () => {
-      targetScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const y = window.pageYOffset || document.documentElement.scrollTop;
+      targetScrollY = y;
+      scrollY       = y;
+      heroScrollY   = y;
     }, { passive: true });
   } else {
     // Emergency resync: if something external (hash nav, GSAP refresh,
@@ -1546,14 +1549,17 @@
     const PAGE_STEP = Math.round(window.innerHeight * 0.85);
 
     // Wheel → accumulate into targetScrollY, suppress the native 100 px jump
-    window.addEventListener('wheel', (e) => {
-      if (hasScrollableParent(e.target)) return; // dropdowns / modals scroll normally
-      e.preventDefault();
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      targetScrollY = Math.max(0, Math.min(max,
-        targetScrollY + (e.deltaMode === 1 ? e.deltaY * 30 : e.deltaY)
-      ));
-    }, { passive: false });
+    // Only intercept on pages with the hero section (others use native scroll)
+    if (heroSection) {
+      window.addEventListener('wheel', (e) => {
+        if (hasScrollableParent(e.target)) return; // dropdowns / modals scroll normally
+        e.preventDefault();
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        targetScrollY = Math.max(0, Math.min(max,
+          targetScrollY + (e.deltaMode === 1 ? e.deltaY * 30 : e.deltaY)
+        ));
+      }, { passive: false });
+    }
 
     // Keyboard → route Space / PgDn / PgUp / arrows / Home / End through targetScrollY
     window.addEventListener('keydown', (e) => {
@@ -1586,14 +1592,10 @@
   function animate(time) {
     rafId = requestAnimationFrame(animate);
 
-    // Smooth scroll interpolation
-    scrollY += (targetScrollY - scrollY) * (isMobileOrTouch ? 0.25 : 0.18);
-    // Hero gets its own slower lerp so mouse-wheel jumps animate as smoothly as touchpad
-    heroScrollY += (targetScrollY - heroScrollY) * (isMobileOrTouch ? 0.25 : 0.1);
-
-    // On desktop, feed GSAP our lerped scrollY so pin/unpin crossings are
-    // gradual (no stuck / glitch at the hero → next-section boundary).
-    if (!isMobileOrTouch) {
+    // Smooth scroll interpolation — only lerp on pages with the hero section
+    if (!isMobileOrTouch && heroSection) {
+      scrollY += (targetScrollY - scrollY) * 0.18;
+      heroScrollY += (targetScrollY - heroScrollY) * 0.1;
       window.scrollTo(0, Math.round(scrollY));
     }
 
@@ -1944,8 +1946,8 @@
 
     scrollToTopBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      if (!isMobileOrTouch) {
-        targetScrollY = 0; // RAF lerp handles the smooth ride
+      if (!isMobileOrTouch && heroSection) {
+        targetScrollY = 0; // RAF lerp handles the smooth ride on hero pages
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
