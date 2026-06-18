@@ -1139,14 +1139,6 @@
   // ═══════════════════════════════════════════════════════════
   // CONTACT FORM INTERACTIONS
   // ═══════════════════════════════════════════════════════════
-  const queryOptions = document.querySelectorAll('.query-option');
-  queryOptions.forEach(opt => {
-    opt.addEventListener('click', () => {
-      queryOptions.forEach(o => o.classList.remove('selected'));
-      opt.classList.add('selected');
-    });
-  });
-
   const submitBtn = document.getElementById('submit-btn');
   if (submitBtn) {
     submitBtn.addEventListener('click', () => {
@@ -1676,8 +1668,10 @@
         const name = document.getElementById('field-name')?.value || '';
         const company = document.getElementById('field-company')?.value || '';
         const email = document.getElementById('field-email')?.value || '';
-        const selectedOption = contactForm.querySelector('.query-option.active');
-        const inquiryType = selectedOption ? selectedOption.innerText.trim() : 'General Inquiry';
+        const selectedOptions = contactForm.querySelectorAll('.query-option.selected');
+        const inquiryType = selectedOptions.length
+          ? Array.from(selectedOptions).map(o => o.innerText.trim()).join(', ')
+          : 'General Inquiry';
         const textEl = submitBtn.querySelector('.submit-text');
 
         if (!name || !email) {
@@ -1703,8 +1697,7 @@
       const options = contactForm.querySelectorAll('.query-option');
       options.forEach(opt => {
         opt.addEventListener('click', () => {
-          options.forEach(o => o.classList.remove('active'));
-          opt.classList.add('active');
+          opt.classList.toggle('selected');
         });
       });
     }

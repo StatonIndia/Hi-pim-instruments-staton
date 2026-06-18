@@ -696,6 +696,10 @@ body:not(.loading) .floating-nav {
   overflow: hidden;
   transition: transform 0.4s var(--ease-out-expo), border-color 0.4s, background 0.4s;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .why-card::before {
@@ -917,10 +921,17 @@ body:not(.loading) .floating-nav {
 }
 
 .fsarc-text-block {
-  flex: 0 0 380px;
+  flex: 0 0 440px;
   max-width: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 6;
+  padding: 36px 40px;
+  border-radius: 18px;
+  background: rgba(10, 14, 18, 0.62);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
 /* Pull Row 1 text block closer to image */
@@ -939,11 +950,12 @@ body:not(.loading) .floating-nav {
 }
 
 .fsarc-text-title {
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--white);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
 .accent-title {
@@ -951,15 +963,18 @@ body:not(.loading) .floating-nav {
 }
 
 .fsarc-text-desc {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
+  color: var(--text-light, #d6dde3);
+  font-size: 1.1rem;
+  line-height: 1.75;
   font-weight: 400;
 }
 
-/* - Opacity Reveal Animation - */
+/* - Opacity Reveal Animation -
+   Spans start dimmed and are brought to full opacity by the GSAP
+   scroll timeline. Use a legible base so text is never invisible
+   if the animation hasn't fired yet. */
 .opacity-reveal span {
-  opacity: 0.05;
+  opacity: 0.85;
 }
 
 
@@ -971,7 +986,7 @@ body:not(.loading) .floating-nav {
 }
 
 .accent-desc {
-  color: var(--text-dim);
+  color: var(--text-light, #d6dde3);
 }
 
 .accent-desc strong {
@@ -1022,11 +1037,13 @@ body:not(.loading) .floating-nav {
   }
 
   .fsarc-text-block {
-    margin: 0 !important;
+    margin: 0 auto !important;
     left: 0 !important;
     text-align: center;
     flex: unset;
     width: 100%;
+    max-width: 460px;
+    padding: 28px 26px;
   }
 
   .rough-tool {
@@ -1502,6 +1519,13 @@ body:not(.loading) .floating-nav {
   line-height: 1.8;
   margin-bottom: 36px;
   max-width: 440px;
+}
+
+.machine-desc-extended {
+  font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  max-width: 460px;
 }
 
 .machine-specs {
