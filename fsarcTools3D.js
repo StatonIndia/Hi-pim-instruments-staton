@@ -31,7 +31,7 @@ function initTool(containerId, hasDefects) {
     controls.enablePan = false;
     controls.enableRotate = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 32.0;
+    controls.autoRotateSpeed = 54.0;
 
     /**
      * 2. Soft Studio Lighting
@@ -226,7 +226,7 @@ function initTool(containerId, hasDefects) {
     toolGroup.add(shank);
 
     // 2. Head Surface
-    const headGeo = createReferenceFluteGeometry(shankRadius, coatedAreaHeight, 6, 1.2, hasDefects);
+    const headGeo = createReferenceFluteGeometry(shankRadius, coatedAreaHeight, 6, -1.2, hasDefects);
     const head = new THREE.Mesh(headGeo, headMat);
     head.position.y = shankHeight;
     toolGroup.add(head);
@@ -235,7 +235,7 @@ function initTool(containerId, hasDefects) {
     if (hasDefects) {
         const defectGroup = new THREE.Group();
         defectGroup.position.y = shankHeight;
-        createCoatingDefects(defectGroup, shankRadius, coatedAreaHeight, 6, 1.2, isMob3D ? 300 : 3000);
+        createCoatingDefects(defectGroup, shankRadius, coatedAreaHeight, 6, -1.2, isMob3D ? 300 : 3000);
         toolGroup.add(defectGroup);
     }
 

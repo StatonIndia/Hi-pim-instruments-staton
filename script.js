@@ -1166,10 +1166,10 @@
   // ═══════════════════════════════════════════════════════════
   // SMOOTH NAV LINK SCROLLING
   // ═══════════════════════════════════════════════════════════
-  document.querySelectorAll('.nav-links-pill a, .contact-pill').forEach(link => {
+  document.querySelectorAll('.nav-links-pill a, .contact-pill, a.prod-cta-btn[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
       const targetId = link.getAttribute('href');
-      if (targetId && targetId.startsWith('#')) {
+      if (targetId && targetId.length > 1 && targetId.startsWith('#')) {
         e.preventDefault();
 
         // Removed hero locking logic
@@ -1192,10 +1192,29 @@
   const heroSection = document.getElementById('hero');
   const heroCanvas = document.getElementById('hero-canvas');
   const heroCtx = heroCanvas ? heroCanvas.getContext('2d', { alpha: false }) : null;
-  const frameCount = isMobileOrTouch ? 80 : 240;
+  const heroFrameFolder = 'assets/hero';
+  const heroFramePrefix = 'frame_';
+  const heroFrameExt = '.jpg';
+  const heroImageCount = 190;
+  const mobileFrameCount = 80;
+  const frameCount = isMobileOrTouch ? mobileFrameCount : heroImageCount;
+  const heroFrameStep = (heroImageCount - 1) / (mobileFrameCount - 1);
   const frames = [];
   let imagesLoaded = 0;
   let currentFrameIndex = -1;
+
+  function getHeroFrameNumber(logicalIndex) {
+    if (logicalIndex >= 190) return logicalIndex + 2;
+    if (logicalIndex >= 187) return logicalIndex + 1;
+    return logicalIndex;
+  }
+
+  function getHeroFrameFilename(logicalIndex) {
+    const actualIndex = isMobileOrTouch
+      ? Math.min(heroImageCount, Math.max(1, Math.round(1 + (logicalIndex - 1) * heroFrameStep)))
+      : logicalIndex;
+    return `${heroFrameFolder}/${heroFramePrefix}${String(getHeroFrameNumber(actualIndex)).padStart(3, '0')}${heroFrameExt}`;
+  }
 
   if (heroCanvas) {
     // High-DPI support: Use device pixel ratio but cap at 2 for performance
@@ -1242,10 +1261,7 @@
     // Still load hero frames in background, but don't gate on them
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
-      const numStr = isMobileOrTouch
-        ? (((i - 1) * 3) + 1).toString().padStart(3, '0')
-        : i.toString().padStart(3, '0');
-      img.src = `assets/hero/ezgif-frame-${numStr}_converted.webp`;
+      img.src = getHeroFrameFilename(i);
       img.onload = () => {
         imagesLoaded++;
         if (imagesLoaded === 1 && currentFrameIndex < 0) {
@@ -1353,10 +1369,7 @@
 
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
-      const numStr = isMobileOrTouch
-        ? (((i - 1) * 3) + 1).toString().padStart(3, '0')
-        : i.toString().padStart(3, '0');
-      img.src = `assets/hero/ezgif-frame-${numStr}_converted.webp`;
+      img.src = getHeroFrameFilename(i);
       img.onload = () => {
         imagesLoaded++;
         checkReadiness();

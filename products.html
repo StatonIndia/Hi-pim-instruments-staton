@@ -248,6 +248,278 @@
       box-shadow: 0 20px 40px rgba(13, 184, 74, 0.5);
     }
 
+    /* - Model Lineup Grid - */
+    .lineup-section {
+      padding: var(--section-pad);
+      position: relative;
+    }
+
+    .lineup-series {
+      max-width: 1300px;
+      margin: 0 auto 90px;
+    }
+
+    .lineup-series:last-child {
+      margin-bottom: 0;
+    }
+
+    .lineup-series-head {
+      display: flex;
+      align-items: baseline;
+      gap: 18px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .lineup-series-name {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .lineup-series-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--prod-green);
+    }
+
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .model-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 40px;
+      backdrop-filter: blur(20px);
+      transition: transform 0.5s var(--ease-out-expo), border-color 0.5s ease;
+    }
+
+    .model-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(13, 184, 74, 0.35);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Model image slider */
+    .model-slider {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      margin-bottom: 28px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: radial-gradient(ellipse at center, rgba(13, 184, 74, 0.08) 0%, transparent 70%);
+    }
+
+    .model-slider-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s var(--ease-out-expo);
+    }
+
+    .model-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .model-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+    }
+
+    .model-slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.4s ease, background 0.3s ease, border-color 0.3s ease;
+      z-index: 3;
+      padding: 0;
+    }
+
+    .model-slider:hover .model-slider-btn {
+      opacity: 1;
+    }
+
+    .model-slider-btn:hover {
+      background: var(--prod-green);
+      border-color: var(--prod-green);
+    }
+
+    .model-slider-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    .model-slider-btn.prev {
+      left: 12px;
+    }
+
+    .model-slider-btn.next {
+      right: 12px;
+    }
+
+    .model-slider-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      z-index: 3;
+    }
+
+    .model-slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .model-slider-dot.active {
+      background: var(--prod-green);
+      transform: scale(1.3);
+    }
+
+    .model-card-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--prod-green);
+      margin-bottom: 12px;
+    }
+
+    .model-card-name {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .model-card-desc {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 28px;
+    }
+
+    .model-spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .model-spec {
+      background: rgba(13, 184, 74, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+
+    .model-spec-value {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--prod-green);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .model-spec-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .model-capacity {
+      margin-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 18px;
+    }
+
+    .model-capacity-title {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--prod-green);
+      margin-bottom: 12px;
+    }
+
+    .model-capacity-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+    }
+
+    .model-capacity-row:last-child {
+      border-bottom: none;
+    }
+
+    .model-capacity-name {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .model-capacity-val {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .lineup-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .model-card {
+        padding: 28px 24px;
+      }
+
+      .model-spec-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* - Technical Advantages Grid - */
     .advantages-section {
       padding: var(--section-pad);
@@ -669,7 +941,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="technology.html">Technology</a></li>
       <li><a href="products.html" class="active">Products</a></li>
-      <li><a href="applications.html">Applications</a></li>
+      <li><a href="coatings.html">Coatings</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
@@ -695,7 +967,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="technology.html">Technology</a></li>
       <li><a href="products.html" class="active">Products</a></li>
-      <li><a href="applications.html">Applications</a></li>
+      <li><a href="coatings.html">Coatings</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
@@ -765,7 +1037,7 @@
             <span class="prod-feat-text">Multi-cathode versatility</span>
           </div>
         </div>
-        <a href="#datasheet" class="prod-cta-btn">View Specifications →</a>
+        <a href="#octoarc-models" class="prod-cta-btn">View Specifications →</a>
       </div>
       <div class="product-image-side">
         <div class="product-image-card">
@@ -816,7 +1088,407 @@
             <span class="prod-feat-text">Exceptional density & adhesion</span>
           </div>
         </div>
-        <a href="#datasheet" class="prod-cta-btn">Explore Magnetron →</a>
+        <a href="#octomag-models" class="prod-cta-btn">Explore Magnetron →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ MODEL LINEUP ═══════ -->
+  <section class="lineup-section" id="models">
+    <div class="section-header">
+      <span class="section-label">Full Range</span>
+      <h2 class="section-title">Model <span class="accent">Lineup</span></h2>
+    </div>
+
+    <!-- OCTOARC MODELS -->
+    <div class="lineup-series" id="octoarc-models">
+      <div class="lineup-series-head">
+        <span class="lineup-series-tag">Arc Evaporation</span>
+        <h3 class="lineup-series-name">OCTOARC <span class="accent">Series</span></h3>
+      </div>
+      <div class="lineup-grid">
+
+        <!-- PD300-G2 -->
+        <div class="model-card">
+          <div class="model-slider" data-slider>
+            <div class="model-slider-track">
+              <div class="model-slide"><img src="assets/products/pd300-g2.png" alt="OCTOARC PD300-G2 closed view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/pd300-g2_opened1.png" alt="OCTOARC PD300-G2 open chamber view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/pd300-g2_opened2.png" alt="OCTOARC PD300-G2 interior detail view" loading="lazy"></div>
+            </div>
+            <button class="model-slider-btn prev" aria-label="Previous image" data-prev><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="model-slider-btn next" aria-label="Next image" data-next><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="model-slider-dots" data-dots></div>
+          </div>
+          <div class="model-card-label">Small Batch &amp; R&amp;D</div>
+          <h4 class="model-card-name">PD300-G2</h4>
+          <p class="model-card-desc">
+            An excellent choice for PVD coating when dealing with small batches
+            or conducting research, with rapid turnaround times enabling several
+            batches within a single day.
+          </p>
+          <div class="model-spec-grid">
+            <div class="model-spec">
+              <div class="model-spec-value">Ø540 × 200 mm</div>
+              <div class="model-spec-label">Active Plasma Volume</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">500 kg</div>
+              <div class="model-spec-label">Max Load Mass</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">Up to 6</div>
+              <div class="model-spec-label">Batches / Day</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">3250 × 1850 × 2040 mm</div>
+              <div class="model-spec-label">Dimensions (L×W×H)</div>
+            </div>
+          </div>
+          <div class="model-capacity">
+            <div class="model-capacity-title">Max Capacity / Batch</div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø6 × 80 mm</span><span class="model-capacity-val">560 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø12 × 150 mm</span><span class="model-capacity-val">147 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø20 × 250 mm</span><span class="model-capacity-val">105 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Inserts 5 × 15 × 5 mm</span><span class="model-capacity-val">1190 pcs</span></div>
+          </div>
+        </div>
+
+        <!-- PD500-G2 -->
+        <div class="model-card">
+          <div class="model-slider" data-slider>
+            <div class="model-slider-track">
+              <div class="model-slide"><img src="assets/products/pd500-g2.png" alt="OCTOARC PD500-G2 closed view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/pd500-g2_opened1.png" alt="OCTOARC PD500-G2 open chamber view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/pd500-g2_opened2.png" alt="OCTOARC PD500-G2 interior detail view" loading="lazy"></div>
+            </div>
+            <button class="model-slider-btn prev" aria-label="Previous image" data-prev><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="model-slider-btn next" aria-label="Next image" data-next><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="model-slider-dots" data-dots></div>
+          </div>
+          <div class="model-card-label">Flexible Medium-Scale Batch</div>
+          <h4 class="model-card-name">PD500-G2</h4>
+          <p class="model-card-desc">
+            A versatile PVD coating solution tailored for medium-scale
+            production, offering versatility across various types of tools and
+            components.
+          </p>
+          <div class="model-spec-grid">
+            <div class="model-spec">
+              <div class="model-spec-value">Ø540 × 400 mm</div>
+              <div class="model-spec-label">Active Plasma Volume</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">1000 kg</div>
+              <div class="model-spec-label">Max Load Mass</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">Up to 5</div>
+              <div class="model-spec-label">Batches / Day</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">3550 × 1850 × 2240 mm</div>
+              <div class="model-spec-label">Dimensions (L×W×H)</div>
+            </div>
+          </div>
+          <div class="model-capacity">
+            <div class="model-capacity-title">Max Capacity / Batch</div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø6 × 80 mm</span><span class="model-capacity-val">1120 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø12 × 150 mm</span><span class="model-capacity-val">294 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø20 × 200 mm</span><span class="model-capacity-val">210 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Inserts 15 × 15 × 5 mm</span><span class="model-capacity-val">2380 pcs</span></div>
+          </div>
+        </div>
+
+        <!-- PD700-G2 -->
+        <div class="model-card">
+          <div class="model-slider" data-slider>
+            <div class="model-slider-track">
+              <div class="model-slide"><img src="assets/products/pd700-g2.png" alt="OCTOARC PD700-G2 closed view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/pd700-g2_opened1.png" alt="OCTOARC PD700-G2 open chamber view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/pd700-g2_opened2.png" alt="OCTOARC PD700-G2 interior detail view" loading="lazy"></div>
+            </div>
+            <button class="model-slider-btn prev" aria-label="Previous image" data-prev><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="model-slider-btn next" aria-label="Next image" data-next><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="model-slider-dots" data-dots></div>
+          </div>
+          <div class="model-card-label">Flexible Large-Scale Batch</div>
+          <h4 class="model-card-name">PD700-G2</h4>
+          <p class="model-card-desc">
+            Optimised for efficient handling of large-scale batches while
+            accommodating diverse tools and components across broad production
+            demands.
+          </p>
+          <div class="model-spec-grid">
+            <div class="model-spec">
+              <div class="model-spec-value">Ø540 × 650 mm</div>
+              <div class="model-spec-label">Active Plasma Volume</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">1000 kg</div>
+              <div class="model-spec-label">Max Load Mass</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">Up to 4</div>
+              <div class="model-spec-label">Batches / Day</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">3550 × 1850 × 2240 mm</div>
+              <div class="model-spec-label">Dimensions (L×W×H)</div>
+            </div>
+          </div>
+          <div class="model-capacity">
+            <div class="model-capacity-title">Max Capacity / Batch</div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø6 × 80 mm</span><span class="model-capacity-val">1680 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø12 × 150 mm</span><span class="model-capacity-val">441 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø20 × 200 mm</span><span class="model-capacity-val">315 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Inserts 15 × 15 × 5 mm</span><span class="model-capacity-val">3570 pcs</span></div>
+          </div>
+        </div>
+
+        <!-- PD1000-G2 -->
+        <div class="model-card">
+          <div class="model-slider" data-slider>
+            <div class="model-slider-track">
+              <div class="model-slide"><img src="assets/products/pd1000-g2.png" alt="OCTOARC PD1000-G2 closed view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/pd1000-g2_opened1.png" alt="OCTOARC PD1000-G2 open chamber view" loading="lazy"></div>
+            </div>
+            <button class="model-slider-btn prev" aria-label="Previous image" data-prev><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="model-slider-btn next" aria-label="Next image" data-next><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="model-slider-dots" data-dots></div>
+          </div>
+          <div class="model-card-label">Mass Production / Large Components</div>
+          <h4 class="model-card-name">PD1000-G2</h4>
+          <p class="model-card-desc">
+            The ultimate solution for coating large components and the mass
+            production of cutting tools, designed for high capacity and maximum
+            productivity.
+          </p>
+          <div class="model-spec-grid">
+            <div class="model-spec">
+              <div class="model-spec-value">Ø850 × 900 mm</div>
+              <div class="model-spec-label">Active Plasma Volume</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">2000 kg</div>
+              <div class="model-spec-label">Max Load Mass</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">Up to 4</div>
+              <div class="model-spec-label">Batches / Day</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">4530 × 1850 × 2500 mm</div>
+              <div class="model-spec-label">Dimensions (L×W×H)</div>
+            </div>
+          </div>
+          <div class="model-capacity">
+            <div class="model-capacity-title">Max Capacity / Batch</div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø6 × 80 mm</span><span class="model-capacity-val">2240 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø12 × 150 mm</span><span class="model-capacity-val">588 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø20 × 200 mm</span><span class="model-capacity-val">420 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Inserts 15 × 15 × 5 mm</span><span class="model-capacity-val">7140 pcs</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- OCTOMAG MODELS -->
+    <div class="lineup-series" id="octomag-models">
+      <div class="lineup-series-head">
+        <span class="lineup-series-tag">Magnetron Sputtering</span>
+        <h3 class="lineup-series-name">OCTOMAG <span class="accent">Series</span></h3>
+      </div>
+      <div class="lineup-grid">
+
+        <!-- M250-G2 -->
+        <div class="model-card">
+          <div class="model-slider" data-slider>
+            <div class="model-slider-track">
+              <div class="model-slide"><img src="assets/products/m250-g2.png" alt="OCTOMAG M250-G2 closed view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/m250-g2_opened1.png" alt="OCTOMAG M250-G2 open chamber view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/m250-g2_opened2.png" alt="OCTOMAG M250-G2 interior detail view" loading="lazy"></div>
+            </div>
+            <button class="model-slider-btn prev" aria-label="Previous image" data-prev><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="model-slider-btn next" aria-label="Next image" data-next><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="model-slider-dots" data-dots></div>
+          </div>
+          <div class="model-card-label">Small Batch &amp; R&amp;D</div>
+          <h4 class="model-card-name">M250-G2</h4>
+          <p class="model-card-desc">
+            Designed for rapid processing of multiple batches within a single
+            day, offering flexibility across different processes, coatings, and
+            products. Integrates effectively with larger machinery to optimise
+            production flow and is well suited for scaling up new products.
+          </p>
+          <div class="model-spec-grid">
+            <div class="model-spec">
+              <div class="model-spec-value">Ø540 × 200 mm</div>
+              <div class="model-spec-label">Active Plasma Volume</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">500 kg</div>
+              <div class="model-spec-label">Max Load Mass</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">Up to 6</div>
+              <div class="model-spec-label">Batches / Day</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">3250 × 1850 × 2040 mm</div>
+              <div class="model-spec-label">Dimensions (L×W×H)</div>
+            </div>
+          </div>
+          <div class="model-capacity">
+            <div class="model-capacity-title">Max Capacity / Batch</div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø6 × 80 mm</span><span class="model-capacity-val">560 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø12 × 150 mm</span><span class="model-capacity-val">147 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø20 × 250 mm</span><span class="model-capacity-val">105 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Inserts 5 × 15 × 5 mm</span><span class="model-capacity-val">1190 pcs</span></div>
+          </div>
+        </div>
+
+        <!-- M500-G2 -->
+        <div class="model-card">
+          <div class="model-slider" data-slider>
+            <div class="model-slider-track">
+              <div class="model-slide"><img src="assets/products/m500-g2.png" alt="OCTOMAG M500-G2 closed view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/m500-g2_opened1.png" alt="OCTOMAG M500-G2 open chamber view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/m500-g2_opened2.png" alt="OCTOMAG M500-G2 interior detail view" loading="lazy"></div>
+            </div>
+            <button class="model-slider-btn prev" aria-label="Previous image" data-prev><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="model-slider-btn next" aria-label="Next image" data-next><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="model-slider-dots" data-dots></div>
+          </div>
+          <div class="model-card-label">Flexible Medium-Scale Batch</div>
+          <h4 class="model-card-name">M500-G2</h4>
+          <p class="model-card-desc">
+            A versatile PVD coating solution tailored for medium-scale
+            production. Handles varying batch sizes seamlessly while ensuring
+            efficient performance across diverse production needs for tools and
+            components.
+          </p>
+          <div class="model-spec-grid">
+            <div class="model-spec">
+              <div class="model-spec-value">Ø540 × 400 mm</div>
+              <div class="model-spec-label">Active Plasma Volume</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">1000 kg</div>
+              <div class="model-spec-label">Max Load Mass</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">Up to 5</div>
+              <div class="model-spec-label">Batches / Day</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">3550 × 1850 × 2240 mm</div>
+              <div class="model-spec-label">Dimensions (L×W×H)</div>
+            </div>
+          </div>
+          <div class="model-capacity">
+            <div class="model-capacity-title">Max Capacity / Batch</div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø6 × 80 mm</span><span class="model-capacity-val">1120 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø12 × 150 mm</span><span class="model-capacity-val">294 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø20 × 200 mm</span><span class="model-capacity-val">210 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Inserts 15 × 15 × 5 mm</span><span class="model-capacity-val">2380 pcs</span></div>
+          </div>
+        </div>
+
+        <!-- M700-G2 -->
+        <div class="model-card">
+          <div class="model-slider" data-slider>
+            <div class="model-slider-track">
+              <div class="model-slide"><img src="assets/products/m700-g2.png" alt="OCTOMAG M700-G2 closed view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/m700-g2_opened1.png" alt="OCTOMAG M700-G2 open chamber view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/m700-g2_opened2.png" alt="OCTOMAG M700-G2 interior detail view" loading="lazy"></div>
+            </div>
+            <button class="model-slider-btn prev" aria-label="Previous image" data-prev><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="model-slider-btn next" aria-label="Next image" data-next><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="model-slider-dots" data-dots></div>
+          </div>
+          <div class="model-card-label">Flexible Large-Scale Batch</div>
+          <h4 class="model-card-name">M700-G2</h4>
+          <p class="model-card-desc">
+            Optimised for efficient handling of large-scale batches with the
+            capability to accommodate diverse tools and components. Manages
+            varying batch sizes to deliver consistent performance across broad
+            production demands.
+          </p>
+          <div class="model-spec-grid">
+            <div class="model-spec">
+              <div class="model-spec-value">Ø540 × 650 mm</div>
+              <div class="model-spec-label">Active Plasma Volume</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">1000 kg</div>
+              <div class="model-spec-label">Max Load Mass</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">Up to 4</div>
+              <div class="model-spec-label">Batches / Day</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">3550 × 1850 × 2240 mm</div>
+              <div class="model-spec-label">Dimensions (L×W×H)</div>
+            </div>
+          </div>
+          <div class="model-capacity">
+            <div class="model-capacity-title">Max Capacity / Batch</div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø6 × 80 mm</span><span class="model-capacity-val">1680 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø12 × 150 mm</span><span class="model-capacity-val">441 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø20 × 200 mm</span><span class="model-capacity-val">315 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Inserts 15 × 15 × 5 mm</span><span class="model-capacity-val">3570 pcs</span></div>
+          </div>
+        </div>
+
+        <!-- M1000-G2 -->
+        <div class="model-card">
+          <div class="model-slider" data-slider>
+            <div class="model-slider-track">
+              <div class="model-slide"><img src="assets/products/m1000-g2.png" alt="OCTOMAG M1000-G2 closed view" loading="lazy"></div>
+              <div class="model-slide"><img src="assets/products/m1000-g2_opened1.png" alt="OCTOMAG M1000-G2 open chamber view" loading="lazy"></div>
+            </div>
+            <button class="model-slider-btn prev" aria-label="Previous image" data-prev><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="model-slider-btn next" aria-label="Next image" data-next><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="model-slider-dots" data-dots></div>
+          </div>
+          <div class="model-card-label">Mass Production / Large Components</div>
+          <h4 class="model-card-name">M1000-G2</h4>
+          <p class="model-card-desc">
+            The ultimate solution for coating large components and cutting tool
+            mass production. Accommodates the largest forming tools, extra-large
+            cutting tools, and lengthy components with tailored capabilities for
+            substantial volumes.
+          </p>
+          <div class="model-spec-grid">
+            <div class="model-spec">
+              <div class="model-spec-value">Ø850 × 900 mm</div>
+              <div class="model-spec-label">Active Plasma Volume</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">2000 kg</div>
+              <div class="model-spec-label">Max Load Mass</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">Up to 4</div>
+              <div class="model-spec-label">Batches / Day</div>
+            </div>
+            <div class="model-spec">
+              <div class="model-spec-value">4530 × 1850 × 2500 mm</div>
+              <div class="model-spec-label">Dimensions (L×W×H)</div>
+            </div>
+          </div>
+          <div class="model-capacity">
+            <div class="model-capacity-title">Max Capacity / Batch</div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø6 × 80 mm</span><span class="model-capacity-val">2240 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø12 × 150 mm</span><span class="model-capacity-val">588 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Drills Ø20 × 200 mm</span><span class="model-capacity-val">420 pcs</span></div>
+            <div class="model-capacity-row"><span class="model-capacity-name">Inserts 15 × 15 × 5 mm</span><span class="model-capacity-val">7140 pcs</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -912,12 +1584,10 @@
               <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. footer logo"
                 class="footer-staton-logo" style="margin-bottom: 0;">
             </a>
-            <!-- HIDDEN until domain change:
             <div class="footer-hipim-wrap">
               <div class="hipim-logo-footer"><img src="assets/hipim%20logo/h%20surroundings.png" alt="" class="hipim-ring" aria-hidden="true"><img src="assets/hipim%20logo/H%20logo.png" alt="HI-PIM Logo" class="hipim-h"></div>
               <div class="footer-hipim-name">HI-PIM Instruments PVT. Ltd</div>
             </div>
-            -->
           </div>
           <div class="footer-staton-socials">
             <a href="#" class="footer-staton-social-link" aria-label="Facebook">
@@ -957,6 +1627,7 @@
             <ul class="footer-staton-list">
               <li><a href="#octoarc">Octoarc</a></li>
               <li><a href="#octomag">Octomag</a></li>
+              <li><a href="#models">Model Lineup</a></li>
               <li><a href="#advantages">Advantages</a></li>
               <li><a href="#datasheet">Datasheet</a></li>
             </ul>
@@ -1050,6 +1721,66 @@
         delay: 0.2,
         ease: "back.out(1.2)"
       });
+    });
+
+    gsap.utils.toArray('.model-card').forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 88%",
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        delay: (i % 2) * 0.1,
+        ease: "power3.out"
+      });
+    });
+
+    // Model image sliders
+    document.querySelectorAll('[data-slider]').forEach(slider => {
+      const track = slider.querySelector('.model-slider-track');
+      const slides = slider.querySelectorAll('.model-slide');
+      const dotsWrap = slider.querySelector('[data-dots]');
+      const total = slides.length;
+      let index = 0;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'model-slider-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+        dot.addEventListener('click', () => go(i));
+        dotsWrap.appendChild(dot);
+      });
+      const dots = dotsWrap.querySelectorAll('.model-slider-dot');
+
+      function go(i) {
+        index = (i + total) % total;
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach((d, di) => d.classList.toggle('active', di === index));
+      }
+
+      slider.querySelector('[data-prev]').addEventListener('click', () => { go(index - 1); restart(); });
+      slider.querySelector('[data-next]').addEventListener('click', () => { go(index + 1); restart(); });
+      dots.forEach((d, i) => d.addEventListener('click', restart));
+
+      // Auto-advance every 4s; pause on hover, run only while in view
+      let timer = null, inView = false, hovered = false;
+      function start() { if (total > 1 && inView && !hovered && !timer) timer = setInterval(() => go(index + 1), 4000); }
+      function stop() { clearInterval(timer); timer = null; }
+      function restart() { stop(); start(); }
+
+      slider.addEventListener('mouseenter', () => { hovered = true; stop(); });
+      slider.addEventListener('mouseleave', () => { hovered = false; start(); });
+
+      new IntersectionObserver((entries) => {
+        const e = entries[0];
+        // Only treat as "in view" when a meaningful portion is visible, and
+        // always stop the moment it scrolls out so it never advances off-screen.
+        inView = e.isIntersecting && e.intersectionRatio >= 0.4;
+        if (inView) start(); else stop();
+      }, { threshold: [0, 0.4, 1] }).observe(slider);
     });
 
     gsap.from('.adv-header-row', {

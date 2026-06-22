@@ -33,7 +33,7 @@ controls.enableZoom = false;
 controls.enablePan = false;
 controls.enableRotate = false;
 controls.autoRotate = true;
-controls.autoRotateSpeed = 32.0;
+controls.autoRotateSpeed = 54.0;
 
 /**
  * 2. Soft Studio Lighting (Balanced Highlights & Shadows)
@@ -177,7 +177,7 @@ shank.position.y = shankHeight / 2;
 toolGroup.add(shank);
 
 // Continuous Coated Surface (Includes Neck + Helical Head)
-const headGeo = createReferenceFluteGeometry(shankRadius, coatedAreaHeight, 6, 1.2);
+const headGeo = createReferenceFluteGeometry(shankRadius, coatedAreaHeight, 6, -1.2);
 const head = new THREE.Mesh(headGeo, headMat);
 head.position.y = shankHeight;
 toolGroup.add(head);

@@ -21,7 +21,7 @@
   </script>
 
   <!-- Preload critical first hero frame -->
-  <link rel="preload" as="image" href="assets/hero/ezgif-frame-001_converted.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero/frame_001.jpg" fetchpriority="high">
 
   <!-- CDN preconnect: resolves DNS + TLS before GSAP scripts are requested -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -72,7 +72,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="technology.html">Technology</a></li>
       <li><a href="products.html">Products</a></li>
-      <li><a href="applications.html">Applications</a></li>
+      <li><a href="coatings.html">Coatings</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
@@ -99,7 +99,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="technology.html">Technology</a></li>
       <li><a href="products.html">Products</a></li>
-      <li><a href="applications.html">Applications</a></li>
+      <li><a href="coatings.html">Coatings</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
@@ -130,6 +130,7 @@
       <div class="hero-text-layer">
         <div class="hero-chapter pos-top-left" id="chapter-1">
           <div class="chapter-eyebrow">TECHNOLOGY</div>
+          <div class="chapter-tagline">STATON — supplier of coating equipment</div>
           <h1 class="chapter-title"><span class="title-light">Precision</span><br><span class="title-bold">PVD
               Coating.</span></h1>
           <div class="chapter-desc">fsARC™ filtered cathodic arc systems delivering flawless, droplet-free performance.
@@ -228,8 +229,8 @@
         <div class="fsarc-text-block">
           <h3 class="fsarc-text-title accent-title">fsARC™ Coating</h3>
           <p class="fsarc-text-desc accent-desc opacity-reveal">
-            Staton's proprietary fsARC™ technology delivers a <strong>flawless, droplet-free surface</strong> that
-            is <strong>exceptionally smooth</strong>. By eliminating macro-particles at the source, it
+            STATON's patented fsARC™ technology delivers an <strong>exceptionally smooth coating surface</strong>
+            with a <strong>minimal droplet content</strong>. By eliminating macro-particles at the source, it
             <strong>minimizes operational friction</strong> and <strong>maximizes machining efficiency</strong>,
             extending tool life by up to <strong>five times</strong>.
           </p>
@@ -242,77 +243,6 @@
       </div>
     </div>
   </section>
-  <!-- ═══════ TOOL LIFECYCLE SCROLLYTELLING ═══════ -->
-  <section class="lifecycle-section section" id="lifecycle">
-    <div class="lifecycle-header">
-      <h2 class="lifecycle-title">Tool Process <span class="accent">Workflow</span></h2>
-      <p class="lifecycle-subtitle">From used tool to high-performance coating - a precision-driven restoration and
-        enhancement process.</p>
-    </div>
-
-    <div class="lifecycle-track" id="lifecycle-track">
-      <!-- SVG path for the zig-zag motion -->
-      <svg class="lifecycle-svg" viewBox="0 0 1000 2000" preserveAspectRatio="xMidYMid slice">
-        <path id="motion-path"
-          d="M 500,50 C 900,300 900,500 500,700 C 100,900 100,1100 500,1300 C 900,1500 900,1700 500,1900" fill="none"
-          stroke="rgba(0, 255, 100, 0.75)" stroke-width="6"
-          style="filter: drop-shadow(0 0 10px rgba(0, 255, 100, 0.6));" />
-        <path id="motion-path-mobile"
-          d="M 500,50 C 500,150 750,150 750,250 C 750,450 250,450 250,650 C 250,850 750,1050 730,1250 C 730,1450 270,1650 270,1850"
-          fill="none" stroke="rgba(0, 255, 100, 0.4)" stroke-width="6" opacity="0"
-          style="filter: drop-shadow(0 0 10px rgba(0, 255, 100, 0.6));" />
-      </svg>
-
-      <!-- The rolling gear with crossfading images inside -->
-      <div class="lifecycle-gear-wrapper" id="lifecycle-gear">
-        <div class="gear-shadow"></div>
-        <div class="gear-rotator" id="gear-rotator">
-          <img src="assets/toolprocess/one.png" alt="Industrial tool stripping stage - removing old coating"
-            class="gear-img active" data-stage="1" decoding="async" fetchpriority="low">
-          <img src="assets/toolprocess/two.png" alt="Precision tool sharpening and edge restoration stage"
-            class="gear-img" data-stage="2" decoding="async" fetchpriority="low">
-          <img src="assets/toolprocess/third.png" alt="Advanced ultrasonic tool cleaning stage" class="gear-img"
-            data-stage="3" decoding="async" fetchpriority="low">
-          <img src="assets/toolprocess/four.png" alt="Final PVD coating stage - applying wear-resistant layer"
-            class="gear-img" data-stage="4" decoding="async" fetchpriority="low">
-        </div>
-      </div>
-
-      <!-- Content stages synced to scroll -->
-      <div class="lifecycle-stages">
-        <div class="lifecycle-stage left">
-          <div class="stage-info">
-            <h3 class="stage-title">Stripping</h3>
-            <p class="stage-desc">Removal of existing coating layers through controlled processes, restoring the tool to
-              its base material while preserving structural integrity and dimensional accuracy.</p>
-          </div>
-        </div>
-        <div class="lifecycle-stage right">
-          <div class="stage-info">
-            <h3 class="stage-title">Sharpening</h3>
-            <p class="stage-desc">Precision regrinding and edge restoration ensure optimal cutting geometry, improving
-              performance, consistency, and machining efficiency.</p>
-          </div>
-        </div>
-        <div class="lifecycle-stage left">
-          <div class="stage-info">
-            <h3 class="stage-title">Cleaning</h3>
-            <p class="stage-desc">Advanced cleaning processes eliminate contaminants, oils, and residues, preparing the
-              surface for uniform coating adhesion in controlled environments.</p>
-          </div>
-        </div>
-        <div class="lifecycle-stage right">
-          <div class="stage-info">
-            <h3 class="stage-title">PVD Coating</h3>
-            <p class="stage-desc">Application of high-performance PVD coating within vacuum-controlled chambers,
-              delivering a uniform, wear-resistant surface with superior adhesion and durability.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- ═══════ MACHINE PORTFOLIO ═══════ -->
   <section class="machines-section section" id="machines">
     <h2 class="machines-headline">
@@ -344,6 +274,10 @@
             making it the system of choice for demanding industrial coating
             applications.
           </p>
+          <a href="products.html#octoarc" class="machine-cta">
+            View Product
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -370,15 +304,14 @@
             applications where surface quality and aesthetic uniformity are
             paramount, from architectural hardware to precision components.
           </p>
+          <a href="products.html#octomag" class="machine-cta">
+            View Product
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
-
-
-
-
-
 
   <!-- ═══════ INDUSTRY CONTINUUM ═══════ -->
   <section class="industry-section section" id="industries">
@@ -502,6 +435,250 @@
         </div>
       </div>
     </div>
+  </section>
+
+
+  <!-- ═══════ COATINGS PORTFOLIO ═══════ -->
+  <section class="coatings-section section" id="coatings">
+    <div class="coatings-header">
+      <div class="coatings-eyebrow">PVD COATING PORTFOLIO</div>
+      <h2 class="coatings-headline">Engineered <span class="accent">Coatings</span> for Every Application</h2>
+      <p class="coatings-sub">
+        A complete range of high-performance PVD coatings — from classic nitrides
+        to advanced nano-composite and carbon-based films — each optimized for a
+        specific machining, forming, tribological or decorative application.
+      </p>
+    </div>
+
+    <div class="coatings-table">
+      <div class="coatings-table-head">
+        <span class="ct-col-name">Coating</span>
+        <span class="ct-col-apps">Applications</span>
+        <span class="ct-col-spec">Hardness</span>
+        <span class="ct-col-spec">Max temp</span>
+        <span class="ct-col-spec">CoF</span>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>TiN</strong><span>Titanium Nitride</span></div>
+        <div class="ct-col-apps">Milling, drilling, taps, gearing, metal forming, injection molding and automotive components.</div>
+        <div class="ct-col-spec" data-label="Hardness">27–29 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">600 °C</div>
+        <div class="ct-col-spec" data-label="CoF">~0.60</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>TiCN</strong><span>Titanium Carbonitride</span></div>
+        <div class="ct-col-apps">Metal forming, injection molding, taps, automotive and decorative coatings.</div>
+        <div class="ct-col-spec" data-label="Hardness">29–35 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">500 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.35</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>CrN</strong><span>Chromium Nitride</span></div>
+        <div class="ct-col-apps">Metal forming, injection molding, automotive and decorative coatings.</div>
+        <div class="ct-col-spec" data-label="Hardness">22–26 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">550 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.55</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>CrCN</strong><span>Chromium Carbonitride</span></div>
+        <div class="ct-col-apps">High-load applications, high-speed machining, automotive and tribological parts.</div>
+        <div class="ct-col-spec" data-label="Hardness">24–27 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">450 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.35</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>ZrN</strong><span>Zirconium Nitride</span></div>
+        <div class="ct-col-apps">Milling aluminium alloys (low silicon), decorative coatings and the food industry.</div>
+        <div class="ct-col-spec" data-label="Hardness">20–22 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">550 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.50</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>TiAlN</strong><span>Titanium Aluminium Nitride</span></div>
+        <div class="ct-col-apps">Injection molding, saw blades, reamers and high-strength sheet forming.</div>
+        <div class="ct-col-spec" data-label="Hardness">30–34 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">850 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.65</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>TiAlCN</strong><span>Titanium Aluminium Carbonitride</span></div>
+        <div class="ct-col-apps">Injection molding, dies and saw blades.</div>
+        <div class="ct-col-spec" data-label="Hardness">31–34 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">750 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.45</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>AlTiN</strong><span>Aluminium Titanium Nitride</span></div>
+        <div class="ct-col-apps">Drilling and machining steels up to 55 HRC, milling stainless steel and cast iron.</div>
+        <div class="ct-col-spec" data-label="Hardness">32–35 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">900 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.65</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>KTRN</strong><span>Nanocomposite AlTiN</span></div>
+        <div class="ct-col-apps">Drilling steels to 55 HRC, milling stainless and cast iron, turning stainless steel.</div>
+        <div class="ct-col-spec" data-label="Hardness">33–35 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1000 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.65</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>KTRN-X</strong><span>Optimized KTRN</span></div>
+        <div class="ct-col-apps">Drilling steels to 55 HRC, milling stainless steel and cast iron, turning.</div>
+        <div class="ct-col-spec" data-label="Hardness">33–35 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1000 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.65</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>CRONAL</strong><span>AlTiCrN Monolayer</span></div>
+        <div class="ct-col-apps">Drills and end mills for low and medium steels up to 1000 MPa tensile strength.</div>
+        <div class="ct-col-spec" data-label="Hardness">33–35 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1000 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.60</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>AlTiCrN-SL</strong><span>Superlattice Multilayer</span></div>
+        <div class="ct-col-apps">Milling alloy steels to 52 HRC, cast iron, gear cutting and dies.</div>
+        <div class="ct-col-spec" data-label="Hardness">29–33 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">950 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.62</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>X-CRAL</strong><span>AlCrN</span></div>
+        <div class="ct-col-apps">Milling unalloyed and low-alloy steels, cast iron, gearing and dies.</div>
+        <div class="ct-col-spec" data-label="Hardness">32–34 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">850 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.60</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>X-CRAL PRO</strong><span>Enhanced AlCrN</span></div>
+        <div class="ct-col-apps">Milling low and medium steels, stainless steel and hardened steel 45–55 HRC.</div>
+        <div class="ct-col-spec" data-label="Hardness">34–37 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1000 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.60</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>TIXAL</strong><span>Nanocomposite</span></div>
+        <div class="ct-col-apps">Drilling steel, stainless and cast iron; milling medium and high-alloy steels.</div>
+        <div class="ct-col-spec" data-label="Hardness">33–36 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1050 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.65</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>ta-C</strong><span>Tetrahedral Amorphous Carbon</span></div>
+        <div class="ct-col-apps">Machining non-ferrous alloys: aluminium, copper, silver, gold and magnesium.</div>
+        <div class="ct-col-spec" data-label="Hardness">40–60 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">400 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.15</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>MAKRO</strong><span>AlCrN-based</span></div>
+        <div class="ct-col-apps">Drilling unalloyed and low-alloy steels, milling low-alloy steels and cast iron.</div>
+        <div class="ct-col-spec" data-label="Hardness">30–33 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1000 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.65</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>TiSiN</strong><span>Titanium Silicon Nitride</span></div>
+        <div class="ct-col-apps">Roughing and finishing end mills for stainless and hardened steel 58–62 HRC.</div>
+        <div class="ct-col-spec" data-label="Hardness">36–38 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1050 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.65</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>SICRAL</strong><span>Optimized TiSiN</span></div>
+        <div class="ct-col-apps">End mills for stainless steel and hardened steel to 58 HRC, drilling stainless.</div>
+        <div class="ct-col-spec" data-label="Hardness">34–36 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1050 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.62</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>MAHLEN</strong><span>TiAlCrXN Multilayer</span></div>
+        <div class="ct-col-apps">Knives, dies, punches and stamping tools.</div>
+        <div class="ct-col-spec" data-label="Hardness">30–32 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1000 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.65</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>ALU-CUT</strong><span>Carbon-based</span></div>
+        <div class="ct-col-apps">End tools for non-ferrous metals: aluminium, copper, magnesium, wood and paper.</div>
+        <div class="ct-col-spec" data-label="Hardness">40–60 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">400 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.10–0.20</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>TriboW</strong><span>Tungsten-doped</span></div>
+        <div class="ct-col-apps">Automotive and sliding applications.</div>
+        <div class="ct-col-spec" data-label="Hardness">10–15 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">450 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.10</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>TriboAF+</strong><span>High wear resistance</span></div>
+        <div class="ct-col-apps">Automotive and sliding applications.</div>
+        <div class="ct-col-spec" data-label="Hardness">12–18 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">400 °C</div>
+        <div class="ct-col-spec" data-label="CoF">0.20</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>STACOM30</strong><span>Thermal Barrier Nanostructured</span></div>
+        <div class="ct-col-apps">Heat-resistant components.</div>
+        <div class="ct-col-spec" data-label="Hardness">25 GPa</div>
+        <div class="ct-col-spec" data-label="Max temp">1200 °C</div>
+        <div class="ct-col-spec" data-label="CoF"><small class="ct-spec-alt">Thickness</small>3.0 µm</div>
+      </div>
+
+      <div class="coating-row">
+        <div class="ct-col-name"><strong>BARTIL</strong><span>Corrosion Resistant</span></div>
+        <div class="ct-col-apps">Components exposed to corrosive humid or salt environments.</div>
+        <div class="ct-col-spec" data-label="Hardness"><small class="ct-spec-alt">Thickness</small>2–5 µm</div>
+        <div class="ct-col-spec" data-label="Max temp"><small class="ct-spec-alt">Process</small>Sputtering</div>
+        <div class="ct-col-spec" data-label="CoF"><small class="ct-spec-alt">Colour</small>Anthracite</div>
+      </div>
+
+    </div>
+
+    <script>
+      (function () {
+        var rows = document.querySelectorAll('.coatings-section .coating-row');
+        if (!('IntersectionObserver' in window)) {
+          rows.forEach(function (r) { r.classList.add('visible'); });
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        rows.forEach(function (r) { io.observe(r); });
+      })();
+    </script>
   </section>
 
   <!-- ═══════ PERFORMANCE COMPARISON ═══════ -->
@@ -712,13 +889,9 @@
 
         <!-- Info Column -->
         <div class="india-info-col">
-          <!-- HIDDEN until domain change, original text:
+          <p class="india-desc-text">
             Bridging European precision with local excellence. Staton s.r.o. and HI-PIM Instruments PVT. Ltd
             provide an unshakeable engineering shield for your PVD operations.
-          -->
-          <p class="india-desc-text">
-            Bridging European precision with local excellence. Staton s.r.o.
-            provides an unshakeable engineering shield for your PVD operations.
           </p>
 
           <div class="india-features-matrix">
@@ -787,12 +960,8 @@
         <div class="hub-line-system">
           <div class="hub-node node-india">
             <div class="node-label">INDIA</div>
-            <!-- HIDDEN until domain change:
             <div class="node-title">HI-PIM Instruments PVT. Ltd<div class="hub-logo"><img src="assets/hipim%20logo/h%20surroundings.png" alt="" class="hipim-ring" aria-hidden="true"><img src="assets/hipim%20logo/H%20logo.png" alt="HI-PIM Logo" class="hipim-h"></div></div>
             <div class="node-status">AUTHORISED PARTNER OF STATON INDIA</div>
-            -->
-            <div class="node-title">Staton India</div>
-            <div class="node-status">LOCAL SUPPORT &amp; SERVICE HUB</div>
           </div>
 
           <div class="hub-data-stream">
@@ -852,7 +1021,7 @@
             <div class="event-card-body">
               <div class="event-tag">Advanced Manufacturing &amp; Technology</div>
               <h3 class="event-name">AMTEX 2026</h3>
-              <p class="event-desc">A premier Indian platform for advanced manufacturing technologies — <!-- HIDDEN until domain change: originally "Staton and HI-PIM Instruments PVT. Ltd will showcase" -->Staton will showcase fsARC™ PVD coating systems and connect with India's growing engineering sector.</p>
+              <p class="event-desc">A premier Indian platform for advanced manufacturing technologies — Staton and HI-PIM Instruments PVT. Ltd will showcase fsARC™ PVD coating systems and connect with India's growing engineering sector.</p>
               <div class="event-location">
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -881,7 +1050,7 @@
             <div class="event-card-body">
               <div class="event-tag">India's Largest Machine Tool Expo</div>
               <h3 class="event-name">IMTEX 2027</h3>
-              <p class="event-desc">India's flagship manufacturing exhibition — <!-- HIDDEN until domain change: originally "Staton and HI-PIM Instruments PVT. Ltd will demonstrate" -->Staton will demonstrate advanced PVD coating solutions with live system demos and expert consultations for the Indian market.</p>
+              <p class="event-desc">India's flagship manufacturing exhibition — Staton and HI-PIM Instruments PVT. Ltd will demonstrate advanced PVD coating solutions with live system demos and expert consultations for the Indian market.</p>
               <div class="event-location">
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -1050,8 +1219,7 @@
 
         <!-- Right: The Form -->
         <div class="form-glass-wrapper">
-          <!-- HIDDEN until domain change: form action was mailto:hipiminstruments@gmail.com -->
-          <form class="contact-form" id="contact-form" action="mailto:India@staton.in" method="post" enctype="text/plain">
+          <form class="contact-form" id="contact-form" action="mailto:hipiminstruments@gmail.com" method="post" enctype="text/plain">
             <div class="form-field">
               <input type="text" id="field-name" placeholder=" " autocomplete="name">
               <label for="field-name">Your Name</label>
@@ -1102,12 +1270,10 @@
               <img src="assets/products/Staton%20LogoR_dlhe.png" alt="Staton s.r.o. footer logo"
                 class="footer-staton-logo" style="margin-bottom: 0;">
             </a>
-            <!-- HIDDEN until domain change:
             <div class="footer-hipim-wrap">
               <div class="hipim-logo-footer"><img src="assets/hipim%20logo/h%20surroundings.png" alt="" class="hipim-ring" aria-hidden="true"><img src="assets/hipim%20logo/H%20logo.png" alt="HI-PIM Logo" class="hipim-h"></div>
               <div class="footer-hipim-name">HI-PIM Instruments PVT. Ltd</div>
             </div>
-            -->
           </div>
           <div class="footer-staton-socials">
             <a href="#" class="footer-staton-social-link" aria-label="Facebook">
