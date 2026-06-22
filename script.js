@@ -1232,6 +1232,7 @@
   // Preload frames logic
   const heroLoader = document.getElementById('hero-loader');
   const loaderLogo = document.getElementById('loader-logo');
+  const loaderPercent = document.getElementById('loader-percent');
   const navLogo = document.querySelector('.nav-logo');
   const floatingNav = document.getElementById('floating-nav');
   const loadThreshold = isMobileOrTouch
@@ -1285,6 +1286,17 @@
         ease: "power2.out"
       });
 
+      // Reveal the progress counter only AFTER the logo has come in,
+      // so on slow (hosted) connections the user sees the logo first.
+      if (loaderPercent) {
+        gsap.to(loaderPercent, {
+          opacity: 0.55,
+          duration: 1.0,
+          delay: 1.8,
+          ease: "power2.out"
+        });
+      }
+
       // Animate the outer glow bloom
       gsap.fromTo('.loader-bloom',
         { opacity: 0, scale: 0.5 },
@@ -1308,15 +1320,42 @@
       );
     }
 
+    // - ACCURATE PROGRESS: percent reflects BOTH gates (images + min time) -
+    // It is the MIN of the two so it only reaches 100% exactly when the hero
+    // is actually about to be revealed, never sooner.
+    let displayedPercent = 0;
+    function updatePercent() {
+      const elapsed = Date.now() - startTime;
+      const imageProgress = Math.min(1, imagesLoaded / loadThreshold);
+      const timeProgress = Math.min(1, elapsed / minIntroTime);
+      const target = Math.floor(Math.min(imageProgress, timeProgress) * 100);
+      // Only ever move forward, so it never flickers backwards
+      if (target > displayedPercent) displayedPercent = target;
+      if (loaderPercent) loaderPercent.textContent = displayedPercent + '%';
+    }
+
+    function percentLoop() {
+      if (isHeroReady) {
+        if (loaderPercent) loaderPercent.textContent = '100%';
+        return;
+      }
+      updatePercent();
+      requestAnimationFrame(percentLoop);
+    }
+    requestAnimationFrame(percentLoop);
+
     function checkReadiness() {
       const elapsed = Date.now() - startTime;
       if (imagesLoaded >= loadThreshold && elapsed >= minIntroTime && !isHeroReady) {
+        if (loaderPercent) loaderPercent.textContent = '100%';
         triggerTransition();
       } else if (!isHeroReady) {
         // If not ready yet, check again in a bit
         setTimeout(checkReadiness, 100);
       }
     }
+    // Kick off the time-gate check even if no images have loaded yet
+    checkReadiness();
 
     function triggerTransition() {
       isHeroReady = true;
@@ -1346,6 +1385,7 @@
         // Sync background fade, bloom removal, and logo travel
         // Faster fade and scale-down for the bloom to ensure it doesn't linger
         tl.to('.loader-bloom', { opacity: 0, scale: 0.1, duration: 0.5, ease: "power2.in" }, "start");
+        if (loaderPercent) tl.to(loaderPercent, { opacity: 0, duration: 0.4, ease: "power2.in" }, "start");
         tl.to(heroLoader, { background: 'rgba(0,0,0,0)', duration: 1.2, ease: "power3.inOut" }, "start");
         tl.to(loaderLogo, {
           x: dx,

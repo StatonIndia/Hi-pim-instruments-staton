@@ -431,6 +431,22 @@ body:not(.loading) .floating-nav {
   }
 }
 
+.loader-percent {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  color: var(--white);
+  opacity: 0.55;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  z-index: 12;
+  opacity: 0;
+}
+
 .loader-status {
   display: flex;
   flex-direction: column;
