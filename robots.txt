@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.statonindia.com/sitemap.xml
+Sitemap: https://staton.in/sitemap.xml
