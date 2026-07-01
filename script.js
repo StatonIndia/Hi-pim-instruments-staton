@@ -1192,29 +1192,163 @@
   const heroSection = document.getElementById('hero');
   const heroCanvas = document.getElementById('hero-canvas');
   const heroCtx = heroCanvas ? heroCanvas.getContext('2d', { alpha: false }) : null;
-  const heroFrameFolder = 'assets/hero';
-  const heroFramePrefix = 'frame_';
-  const heroFrameExt = '.jpg';
-  const heroImageCount = 190;
-  const mobileFrameCount = 80;
-  const frameCount = isMobileOrTouch ? mobileFrameCount : heroImageCount;
-  const heroFrameStep = (heroImageCount - 1) / (mobileFrameCount - 1);
-  const frames = [];
+
+  // - VIDEO-DRIVEN HERO SEQUENCE -
+  // Instead of preloading ~190 JPG frames (~188MB), we scrub a single MP4
+  // by mapping scroll progress -> video.currentTime. Massively smaller payload.
+  const heroVideoSrc = 'assets/video/Machine_exploded_view_animation_202606211334_scrub.mp4';
+  const heroVideo = document.createElement('video');
+  heroVideo.src = heroVideoSrc;
+  heroVideo.muted = true;
+  heroVideo.playsInline = true;
+  heroVideo.setAttribute('playsinline', '');
+  heroVideo.setAttribute('webkit-playsinline', '');
+  heroVideo.preload = 'auto';
+  heroVideo.crossOrigin = 'anonymous';
+  // Keep it out of layout; it's only a decode source for the canvas.
+  // Off-screen (not display:none) so mobile Safari still decodes/seeks it.
+  heroVideo.setAttribute('muted', '');
+  heroVideo.style.position = 'absolute';
+  heroVideo.style.width = '1px';
+  heroVideo.style.height = '1px';
+  heroVideo.style.opacity = '0';
+  heroVideo.style.pointerEvents = 'none';
+  heroVideo.style.left = '-9999px';
+  heroVideo.style.top = '0';
+  document.body.appendChild(heroVideo);
+
+  let videoReady = false;      // enough data to draw the first frame
+  let videoFullyBuffered = false; // entire clip downloaded — safe to scrub freely
+  let heroDuration = 0;
+  let seeking = false;         // legacy-path guard so we don't stack seeks
+  // `imagesLoaded` is kept as the preloader's "have something to draw" flag
+  // so the existing loader gating code below works unchanged.
   let imagesLoaded = 0;
-  let currentFrameIndex = -1;
+  let currentFrameIndex = -1;  // retained for resize redraw gating
 
-  function getHeroFrameNumber(logicalIndex) {
-    if (logicalIndex >= 190) return logicalIndex + 2;
-    if (logicalIndex >= 187) return logicalIndex + 1;
-    return logicalIndex;
+  // True once the video's buffered ranges cover (almost) the whole duration.
+  // Until then, seeking into un-downloaded regions stalls the decoder — which
+  // is exactly the "laggy/stuck right after load" symptom. We check on every
+  // 'progress' event and flip the flag when the clip is fully in the buffer.
+  function checkFullyBuffered() {
+    if (videoFullyBuffered || !heroDuration) return;
+    const b = heroVideo.buffered;
+    if (b && b.length && b.end(b.length - 1) >= heroDuration - 0.25) {
+      videoFullyBuffered = true;
+    }
+  }
+  heroVideo.addEventListener('progress', checkFullyBuffered);
+  heroVideo.addEventListener('canplaythrough', () => { videoFullyBuffered = true; });
+
+  // Minimum time delta worth seeking to. One frame at 24fps ≈ 0.0417s; below
+  // ~half a frame there's nothing new to show, so skip the seek entirely.
+  const SEEK_EPS = 0.02;
+  let seekWatchdog = null;
+
+  // Seek the video to a normalized progress; coalesce rapid requests so we
+  // never queue more than one seek at a time (smoother than spamming currentTime).
+  // Furthest continuous time that's actually downloaded from the start.
+  function bufferedEnd() {
+    const b = heroVideo.buffered;
+    if (!b || !b.length) return 0;
+    // Find the range that contains t=0 (or the first range) and return its end.
+    for (let i = 0; i < b.length; i++) {
+      if (b.start(i) <= 0.05) return b.end(i);
+    }
+    return b.end(0);
   }
 
-  function getHeroFrameFilename(logicalIndex) {
-    const actualIndex = isMobileOrTouch
-      ? Math.min(heroImageCount, Math.max(1, Math.round(1 + (logicalIndex - 1) * heroFrameStep)))
-      : logicalIndex;
-    return `${heroFrameFolder}/${heroFramePrefix}${String(getHeroFrameNumber(actualIndex)).padStart(3, '0')}${heroFrameExt}`;
+  // requestVideoFrameCallback = fires each time a decoded frame is *presented*.
+  // We run a self-sustaining loop that (a) nudges currentTime toward the target
+  // and (b) paints whatever frame the decoder just produced. Letting the browser
+  // coalesce seeks and painting the freshest frame avoids the seek-chaining
+  // thrash that caused intermittent stutter/stuck scrolling.
+  const hasRVFC = typeof heroVideo.requestVideoFrameCallback === 'function';
+  let targetTime = 0;          // where scroll wants the playhead (seconds)
+  let rvfcRunning = false;
+
+  function seekHeroVideo(progress) {
+    if (!videoReady || heroDuration <= 0) return;
+    let t = Math.max(0, Math.min(heroDuration - 0.001, progress * heroDuration));
+    // Before the clip is fully buffered, never seek past what's downloaded —
+    // seeking into an un-buffered region stalls the decoder.
+    if (!videoFullyBuffered) {
+      const safe = bufferedEnd() - 0.1;
+      if (safe > 0 && t > safe) t = safe;
+    }
+    targetTime = t;
+    if (hasRVFC) {
+      ensureRvfcLoop();
+    } else {
+      legacySeek();
+    }
   }
+
+  // --- rVFC render loop (primary path) ---
+  function ensureRvfcLoop() {
+    if (rvfcRunning) return;
+    // Only move if we're not already within a frame of the target.
+    if (Math.abs(heroVideo.currentTime - targetTime) < SEEK_EPS) return;
+    rvfcRunning = true;
+    heroVideo.currentTime = targetTime;
+    heroVideo.requestVideoFrameCallback(onRvfcFrame);
+  }
+
+  function onRvfcFrame() {
+    drawHeroFrame(0);
+    // Still far from target? Nudge again and keep the loop alive.
+    if (Math.abs(heroVideo.currentTime - targetTime) > SEEK_EPS) {
+      heroVideo.currentTime = targetTime;
+      heroVideo.requestVideoFrameCallback(onRvfcFrame);
+    } else {
+      rvfcRunning = false;
+    }
+  }
+
+  // --- legacy 'seeked'-based path (browsers without rVFC, e.g. older Safari) ---
+  function legacySeek() {
+    if (seeking) return;
+    if (Math.abs(heroVideo.currentTime - targetTime) < SEEK_EPS) return;
+    seeking = true;
+    if (seekWatchdog) clearTimeout(seekWatchdog);
+    seekWatchdog = setTimeout(legacyFinish, 250);
+    heroVideo.currentTime = targetTime;
+  }
+
+  function legacyFinish() {
+    if (seekWatchdog) { clearTimeout(seekWatchdog); seekWatchdog = null; }
+    drawHeroFrame(0);
+    if (Math.abs(heroVideo.currentTime - targetTime) > SEEK_EPS) {
+      seeking = false;
+      legacySeek();
+    } else {
+      seeking = false;
+    }
+  }
+
+  heroVideo.addEventListener('seeked', () => { if (!hasRVFC) legacyFinish(); });
+
+  function markVideoReady() {
+    if (videoReady) return;
+    videoReady = true;
+    heroDuration = heroVideo.duration || 0;
+    checkFullyBuffered(); // may already be fully cached from a prior visit
+    imagesLoaded = 1; // signal to loader gating that we can draw
+    if (currentFrameIndex < 0) currentFrameIndex = 0;
+    // iOS/Safari sometimes won't honor currentTime seeks until the video has
+    // been "played" once. Prime it with a muted play/pause (no-op if blocked).
+    try {
+      const p = heroVideo.play();
+      if (p && typeof p.then === 'function') {
+        p.then(() => heroVideo.pause()).catch(() => {});
+      } else {
+        heroVideo.pause();
+      }
+    } catch (e) { /* autoplay blocked — seeking still works on most browsers */ }
+    drawHeroFrame(0);
+  }
+  heroVideo.addEventListener('loadeddata', markVideoReady);
+  heroVideo.addEventListener('canplay', markVideoReady);
 
   if (heroCanvas) {
     // High-DPI support: Use device pixel ratio but cap at 2 for performance
@@ -1235,9 +1369,9 @@
   const loaderPercent = document.getElementById('loader-percent');
   const navLogo = document.querySelector('.nav-logo');
   const floatingNav = document.getElementById('floating-nav');
-  const loadThreshold = isMobileOrTouch
-    ? Math.floor(frameCount * 0.25)
-    : Math.floor(frameCount * 0.35);
+  // Video is a single asset: the "image gate" is satisfied the moment the
+  // video has enough data to draw its first frame (imagesLoaded flips to 1).
+  const loadThreshold = 1;
   const minIntroTime = isMobileOrTouch ? 1500 : 3000;
   const startTime = Date.now();
   let isHeroReady = false;
@@ -1259,19 +1393,8 @@
     if (navLogo) navLogo.classList.remove('hidden');
     document.body.classList.remove('loading');
 
-    // Still load hero frames in background, but don't gate on them
-    for (let i = 1; i <= frameCount; i++) {
-      const img = new Image();
-      img.src = getHeroFrameFilename(i);
-      img.onload = () => {
-        imagesLoaded++;
-        if (imagesLoaded === 1 && currentFrameIndex < 0) {
-          currentFrameIndex = 0;
-          drawHeroFrame(0);
-        }
-      };
-      frames.push(img);
-    }
+    // Still load hero video in background, but don't gate on it
+    heroVideo.load();
   } else if (heroLoader) {
     // - FIRST VISIT: Full cinematic preloader -
     // The loading class is already handled in HTML.
@@ -1407,15 +1530,10 @@
       drawHeroFrame(idx);
     }
 
-    for (let i = 1; i <= frameCount; i++) {
-      const img = new Image();
-      img.src = getHeroFrameFilename(i);
-      img.onload = () => {
-        imagesLoaded++;
-        checkReadiness();
-      };
-      frames.push(img);
-    }
+    // Load the video; when it can draw, markVideoReady() sets imagesLoaded=1.
+    heroVideo.addEventListener('loadeddata', checkReadiness);
+    heroVideo.addEventListener('canplay', checkReadiness);
+    heroVideo.load();
   } else {
     // No hero loader (subpage)
     document.body.classList.remove('loading');
@@ -1437,8 +1555,9 @@
 
   function drawHeroFrame(index) {
     if (!heroCtx || !isHeroReady) return;
-    const img = frames[index];
-    if (!img || !img.complete) return;
+    const img = heroVideo;
+    // readyState >= 2 (HAVE_CURRENT_DATA) means the current frame is decodable.
+    if (!videoReady || img.readyState < 2) return;
 
     const cw = heroCanvas.width;
     const ch = heroCanvas.height;
@@ -1449,8 +1568,8 @@
       bufferCanvas.height = ch;
     }
 
-    const iw = img.width || 1920;
-    const ih = img.height || 1080;
+    const iw = img.videoWidth || 1920;
+    const ih = img.videoHeight || 1080;
 
     let scale = Math.min(cw / iw, ch / ih);
 
@@ -1498,11 +1617,10 @@
     if (!heroSection || !heroCanvas) return;
     progress = clamp(progress, 0, 1);
 
-    // Use round for smoother frame selection; avoids premature jumps
-    const targetFrameIndex = Math.min(frameCount - 1, Math.round(progress * (frameCount - 1)));
-    if (targetFrameIndex !== currentFrameIndex && imagesLoaded > 0) {
-      currentFrameIndex = targetFrameIndex;
-      drawHeroFrame(currentFrameIndex);
+    // Map scroll progress -> video time. The 'seeked' event triggers the draw.
+    if (videoReady) {
+      currentFrameIndex = 0; // keep resize-redraw gating happy
+      seekHeroVideo(progress);
     }
 
     const setChapterState = (chapter, isActive, pSub) => {
