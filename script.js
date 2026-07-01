@@ -1196,7 +1196,7 @@
   // - VIDEO-DRIVEN HERO SEQUENCE -
   // Instead of preloading ~190 JPG frames (~188MB), we scrub a single MP4
   // by mapping scroll progress -> video.currentTime. Massively smaller payload.
-  const heroVideoSrc = 'assets/video/Machine_exploded_view_animation_202606211334_scrub.mp4';
+  const heroVideoSrc = 'assets/video/Machine_exploded_view_animation_202606211334_720.mp4';
   const heroVideo = document.createElement('video');
   heroVideo.src = heroVideoSrc;
   heroVideo.muted = true;
@@ -1269,6 +1269,7 @@
 
   function seekHeroVideo(progress) {
     if (!videoReady || heroDuration <= 0) return;
+
     let t = Math.max(0, Math.min(heroDuration - 0.001, progress * heroDuration));
     // Before the clip is fully buffered, never seek past what's downloaded —
     // seeking into an un-buffered region stalls the decoder.
